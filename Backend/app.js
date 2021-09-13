@@ -5,6 +5,10 @@ let mongoose = require("mongoose");
 let cors = require("cors");
 // create the reference of express 
 let app = express();
+let adminRouter = require("./router/admin.router");
+let userRouter = require("./router/user.router");
+let productRouter = require("./router/product.router");
+// add other routers as needed ....
 
 // add middleware 
 app.use(cors());
@@ -16,6 +20,10 @@ let url = "mongodb://localhost:27017/Grocers"
 // connect the database 
 mongoose.connect(url).then(res=>console.log("connected")).catch(error=>console.log(error));
 
+// middleware that helps watch main path and pass the request to router file
+app.use("/api/admin",adminRouter);
+app.use("/api/user",userRouter);
+app.use("/api/product",productRouter);
 
 
 app.listen(9090,()=>console.log("Server running on port number 9090"))
