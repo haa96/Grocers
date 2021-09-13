@@ -1,9 +1,9 @@
 // load the model schema file
 let adminModel = require("../model/admin.model");
 
-// let adminLogin = (request, response)=> {
+// let adminLogin = async(request, response)=> {
 //     let admin = request.body; //recieve the data from post method
-//     let adminInfo = await adminModel.findOne({email:admin._id,password:admin.pwd});
+//     let adminInfo = await adminModel.findOne({_id:admin._id,pwd:admin.pwd});
 //     if(adminInfo!=null){
 //         response.send("Success");
 //     }else {

@@ -21,8 +21,12 @@ let url = "mongodb://localhost:27017/Grocers"
 mongoose.connect(url).then(res=>console.log("connected")).catch(error=>console.log(error));
 
 // middleware that helps watch main path and pass the request to router file
+
+// http://localhost:9090/api/admin/
 app.use("/api/admin",adminRouter);
+// http://localhost:9090/api/user/
 app.use("/api/user",userRouter);
+// http://localhost:9090/api/product/
 app.use("/api/product",productRouter);
 
 
