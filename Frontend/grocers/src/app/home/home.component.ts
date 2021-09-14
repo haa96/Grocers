@@ -3,6 +3,7 @@ import {MatDialog} from '@angular/material/dialog';
 import { AdminComponent } from '../admin/admin.component';
 import { UserComponent } from '../user/user.component';
 import { EmployeeComponent } from '../employee/employee.component';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -12,12 +13,13 @@ import { EmployeeComponent } from '../employee/employee.component';
 export class HomeComponent implements OnInit {
 
   title = 'dialog';
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog, public router:Router) { }
 
   ngOnInit(): void {
   }
   openDialogAdmin(){
-    this.dialog.open(AdminComponent);
+    //this.dialog.open(AdminComponent);
+    this.router.navigate(["empmain"])
   }
   openDialogUser(){
     this.dialog.open(UserComponent);
