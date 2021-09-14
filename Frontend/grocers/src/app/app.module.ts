@@ -1,9 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
+import {ReactiveFormsModule} from '@angular/forms';
 import { MatIconModule } from  '@angular/material/icon';
 import {MatDialogModule} from '@angular/material/dialog';
 import { AppRoutingModule } from './app-routing.module';
@@ -29,6 +28,7 @@ import { RegisterComponent } from './register/register.component';
   ],
  
   imports: [
+    ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule,
     MatDialogModule,
