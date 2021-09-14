@@ -1,15 +1,10 @@
 <mat-toolbar color="primary">
   <span class="g">Grocers</span>
-</mat-toolbar>
-
-<mat-toolbar>
-  
-  <button mat-raised-button color="primary" (click)="openDialogAdmin()">Admin Login</button>
-  <button mat-raised-button color="primary" (click)="openDialogUser()">User Login</button>
-  <button mat-raised-button color="primary" (click)="openDialogEmployee()">Employee Login</button>  
-<span class="example-spacer"></span>
-  <button mat-button>
+  <span class="example-spacer"></span>
+  <button mat-button (click)="Signout()">
     Sign Out
   </button>
 </mat-toolbar>
+<router-outlet></router-outlet>
+
 
