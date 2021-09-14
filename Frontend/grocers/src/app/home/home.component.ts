@@ -1,11 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
-// import { AdminComponent } from './admin/admin.component';
-// import { UserComponent } from './user/user.component';
-// import { EmployeeComponent } from './employee/employee.component';
 import {FormControl, FormGroup} from '@angular/forms';
 import {Router} from '@angular/router';
-// import { AdminComponent } from '../admin/admin.component';
 
 @Component({
   selector: 'app-home',
@@ -24,11 +20,11 @@ export class HomeComponent implements OnInit {
   }
   openDialogUser(){
     // this.dialog.open(UserComponent);
-    this.router.navigate(['user']);
+    this.router.navigate(["user"]);
   }
   openDialogEmployee(){
     // this.dialog.open(EmployeeComponent);
-    this.router.navigate(['employee']);
+    this.router.navigate(["employee"]);
   }
 
 }
