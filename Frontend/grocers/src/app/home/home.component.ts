@@ -18,8 +18,8 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
   openDialogAdmin(){
-    //this.dialog.open(AdminComponent);
-    this.router.navigate(["empmain"])
+    this.dialog.open(AdminComponent);
+    
   }
   openDialogUser(){
     this.dialog.open(UserComponent);
