@@ -12,6 +12,9 @@ export class UserpanelComponent implements OnInit {
   cart(){
     this.router.navigate(["cart"]);
   }
+  profile(){
+    this.router.navigate(["profile"]);
+  }
   ngOnInit(): void {
   }
 
