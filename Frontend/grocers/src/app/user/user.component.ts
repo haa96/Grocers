@@ -34,8 +34,10 @@ export class UserComponent implements OnInit {
         this.msg = result;
       }
     },
-  
+
   error=>console.log(error));
   this.loginRef.reset();
+
+  test(){
   }
 }
