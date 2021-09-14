@@ -1,6 +1,9 @@
-<mat-toolbar color="primary">
+<mat-toolbar>
     <span class="g">Profile</span>
     <span class="example-spacer"></span>
+    <button mat-raised-button color="primary">
+        Home
+    </button>
     <button mat-button>
       Sign Out
     </button>
@@ -47,15 +50,13 @@
           </mat-card>
     </mat-tab>
     <mat-tab label="Funds">
-        <br>
-        Current Funds: 
+        <mat-card class="card">
+            Current Funds:
+        </mat-card>
+         
     </mat-tab>
     <mat-tab label="Edit Profile">
-        <br>
-        <h3 style="color: #3f51b5">Edit</h3>
-        <hr>
-
-
+    <mat-card class="card">
         <mat-form-field>
             <mat-label>New First Name</mat-label>
                 <input matInput>
@@ -83,8 +84,8 @@
 
     
         <br>
-  <button mat-raised-button color="primary" mat-dialog-close mat-dialog-close="false">Save</button>
-
+        <button mat-raised-button color="primary" mat-dialog-close mat-dialog-close="false">Save</button>
+    </mat-card>
 
     </mat-tab>
   </mat-tab-group>
