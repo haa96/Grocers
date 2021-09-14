@@ -26,7 +26,7 @@ import { MatCardModule } from '@angular/material/card';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { AdminpanelComponent } from './adminpanel/adminpanel.component';
-
+import { ReportComponent } from './report/report.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,7 +43,9 @@ import { AdminpanelComponent } from './adminpanel/adminpanel.component';
     CartComponent,
     HomeComponent, 
     ProfileComponent,
-    AdminpanelComponent
+    AdminpanelComponent,
+    AdminpanelComponent,
+    ReportComponent
   ],
 
   imports: [
