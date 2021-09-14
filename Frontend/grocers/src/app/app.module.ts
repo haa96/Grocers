@@ -17,6 +17,8 @@ import { AdminComponent } from './admin/admin.component';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatTreeModule} from '@angular/material/tree';
 import { RegisterComponent } from './register/register.component';
+import { ProfileComponent } from './user/profile/profile.component';
+import {MatTabsModule} from '@angular/material/tabs';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import { RegisterComponent } from './register/register.component';
     UserComponent,
     EmployeeComponent,
     AdminComponent,
-    RegisterComponent
+    RegisterComponent,
+    ProfileComponent
   ],
  
   imports: [
@@ -40,6 +43,7 @@ import { RegisterComponent } from './register/register.component';
     MatInputModule,
     MatGridListModule,
     MatTreeModule,
+    MatTabsModule,
     BrowserAnimationsModule
     
   ],
