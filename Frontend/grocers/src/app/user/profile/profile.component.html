@@ -1,15 +1,50 @@
 <mat-toolbar color="primary">
-    <span class="g">User Profile</span>
+    <span class="g">Profile</span>
     <span class="example-spacer"></span>
     <button mat-button>
       Sign Out
     </button>
   </mat-toolbar>
 
+  <mat-card class="card">
+    <mat-card-header >
+      <mat-icon mat-card-avatar class="header-image"></mat-icon>
+      <mat-card-title class="me-name">Name</mat-card-title><br><br>
+      <mat-card-subtitle class="sub">user</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content class="list-info">
+      <ul>
+          <li>Email:  </li>
+          <li>Address:  </li>
+          <li>Phone:  </li>
+      </ul>
+    </mat-card-content>
+  </mat-card>
+
+
   <mat-tab-group animationDuration="0ms">
     <mat-tab label="Order Status">
         <br>
-        Orders:
+        
+		<mat-card class="card">
+		  <mat-card-header >
+			<mat-card-title class="name"> Product 1</mat-card-title><br><br>
+			<mat-card-subtitle class="sub">status</mat-card-subtitle>
+		  </mat-card-header>
+        </mat-card>
+        <mat-card class="card">
+            <mat-card-header >
+              <mat-card-title class="name"> Product 2</mat-card-title><br><br>
+              <mat-card-subtitle class="sub">status</mat-card-subtitle>
+            </mat-card-header>
+          </mat-card>
+          <mat-card class="card">
+            <mat-card-header >
+              <mat-card-title class="name"> Product 3</mat-card-title><br><br>
+              <mat-card-subtitle class="sub">status</mat-card-subtitle>
+            </mat-card-header>
+          </mat-card>
     </mat-tab>
     <mat-tab label="Funds">
         <br>
