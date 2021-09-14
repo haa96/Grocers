@@ -23,7 +23,7 @@ import { ProfileComponent } from './user/profile/profile.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import { MainComponent } from './user/main/main.component';
 import { MatCardModule } from '@angular/material/card';
-
+import { AdminpanelComponent } from './adminpanel/adminpanel.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +34,8 @@ import { MatCardModule } from '@angular/material/card';
     CartComponent,
     HomeComponent,
     ProfileComponent,
-    MainComponent
+    MainComponent,
+    AdminpanelComponent
   ],
  
   imports: [
