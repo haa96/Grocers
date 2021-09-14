@@ -26,6 +26,7 @@ export class UserComponent implements OnInit {
   checkUser() {
     let user = this.loginRef.value;
     console.log(user);
+    
     this.router.navigate(["userPanel"]);
 
     this.userSer.checkUserDetails(user).
