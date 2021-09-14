@@ -13,7 +13,6 @@ import { MatButtonModule } from  '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatTreeModule} from '@angular/material/tree';
-import { HomeComponent } from './home/home.component';
 import { UserComponent } from './user/user.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { AdminComponent } from './admin/admin.component';
@@ -42,7 +41,7 @@ import { AdminpanelComponent } from './adminpanel/adminpanel.component';
     ProfileComponent,
     RegisterComponent,
     CartComponent,
-    HomeComponent,
+    HomeComponent, 
     ProfileComponent,
     AdminpanelComponent
   ],
