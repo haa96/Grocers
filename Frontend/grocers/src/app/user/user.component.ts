@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-user',
@@ -7,11 +10,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserComponent implements OnInit {
 
-  constructor() { }
+  loginRef = new FormGroup({
+    email:new FormControl(),
+    password:new FormControl()
+  });
+
+  constructor(
+    public userSer:UserService,
+    public router:Router) { }
+    msg?:string;
+
   ngOnInit(): void {
   }
 
-  test(){
-    
+  checkUser() {
+    let user = this.loginRef.value;
+    console.log(user);
+    this.userSer.checkUserDetails(user).
+    subscribe(result=>{
+      if(result=="Success"){
+        this.router.navigate(["userPanel",user.email]);
+      }else {
+        this.msg = result;
+      }
+    },
+  
+  error=>console.log(error));
+  this.loginRef.reset();
   }
 }

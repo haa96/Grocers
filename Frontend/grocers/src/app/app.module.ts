@@ -1,9 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-
-import { MatFormFieldModule } from '@angular/material/form-field';
+import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from  '@angular/material/icon';
 import {MatDialogModule} from '@angular/material/dialog';
 import { AppRoutingModule } from './app-routing.module';
@@ -12,12 +11,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from  '@angular/material/toolbar';
 import { MatButtonModule } from  '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatTreeModule} from '@angular/material/tree';
+
+import { HomeComponent } from './home/home.component';
 import { UserComponent } from './user/user.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { AdminComponent } from './admin/admin.component';
-import {MatGridListModule} from '@angular/material/grid-list';
-import {MatTreeModule} from '@angular/material/tree';
-import { RegisterComponent } from './register/register.component';
+import { UserPanelComponent } from './user-panel/user-panel.component';
+import { NotfoundComponent } from './notfound/notfound.component';
 
 @NgModule({
   declarations: [
@@ -25,10 +27,13 @@ import { RegisterComponent } from './register/register.component';
     UserComponent,
     EmployeeComponent,
     AdminComponent,
-    RegisterComponent
+    HomeComponent,
+    UserPanelComponent,
+    NotfoundComponent,
   ],
  
   imports: [
+    ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule,
     MatDialogModule,
