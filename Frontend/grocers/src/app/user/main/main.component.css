@@ -6,10 +6,6 @@
   .example-spacer {
     flex: 1 1 auto;
   }
-  .example-spacer {
-    flex: 1 1 auto;
-  }
-
 
 .card {
   max-width: 500px;
@@ -56,7 +52,9 @@ div{
   height: 55px;
 
 }
-
+.g{
+  font-size:xx-large
+}
 .sub{
     width: 250px;
     color: #3f51b5;
