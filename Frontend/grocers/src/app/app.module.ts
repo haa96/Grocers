@@ -1,9 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
+import {ReactiveFormsModule} from '@angular/forms';
 import { MatIconModule } from  '@angular/material/icon';
 import {MatDialogModule} from '@angular/material/dialog';
 import { AppRoutingModule } from './app-routing.module';
@@ -19,6 +18,12 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatTreeModule} from '@angular/material/tree';
 import { RegisterComponent } from './register/register.component';
 import { EmpMainComponent } from './employee/empmain/empmain.component';
+import { CartComponent } from './cart/cart.component';
+import { HomeComponent } from './home/home.component';
+import { ProfileComponent } from './user/profile/profile.component';
+import {MatTabsModule} from '@angular/material/tabs';
+import { MainComponent } from './user/main/main.component';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -27,10 +32,15 @@ import { EmpMainComponent } from './employee/empmain/empmain.component';
     EmployeeComponent,
     AdminComponent,
     RegisterComponent,
-    EmpMainComponent
+    EmpMainComponent,
+    CartComponent,
+    HomeComponent,
+    ProfileComponent,
+    MainComponent
   ],
  
   imports: [
+    ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule,
     MatDialogModule,
@@ -42,6 +52,8 @@ import { EmpMainComponent } from './employee/empmain/empmain.component';
     MatInputModule,
     MatGridListModule,
     MatTreeModule,
+    MatTabsModule,
+    MatCardModule,
     BrowserAnimationsModule
     
   ],
