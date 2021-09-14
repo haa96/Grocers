@@ -32,7 +32,7 @@ import { MatCardModule } from '@angular/material/card';
     AdminComponent,
     RegisterComponent,
     CartComponent,
-    HomeComponent
+    HomeComponent,
     ProfileComponent,
     MainComponent
   ],
