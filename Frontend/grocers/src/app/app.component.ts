@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
+import {MatDialog} from '@angular/material/dialog';
+import { AdminComponent } from './admin/admin.component';
+import { UserComponent } from './user/user.component';
+import { EmployeeComponent } from './employee/employee.component';
 
 
 @Component({
@@ -10,10 +14,15 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   title = 'dialog';
-  constructor(
-    public router:Router) { }
-  Signout(){
-    this.router.navigate([""]);
-
+  constructor(public dialog: MatDialog) { }
+  
+  openDialogAdmin(){
+    this.dialog.open(AdminComponent);
+  }
+  openDialogUser(){
+    this.dialog.open(UserComponent);
+  }
+  openDialogEmployee(){
+    this.dialog.open(EmployeeComponent);
   }
 }

@@ -8,6 +8,11 @@ const routes: Routes = [
   {path:"",component:HomeComponent}
 
 
+import { ProfileComponent } from './user/profile/profile.component';
+import { MainComponent } from './user/main/main.component';
+const routes: Routes = [
+  {path:"profile",component:ProfileComponent},
+  {path:"main",component:MainComponent}
 ];
 
 @NgModule({

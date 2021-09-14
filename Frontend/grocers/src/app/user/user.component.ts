@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
@@ -7,18 +8,14 @@ import { Router } from '@angular/router';
 })
 export class UserComponent implements OnInit {
 
-  constructor(
- 
-    public router:Router)  {
 
 
-
-   }
-
+  constructor() { }
   ngOnInit(): void {
   }
 
   test(){
 
+    
   }
 }

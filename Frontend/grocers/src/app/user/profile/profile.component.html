@@ -1,0 +1,92 @@
+<mat-toolbar>
+    <span class="g">Profile</span>
+    <span class="example-spacer"></span>
+    <button mat-raised-button color="primary">
+        Home
+    </button>
+    <button mat-button>
+      Sign Out
+    </button>
+  </mat-toolbar>
+
+  <mat-card class="card">
+    <mat-card-header >
+      <mat-icon mat-card-avatar class="header-image"></mat-icon>
+      <mat-card-title class="me-name">Name</mat-card-title><br><br>
+      <mat-card-subtitle class="sub">user</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content class="list-info">
+      <ul>
+          <li>Email:  </li>
+          <li>Address:  </li>
+          <li>Phone:  </li>
+      </ul>
+    </mat-card-content>
+  </mat-card>
+
+
+  <mat-tab-group animationDuration="0ms">
+    <mat-tab label="Order Status">
+        <br>
+        
+		<mat-card class="card">
+		  <mat-card-header >
+			<mat-card-title class="name"> Product 1</mat-card-title><br><br>
+			<mat-card-subtitle class="sub">status</mat-card-subtitle>
+		  </mat-card-header>
+        </mat-card>
+        <mat-card class="card">
+            <mat-card-header >
+              <mat-card-title class="name"> Product 2</mat-card-title><br><br>
+              <mat-card-subtitle class="sub">status</mat-card-subtitle>
+            </mat-card-header>
+          </mat-card>
+          <mat-card class="card">
+            <mat-card-header >
+              <mat-card-title class="name"> Product 3</mat-card-title><br><br>
+              <mat-card-subtitle class="sub">status</mat-card-subtitle>
+            </mat-card-header>
+          </mat-card>
+    </mat-tab>
+    <mat-tab label="Funds">
+        <mat-card class="card">
+            Current Funds:
+        </mat-card>
+         
+    </mat-tab>
+    <mat-tab label="Edit Profile">
+    <mat-card class="card">
+        <mat-form-field>
+            <mat-label>New First Name</mat-label>
+                <input matInput>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-label>New Last Name</mat-label>
+                <input matInput>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-label>New Password</mat-label>
+                <input matInput >
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-label>New Address</mat-label>
+                <input matInput>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-label>New Phone Number</mat-label>
+                <input matInput >
+        </mat-form-field>
+
+    
+        <br>
+        <button mat-raised-button color="primary" mat-dialog-close mat-dialog-close="false">Save</button>
+    </mat-card>
+
+    </mat-tab>
+  </mat-tab-group>
+  
