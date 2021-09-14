@@ -1,8 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
-import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { FormsModule } from '@angular/forms';
+import {ReactiveFormsModule} from '@angular/forms';
 import { MatIconModule } from  '@angular/material/icon';
 import {MatDialogModule} from '@angular/material/dialog';
 import { AppRoutingModule } from './app-routing.module';
@@ -20,6 +20,12 @@ import { EmployeeComponent } from './employee/employee.component';
 import { AdminComponent } from './admin/admin.component';
 import { UserPanelComponent } from './user-panel/user-panel.component';
 import { NotfoundComponent } from './notfound/notfound.component';
+import {MatTreeModule} from '@angular/material/tree';
+import { RegisterComponent } from './register/register.component';
+import { ProfileComponent } from './user/profile/profile.component';
+import {MatTabsModule} from '@angular/material/tabs';
+import { MainComponent } from './user/main/main.component';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -30,8 +36,11 @@ import { NotfoundComponent } from './notfound/notfound.component';
     HomeComponent,
     UserPanelComponent,
     NotfoundComponent,
+    RegisterComponent,
+    ProfileComponent,
+    MainComponent
   ],
- 
+
   imports: [
     ReactiveFormsModule,
     BrowserModule,
@@ -45,8 +54,10 @@ import { NotfoundComponent } from './notfound/notfound.component';
     MatInputModule,
     MatGridListModule,
     MatTreeModule,
+    MatTabsModule,
+    MatCardModule,
     BrowserAnimationsModule
-    
+
   ],
   providers: [],
   bootstrap: [AppComponent]

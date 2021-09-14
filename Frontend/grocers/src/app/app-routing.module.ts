@@ -3,6 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { UserComponent } from './user/user.component';
 import { UserPanelComponent } from './user-panel/user-panel.component';
+import { ProfileComponent } from './user/profile/profile.component';
+import { MainComponent } from './user/main/main.component';
 import { AdminComponent } from './admin/admin.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { NotfoundComponent } from './notfound/notfound.component'
@@ -11,7 +13,9 @@ const routes: Routes = [
   {path:"user",component:UserComponent},
   {path:"admin",component:AdminComponent},
   {path: "employee",component:EmployeeComponent},
-  {path:"userPanel",component:UserPanelComponent},
+  {path:"userPanel",component:UserPanelComponent
+  {path:"profile",component:ProfileComponent},
+  {path:"main",component:MainComponent}
   {path:"",redirectTo:"home",pathMatch:"prefix"},
   {path:"**",component:NotfoundComponent}
 ];
