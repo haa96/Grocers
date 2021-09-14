@@ -23,7 +23,8 @@ import { ProfileComponent } from './user/profile/profile.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import { MainComponent } from './user/main/main.component';
 import { MatCardModule } from '@angular/material/card';
-import { AdminpanelComponent } from './adminpanel/adminpanel.component';
+import { AdminpanelComponent } from './admin/adminpanel/adminpanel.component';
+import { ReportComponent } from './admin/report/report.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +36,8 @@ import { AdminpanelComponent } from './adminpanel/adminpanel.component';
     HomeComponent,
     ProfileComponent,
     MainComponent,
-    AdminpanelComponent
+    AdminpanelComponent,
+    ReportComponent
   ],
  
   imports: [
