@@ -34,14 +34,18 @@ title = 'dialog';
 
   openDialogAdmin(){
     // this.dialog.open(AdminComponent);
+    console.log("open dialog admin");
     this.router.navigate(["admin"]);
   }
   openDialogUser(){
     // this.dialog.open(UserComponent);
+    console.log("open dialog user");
+
     this.router.navigate(["user"]);
   }
   openDialogEmployee(){
     // this.dialog.open(EmployeeComponent);
+    console.log("open dialog emp");
     this.router.navigate(["employee"]);
   }
 

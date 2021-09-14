@@ -26,10 +26,13 @@ export class UserComponent implements OnInit {
   checkUser() {
     let user = this.loginRef.value;
     console.log(user);
+    this.router.navigate(["userPanel"]);
+
     this.userSer.checkUserDetails(user).
     subscribe(result=>{
       if(result=="Success"){
-        this.router.navigate(["userPanel",user.email]);
+        // this.router.navigate(["userPanel",user.email]);
+        this.router.navigate(["userPanel"]);
       }else {
         this.msg = result;
       }
@@ -37,7 +40,9 @@ export class UserComponent implements OnInit {
 
   error=>console.log(error));
   this.loginRef.reset();
+  }
 
-  test(){
+  registerUser() {
+    
   }
 }
