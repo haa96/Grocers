@@ -18,6 +18,7 @@ import { AdminComponent } from './admin/admin.component';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatTreeModule} from '@angular/material/tree';
 import { RegisterComponent } from './register/register.component';
+import { EmpMainComponent } from './employee/empmain/empmain.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { RegisterComponent } from './register/register.component';
     UserComponent,
     EmployeeComponent,
     AdminComponent,
-    RegisterComponent
+    RegisterComponent,
+    EmpMainComponent
   ],
  
   imports: [
