@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-userpanel',
@@ -7,8 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserpanelComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(public router:Router) { }
+  cart(){
+    this.router.navigate(["cart"]);
+  }
   ngOnInit(): void {
   }
 
