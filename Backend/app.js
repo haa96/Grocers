@@ -25,7 +25,7 @@ mongoose.connect(url).then(res=>console.log("connected")).catch(error=>console.l
 
 // http://localhost:9090/api/admin/
 app.use("/api/admin",adminRouter);
-// http://localhost:9090/api/user/
+// http://localhost:9090/api/user/login
 app.use("/api/user",userRouter);
 // http://localhost:9090/api/product/
 app.use("/api/product",productRouter);

@@ -1,18 +1,28 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { HomeComponent } from './home/home.component';
+import { UserComponent } from './user/user.component';
+import { UserpanelComponent } from './user/userpanel/userpanel.component';
+import { AdminComponent } from './admin/admin.component';
+import { EmployeeComponent } from './employee/employee.component';
+import { NotfoundComponent } from './notfound/notfound.component';
 import { CartComponent} from'./cart/cart.component';
-import { HomeComponent} from'./home/home.component';
-import { AdminpanelComponent} from'./adminpanel/adminpanel.component';
 import { ProfileComponent } from './user/profile/profile.component';
-import { MainComponent } from './user/main/main.component';
 
 const routes: Routes = [
-  {path:"AdminPan",component:AdminpanelComponent},
+  {path:"",component:HomeComponent},
+  {path:"home",component:HomeComponent},
+  // user login page
+  {path:"user",component:UserComponent},
+  // user main page
+  {path:"userPanel",component:UserpanelComponent},
+  // admin login page
+  {path:"admin",component:AdminComponent},
+  // employee login page
+  {path: "employee",component:EmployeeComponent},
   {path:"profile",component:ProfileComponent},
-  {path:"main",component:MainComponent},
   {path:"cart",component:CartComponent},
-  {path:"",component:HomeComponent}
-
+  {path:"**",component:NotfoundComponent}
 ];
 
 @NgModule({

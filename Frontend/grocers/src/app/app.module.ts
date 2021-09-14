@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import {ReactiveFormsModule} from '@angular/forms';
 import { MatIconModule } from  '@angular/material/icon';
 import {MatDialogModule} from '@angular/material/dialog';
@@ -11,33 +11,41 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from  '@angular/material/toolbar';
 import { MatButtonModule } from  '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatTreeModule} from '@angular/material/tree';
 import { UserComponent } from './user/user.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { AdminComponent } from './admin/admin.component';
-import {MatGridListModule} from '@angular/material/grid-list';
-import {MatTreeModule} from '@angular/material/tree';
+import { NotfoundComponent } from './notfound/notfound.component';
 import { RegisterComponent } from './register/register.component';
 import { CartComponent } from './cart/cart.component';
-import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './user/profile/profile.component';
 import {MatTabsModule} from '@angular/material/tabs';
-import { MainComponent } from './user/main/main.component';
+import { UserpanelComponent } from './user/userpanel/userpanel.component'; // used to be mainComponent
 import { MatCardModule } from '@angular/material/card';
+import { HttpClientModule } from '@angular/common/http';
+import { HomeComponent } from './home/home.component';
 import { AdminpanelComponent } from './adminpanel/adminpanel.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     UserComponent,
     EmployeeComponent,
     AdminComponent,
+    HomeComponent,
+    UserpanelComponent,
+    NotfoundComponent,
     RegisterComponent,
     CartComponent,
-    HomeComponent,
     ProfileComponent,
-    MainComponent,
+    RegisterComponent,
+    CartComponent,
+    HomeComponent, 
+    ProfileComponent,
     AdminpanelComponent
   ],
- 
+
   imports: [
     ReactiveFormsModule,
     BrowserModule,
@@ -53,8 +61,8 @@ import { AdminpanelComponent } from './adminpanel/adminpanel.component';
     MatTreeModule,
     MatTabsModule,
     MatCardModule,
-    BrowserAnimationsModule
-    
+    BrowserAnimationsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
