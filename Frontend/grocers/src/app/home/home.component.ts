@@ -12,21 +12,6 @@ import {Router} from '@angular/router';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-title = 'dialog';
-// constructor(public dialog: MatDialog) { }
-//
-// ngOnInit(): void {
-// }
-// openDialogAdmin(){
-//   this.dialog.open(AdminComponent);
-// }
-// openDialogUser(){
-//   this.dialog.open(UserComponent);
-// }
-// openDialogEmployee(){
-//   this.dialog.open(EmployeeComponent);
-// }
-
   ngOnInit(): void {
   }
   // title = 'dialog';

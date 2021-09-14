@@ -22,9 +22,11 @@ import { RegisterComponent } from './register/register.component';
 import { CartComponent } from './cart/cart.component';
 import { ProfileComponent } from './user/profile/profile.component';
 import {MatTabsModule} from '@angular/material/tabs';
-import { UserpanelComponent } from './user/userpanel/userpanel.component';
+import { UserpanelComponent } from './user/userpanel/userpanel.component'; // used to be mainComponent
 import { MatCardModule } from '@angular/material/card';
 import { HttpClientModule } from '@angular/common/http';
+import { HomeComponent } from './home/home.component';
+import { AdminpanelComponent } from './adminpanel/adminpanel.component';
 
 @NgModule({
   declarations: [
@@ -37,8 +39,12 @@ import { HttpClientModule } from '@angular/common/http';
     NotfoundComponent,
     RegisterComponent,
     CartComponent,
+    ProfileComponent,
+    RegisterComponent,
+    CartComponent,
     HomeComponent,
     ProfileComponent,
+    AdminpanelComponent
   ],
 
   imports: [
