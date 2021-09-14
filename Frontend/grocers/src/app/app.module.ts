@@ -24,6 +24,12 @@ import {MatTabsModule} from '@angular/material/tabs';
 import { MainComponent } from './user/main/main.component';
 import { MatCardModule } from '@angular/material/card';
 import { AdminpanelComponent } from './adminpanel/adminpanel.component';
+import { AddProductComponent } from './adminpanel/add-product/add-product.component';
+import { DeleteProductComponent } from './adminpanel/delete-product/delete-product.component';
+
+import { MatTableModule } from '@angular/material/table';
+import { UpdateproductComponent } from './adminpanel/updateproduct/updateproduct.component';
+import { ViewRequestComponent } from './adminpanel/view-request/view-request.component'; 
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +41,11 @@ import { AdminpanelComponent } from './adminpanel/adminpanel.component';
     HomeComponent,
     ProfileComponent,
     MainComponent,
-    AdminpanelComponent
+    AdminpanelComponent,
+    AddProductComponent,
+    DeleteProductComponent,
+    UpdateproductComponent,
+    ViewRequestComponent
   ],
  
   imports: [
@@ -53,8 +63,8 @@ import { AdminpanelComponent } from './adminpanel/adminpanel.component';
     MatTreeModule,
     MatTabsModule,
     MatCardModule,
-    BrowserAnimationsModule
-    
+    BrowserAnimationsModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
