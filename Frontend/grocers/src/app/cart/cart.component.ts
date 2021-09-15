@@ -14,6 +14,6 @@ export class CartComponent implements OnInit {
   }
   main(){
     this.router.navigate(["main"]);
-  
+
   }
 }

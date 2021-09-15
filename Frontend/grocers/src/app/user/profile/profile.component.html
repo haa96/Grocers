@@ -1,11 +1,8 @@
 <mat-toolbar>
     <span class="g">Profile</span>
     <span class="example-spacer"></span>
-    <button mat-raised-button color="primary" (click)="main()">
-        Home
-    </button>
-
-  </mat-toolbar>
+    <button mat-raised-button color="primary" (click)="main()">Home</button>
+</mat-toolbar>
 
   <mat-card class="card">
     <mat-card-header >
@@ -27,7 +24,7 @@
   <mat-tab-group animationDuration="0ms">
     <mat-tab label="Order Status">
         <br>
-        
+
 		<mat-card class="card">
 		  <mat-card-header >
 			<mat-card-title class="name"> Product 1</mat-card-title><br><br>
@@ -51,7 +48,7 @@
         <mat-card class="card">
             Current Funds:
         </mat-card>
-         
+
     </mat-tab>
     <mat-tab label="Edit Profile">
     <mat-card class="card">
@@ -80,11 +77,10 @@
                 <input matInput >
         </mat-form-field>
 
-    
+
         <br>
         <button mat-raised-button color="primary" mat-dialog-close mat-dialog-close="false">Save</button>
     </mat-card>
 
     </mat-tab>
   </mat-tab-group>
-  
