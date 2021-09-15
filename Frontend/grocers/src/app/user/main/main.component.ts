@@ -1,17 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { Router,ActivatedRoute } from '@angular/router';
 import { AdminService } from 'src/app/admin.service';
-
+import { SharedService } from 'src/app/shared.service';
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.css']
+
 })
 export class MainComponent implements OnInit {
 products =[];
 
 
-constructor(public router:Router,public adminSer:AdminService,public activateRoute:ActivatedRoute) { }
+constructor(public ser:SharedService,public router:Router,public adminSer:AdminService,public activateRoute:ActivatedRoute) { }
 
 ngOnInit(): void {
   
@@ -29,6 +30,10 @@ populateProducts(){
     }
       console.log(this.products);
   },error=> console.error(error));
-
 }
+addcart(){
+  let x=25;
+  this.ser.setEmpArray(this.emps);      
+}
+
 }
