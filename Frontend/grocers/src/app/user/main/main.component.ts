@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router,ActivatedRoute } from '@angular/router';
 import { AdminService } from 'src/app/admin.service';
-port {MatDialog} from '@angular/material/dialog';
+import {MatDialog} from '@angular/material/dialog';
 import { FormControl, FormGroup } from '@angular/forms';
 
 
@@ -33,4 +33,5 @@ populateProducts(){
       console.log(this.products);
   },error=> console.error(error));
 
+}
 }

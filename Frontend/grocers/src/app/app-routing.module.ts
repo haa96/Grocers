@@ -8,8 +8,6 @@ import { EmployeeComponent } from './employee/employee.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { CartComponent} from'./cart/cart.component';
 import { ProfileComponent } from './user/profile/profile.component';
-
-import { AdminpanelComponent} from'./adminpanel/adminpanel.component';
 import { MainComponent } from './user/main/main.component';
 import { AdminpanelComponent} from'./adminpanel/adminpanel.component';
 import { ReportComponent } from './report/report.component';
@@ -22,6 +20,7 @@ const routes: Routes = [
   // user login page
   {path:"user",component:UserComponent},
   // user main page
+  {path:"main",component:MainComponent},
   {path:"main/:user",component:MainComponent},
   // admin login page
   {path:"admin",component:AdminComponent},
