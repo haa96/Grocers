@@ -25,7 +25,8 @@ import { MainComponent } from './user/main/main.component';
 import { MatCardModule } from '@angular/material/card';
 import { AdminpanelComponent } from './admin/adminpanel/adminpanel.component';
 import { ReportComponent } from './admin/report/report.component';
-import {HttpClientModule} from '@angular/common/http'; 
+import {HttpClientModule} from '@angular/common/http';
+import { RaiseticketComponent } from './raiseticket/raiseticket.component'; 
 
 
 
@@ -48,7 +49,8 @@ import {HttpClientModule} from '@angular/common/http';
     MainComponent,
     AdminpanelComponent,
     ReportComponent,
-    MainComponent
+    MainComponent,
+    RaiseticketComponent
   ],
  
   imports: [
