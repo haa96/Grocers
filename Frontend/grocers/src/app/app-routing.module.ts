@@ -2,14 +2,12 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { UserComponent } from './user/user.component';
-import { UserpanelComponent } from './user/userpanel/userpanel.component';
 import { AdminComponent } from './admin/admin.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { CartComponent} from'./cart/cart.component';
 import { ProfileComponent } from './user/profile/profile.component';
 import { MainComponent } from './user/main/main.component';
-
 import { AdminpanelComponent} from'./adminpanel/adminpanel.component';
 import { ReportComponent } from './report/report.component';
 const routes: Routes = [
@@ -21,7 +19,7 @@ const routes: Routes = [
   // user login page
   {path:"user",component:UserComponent},
   // user main page
-  {path:"main/:user",component:UserpanelComponent},
+  {path:"main/:user",component:MainComponent},
   // admin login page
   {path:"admin",component:AdminComponent},
   // employee login page
