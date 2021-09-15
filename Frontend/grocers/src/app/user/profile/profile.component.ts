@@ -10,11 +10,6 @@ export class ProfileComponent implements OnInit {
 
 
 
-
-
-test(){
-  
-}
   constructor(public router:Router){}
 
   ngOnInit(): void {
@@ -22,4 +17,7 @@ test(){
   main(){
     this.router.navigate(["main"]);  }
 
+test(){
+  
+}
 }

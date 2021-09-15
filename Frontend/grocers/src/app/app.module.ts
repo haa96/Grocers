@@ -1,7 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { MatFormFieldModule } from '@angular/material/form-field';
+
+
+
 import { FormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+
 import {ReactiveFormsModule} from '@angular/forms';
 import { MatIconModule } from  '@angular/material/icon';
 import {MatDialogModule} from '@angular/material/dialog';
@@ -47,10 +51,12 @@ import { RaiseticketComponent } from './raiseticket/raiseticket.component';
     HomeComponent,
     ProfileComponent,
     MainComponent,
+   ,
     AdminpanelComponent,
     ReportComponent,
     MainComponent,
-    RaiseticketComponent
+    RaiseticketComponent,
+    ReportComponent
   ],
  
   imports: [
@@ -68,9 +74,7 @@ import { RaiseticketComponent } from './raiseticket/raiseticket.component';
     MatTreeModule,
     MatTabsModule,
     MatCardModule,
-    BrowserAnimationsModule,HttpClientModule,
-    BrowserAnimationsModule
-    
+    BrowserAnimationsModule,HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
