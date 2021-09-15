@@ -14,7 +14,9 @@ let purchaseSchema = mongoose.Schema({
     // the discount on the product
     discount : Number,
     // the date purchased
-    date : Date
+    date : Date,
+    
+    orderStatus : String
 });
 
 let purchaseModel = mongoose.model("Purchase",purchaseSchema);
