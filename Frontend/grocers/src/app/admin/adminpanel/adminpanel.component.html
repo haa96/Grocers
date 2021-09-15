@@ -98,52 +98,59 @@
                 </mat-tab>
        <mat-tab label="Add Employee">
         <mat-card class="card">
+            <form [formGroup]="addempeRef"  >
             <mat-form-field>
                 <mat-label>Employee ID</mat-label>
-                    <input matInput>
+                    <input matInput formControlName="_id" [(ngModel)]="_id">
             </mat-form-field>
             <br>
             <mat-form-field>
                 <mat-label> First Name</mat-label>
-                    <input matInput>
+                    <input matInput formControlName="firstName">
             </mat-form-field>
             <br>
             <mat-form-field>
                 <mat-label>Last Name </mat-label>
-                    <input matInput >
+                    <input matInput formControlName="lastname">
             </mat-form-field>
             <br>
             <mat-form-field>
                 <mat-label>UserName</mat-label>
-                    <input matInput>
+                    <input matInput formControlName="username">
             </mat-form-field>
             <br>
             <mat-form-field>
                 <mat-label>Password</mat-label>
-                    <input matInput >
+                    <input matInput formControlName="pwd">
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <mat-label>Password Updated (T/F)</mat-label>
+                    <input matInput formControlName="pwdUpdated">
             </mat-form-field>
             <br>
             <mat-form-field>
                 <mat-label>Salary </mat-label>
-                    <input matInput >
+                    <input matInput formControlName="salary">
             </mat-form-field>
-        
             <br>
-            <button mat-raised-button color="primary" mat-dialog-close mat-dialog-close="false">ADD</button>
+            <button mat-raised-button (click)="addemployee()" [disabled]="_id === ''"  color="primary" mat-dialog-close mat-dialog-close="false">ADD</button>
+        </form>
         </mat-card>
-    
         </mat-tab>
 
         <mat-tab label="Delete Employee">
             <mat-card class="card">
+                <form [formGroup]="delempRef" >
                 <mat-form-field>
                     <mat-label>Employee ID</mat-label>
-                        <input matInput>
+                        <input matInput formControlName="_id" [(ngModel)]="_id">
                 </mat-form-field>
                
                 <br>
-                <button mat-raised-button color="primary" mat-dialog-close mat-dialog-close="false">Delete</button>
-            </mat-card>
+                <button mat-raised-button (click)="deleteemployee()"  [disabled]="_id === ''" color="primary" mat-dialog-close mat-dialog-close="false">Delete</button>
+                </form>
+             </mat-card>
             </mat-tab>
   </mat-tab-group>
   

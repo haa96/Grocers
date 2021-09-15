@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormControl, FormGroup,FormsModule } from '@angular/forms';
 import { AdminService } from 'src/app/admin.service';
+import { EmployeeService } from 'src/app/employee.service';
 
 @Component({
   selector: 'app-adminpanel',
@@ -27,9 +28,20 @@ export class AdminpanelComponent implements OnInit {
     qty:new FormControl(),
     price:new FormControl(),
     discount:new FormControl(),
-
   })
-  constructor(public router:Router,public adminSer:AdminService) { }
+  addempeRef = new FormGroup({
+    _id:new FormControl(),
+    firstName:new FormControl(),
+    lastname:new FormControl(),
+    username:new FormControl(),
+    pwd:new FormControl(),
+    pwdUpdated:new FormControl(),
+    salary:new FormControl(),
+  })
+  delempRef = new FormGroup({
+    _id:new FormControl(),
+  })
+  constructor(public router:Router,public adminSer:AdminService,public empSer:EmployeeService)  { }
   msg?:string;
  
   ngOnInit(): void { 
@@ -58,5 +70,20 @@ export class AdminpanelComponent implements OnInit {
        subscribe(result=>this.msg=result,error=>console.log(error));
        this.updateRef.reset();    
        alert("The product updated successfully")
+    }
+    addemployee(){
+      let employee = this.addempeRef.value;
+      console.log(employee); 
+       this.empSer.addEmployeeDetails(employee).
+       subscribe(result=>this.msg=result,error=>console.log(error));
+       this.addempeRef.reset();    
+       alert("The employee added successfully")
+    }
+    deleteemployee(){
+      let employee = this.delempRef.value;
+      this.empSer.deleteEmployeeDetails(employee._id).
+      subscribe(result=>this.msg=result,error=>console.log(error));
+      this.delempRef.reset(); 
+      alert("The employee deleted successfully")
     }
 }

@@ -9,12 +9,12 @@ let updateProduct = (request,response)=> {
             response.send(err);
         }
     })
-
+}
 let getAllproductsDetails = (request,response)=> {
     
     productModel.find({},(err,data)=> {
         if(!err){
-            responsze.send(data);
+            response.send(data);
         }else {
              response.send(err);   
         }
@@ -44,4 +44,4 @@ let deleteItem = (request,response)=> {
         }
     })
 }
-module.exports= {getAllproductsDetails,storedProductInfo,deleteItem}
+module.exports= {storedProductInfo,deleteItem,updateProduct,getAllproductsDetails}
