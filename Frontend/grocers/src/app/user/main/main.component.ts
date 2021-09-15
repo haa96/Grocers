@@ -27,7 +27,7 @@ populateProducts(){
   this.adminSer.getproductDetails().
   subscribe(data=>{
     for(let i in data){
-      this.products.push({name: data[i].name, price:data[i].price})
+      this.products.push({name: data[i].name, price:data[i].price, qty:data[i].qty})
     }
       console.log(this.products);
   },error=> console.error(error));
