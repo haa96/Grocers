@@ -33,7 +33,7 @@ export class UserComponent implements OnInit {
     subscribe(result=>{
       if(result=="Success"){
         console.log("Success!");
-        this.router.navigate(["userPanel",user.email]);
+        this.router.navigate(["main",user.email]);
       }else {
           this.msg = result;
       }

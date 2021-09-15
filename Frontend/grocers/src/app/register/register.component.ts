@@ -30,4 +30,7 @@ export class RegisterComponent implements OnInit {
      alert("Your account has been created");
   }
 
+  returnToLogin(){
+    this.router.navigate(["home"]);
+  }
 }
