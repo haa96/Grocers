@@ -21,7 +21,6 @@ import { RegisterComponent } from './register/register.component';
 import { CartComponent } from './cart/cart.component';
 import { ProfileComponent } from './user/profile/profile.component';
 import {MatTabsModule} from '@angular/material/tabs';
-import { UserpanelComponent } from './user/userpanel/userpanel.component'; 
 import { MatCardModule } from '@angular/material/card';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
@@ -36,7 +35,6 @@ import{ RaiseticketComponent} from './raiseticket/raiseticket.component'
     EmployeeComponent,
     AdminComponent,
     HomeComponent,
-    UserpanelComponent,
     NotfoundComponent,
     RegisterComponent,
     CartComponent,
