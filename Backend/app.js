@@ -34,7 +34,7 @@ let adminPreset = new adminModel({
     pwd:1234
 });
 console.log(adminPreset);
-// if(adminModel.find({_id:1234}) == null){
+if(adminModel.findOne({_id:1234}) == null){
     adminModel.create([adminPreset],(err,result)=> {
     if(!err){
         console.log(result);
@@ -42,7 +42,8 @@ console.log(adminPreset);
         console.log(err);
     }
 });
-// }
+
+}
 
 // http://localhost:9090/api/adminlogin
 app.use("/api/admin",adminRouter);

@@ -43,6 +43,6 @@ export class UserComponent implements OnInit {
 
   }
   registerUser(){
-    let user = this.loginRef.value;
+    this.router.navigate(["register"]);
   }
 }

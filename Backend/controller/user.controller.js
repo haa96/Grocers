@@ -12,6 +12,11 @@ let userlogin = async (request, response)=> {
 }
 let register = async (request,response)=> {
     let user = request.body;    // receive the data from post method
+    console.log(user);
+    if(user.bankCardNo === ''){ user.bankCardNo=0; }
+    user.locked = false;
+    user.balance = 500;
+
     let userInfo = await userModel.findOne({email:user.email});
     if(userInfo==null){
         let result = await userModel.insertMany(user);

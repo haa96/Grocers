@@ -5,8 +5,8 @@ mongoose.pluralize(null);
 let userSchema = mongoose.Schema({
     // user/customer ID
     _id : Number,
-    firstName : Number,
-    lastName : Number,
+    firstName : String,
+    lastName : String,
     email : String,
     pwd : String,
     address : String,
@@ -16,6 +16,7 @@ let userSchema = mongoose.Schema({
     bankCardNo : Number,
     locked : Boolean
 });
+
 
 let userModel = mongoose.model("User",userSchema);
 
