@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router,ActivatedRoute } from '@angular/router';
+import { AdminService } from 'src/app/admin.service';
 
 @Component({
   selector: 'app-main',
@@ -7,16 +8,27 @@ import { Router } from '@angular/router';
   styleUrls: ['./main.component.css']
 })
 export class MainComponent implements OnInit {
+products =[];
 
-  constructor(  public router:Router) { }
 
-  ngOnInit(): void {
-  }
-cart(){
-  this.router.navigate(["cart"]);
+constructor(public router:Router,public adminSer:AdminService,public activateRoute:ActivatedRoute) { }
+
+ngOnInit(): void {
+  
+  this.populateProducts();
 }
-profile(){
-  this.router.navigate(["profile"]);
+cart(){this.router.navigate(["cart"]);}
+profile(){this.router.navigate(["profile"]);}
+
+populateProducts(){
+  //alert("here");
+  this.adminSer.getproductDetails().
+  subscribe(data=>{
+    for(let i in data){
+      this.products.push({name: data[i].name, price:data[i].price})
+    }
+      console.log(this.products);
+  },error=> console.error(error));
 
 }
 }

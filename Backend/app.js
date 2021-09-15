@@ -8,6 +8,9 @@ let app = express();
 let adminRouter = require("./router/admin.router");
 let userRouter = require("./router/user.router");
 let productRouter = require("./router/product.router");
+let userticketRouter = require("./router/userticket.router");
+let empRouter = require("./router/emp.router");
+
 // add other routers as needed ....
 let cartController = require("./router/cart.router");
 
@@ -29,10 +32,12 @@ app.use("/api/admin",adminRouter);
 app.use("/api/user",userRouter);
 // http://localhost:9090/api/product/
 app.use("/api/product",productRouter);
+// http://localhost:9090/api/ticket/
+app.use("/api/ticket",userticketRouter);
+// http://localhost:9090/api/employee/
+app.use("/api/employee",empRouter);
 
-// http://localhost:9090/api/cart/getAllCartItem
-// http://localhost:9090/api/cart/deleteItem
-// http://localhost:9090/api/cart/updateItemQuantity
+
 
 app.use("/api/cart",cartController);
 

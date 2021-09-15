@@ -22,13 +22,13 @@ import { EmpMainComponent } from './employee/empmain/empmain.component';
 import { CartComponent } from './cart/cart.component';
 import { ProfileComponent } from './user/profile/profile.component';
 import {MatTabsModule} from '@angular/material/tabs';
-
 import { MatCardModule } from '@angular/material/card';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { AdminpanelComponent } from './adminpanel/adminpanel.component';
 import { ReportComponent } from './report/report.component';
-import { MainComponent } from './user/main/main.component';
+import{ MainComponent}from './user/main/main.component';
+import{ RaiseticketComponent} from './raiseticket/raiseticket.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,7 +48,9 @@ import { MainComponent } from './user/main/main.component';
     AdminpanelComponent,
     AdminpanelComponent,
     ReportComponent,
-    MainComponent
+    MainComponent,
+    RaiseticketComponent,
+    ReportComponent
   ],
 
   imports: [
