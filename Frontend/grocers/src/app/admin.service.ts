@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import { Admin} from './admin'
+
 import { Observable } from 'rxjs';
 
 
 
-@Injectable({
+@Injectable({ 
   providedIn: 'root'
 })
 export class AdminService {
@@ -18,7 +19,10 @@ export class AdminService {
     {responseType:'text'});
   }
   deleteproductDetails(admin:Admin):Observable<any>{
-    return this.http.delete("http://localhost:9090/api/product/deleteItem/"+admin);
+    return this.http.delete("http://localhost:9090/api/product/deleteItem/",admin);
+  }
+  getproductDetails():Observable<any>{
+    return this.http.get("http://localhost:9090/api/product/getProducts/");
   }
   
 }

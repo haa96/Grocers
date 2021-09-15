@@ -1,6 +1,17 @@
 let productModel = require("../model/product.model");
 
 
+let getAllproductsDetails = (request,response)=> {
+    
+    productModel.find({},(err,data)=> {
+        if(!err){
+            response.send(data);
+        }else {
+             response.send(err);   
+        }
+    })
+
+}
 
 let storedProductInfo = (request,response)=> {
     let product = request.body;
@@ -24,4 +35,4 @@ let deleteItem = (request,response)=> {
         }
     })
 }
-module.exports= {storedProductInfo,deleteItem}
+module.exports= {getAllproductsDetails,storedProductInfo,deleteItem}

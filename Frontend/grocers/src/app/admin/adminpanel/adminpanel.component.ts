@@ -25,8 +25,8 @@ export class AdminpanelComponent implements OnInit {
   })
   constructor(public router:Router,public adminSer:AdminService) { }
   msg?:string;
-
-  ngOnInit(): void {
+ 
+  ngOnInit(): void { 
   }
   Report(){
     this.router.navigate(["report"]);  }
@@ -45,4 +45,5 @@ export class AdminpanelComponent implements OnInit {
       this.productRef.reset(); 
       alert("The product deleted successfully")
     }
+    
 }

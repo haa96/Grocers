@@ -9,6 +9,7 @@ let productController = require("../controller/product.controller");
 // ex template: 
 // router.post(".../pathNameHere", productController.functionNameHere);
 router.delete("/deleteItem/:pid",productController.deleteItem);
+router.get("/getProducts",productController.getAllproductsDetails);
 router.post("/storeProduct",productController.storedProductInfo);
 
 module.exports=router;
