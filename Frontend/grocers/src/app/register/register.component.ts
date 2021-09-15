@@ -14,7 +14,10 @@ export class RegisterComponent implements OnInit {
     lastName:new FormControl(),
     email:new FormControl(),
     pwd:new FormControl(),
-    bankCardNo:new FormControl(),
+    phone:new FormControl(),
+    dob:new FormControl(),
+    address:new FormControl(),
+    bankCardNo:new FormControl()
   })
   constructor(public router:Router, public userSer:UserService) { }
   msg?:string;

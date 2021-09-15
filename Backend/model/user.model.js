@@ -9,7 +9,9 @@ let userSchema = mongoose.Schema({
     lastName : String,
     email : String,
     pwd : String,
+    dob : Date,
     address : String,
+    phone : Number,
     // store balance
     balance : Number,
     // optionally store bank information for next funds transfer.
