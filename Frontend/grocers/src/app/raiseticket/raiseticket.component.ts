@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormControl, FormGroup } from '@angular/forms';
-import {MatDialog} from '@angular/material/dialog';
+import { RaiseticketService } from 'src/app/raiseticket.service';
+
 @Component({
   selector: 'app-raiseticket',
   templateUrl: './raiseticket.component.html',
@@ -13,11 +14,16 @@ export class RaiseticketComponent implements OnInit {
     username:new FormControl(),
     reason:new FormControl()
   });
-  constructor(public dialog: MatDialog,  public router:Router) { }
-
+  constructor(public router:Router,public raiseticketService:RaiseticketService) { }
+  msg?:string;
   ngOnInit(): void {
   }
   checkUser(){
-alert("Your tecket submit successfully")
-  }
+    let prodcut = this.ticketRef.value;
+    console.log(prodcut); 
+     this.raiseticketService.addproductDetails(prodcut).
+     subscribe(result=>this.msg=result,error=>console.log(error));
+     this.ticketRef.reset();    
+     alert("The product added successfully")
+      }
 }
