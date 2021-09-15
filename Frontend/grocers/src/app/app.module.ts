@@ -26,8 +26,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { AdminpanelComponent } from './adminpanel/adminpanel.component';
 import { ReportComponent } from './report/report.component';
-import { MainComponent } from './user/main/main.component';
-
+import{ MainComponent}from './user/main/main.component';
+import{ RaiseticketComponent} from './raiseticket/raiseticket.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,8 +42,11 @@ import { MainComponent } from './user/main/main.component';
     HomeComponent,
     ProfileComponent,
     AdminpanelComponent,
+    AdminpanelComponent,
     ReportComponent,
-    MainComponent
+    MainComponent,
+    RaiseticketComponent,
+    ReportComponent
   ],
 
   imports: [

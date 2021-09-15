@@ -1,3 +1,4 @@
+
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
@@ -7,6 +8,8 @@ import { EmployeeComponent } from './employee/employee.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { CartComponent} from'./cart/cart.component';
 import { ProfileComponent } from './user/profile/profile.component';
+
+import { AdminpanelComponent} from'./adminpanel/adminpanel.component';
 import { MainComponent } from './user/main/main.component';
 import { AdminpanelComponent} from'./adminpanel/adminpanel.component';
 import { ReportComponent } from './report/report.component';
