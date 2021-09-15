@@ -1,7 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { MatFormFieldModule } from '@angular/material/form-field';
+
+
+
 import { FormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+
 import {ReactiveFormsModule} from '@angular/forms';
 import { MatIconModule } from  '@angular/material/icon';
 import {MatDialogModule} from '@angular/material/dialog';
@@ -23,6 +27,17 @@ import { ProfileComponent } from './user/profile/profile.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import { MainComponent } from './user/main/main.component';
 import { MatCardModule } from '@angular/material/card';
+import { AdminpanelComponent } from './admin/adminpanel/adminpanel.component';
+import { ReportComponent } from './admin/report/report.component';
+import {HttpClientModule} from '@angular/common/http'; 
+
+
+
+
+
+
+
+
 
 @NgModule({
   declarations: [
@@ -34,7 +49,10 @@ import { MatCardModule } from '@angular/material/card';
     CartComponent,
     HomeComponent,
     ProfileComponent,
-    MainComponent
+    MainComponent,
+   ,
+    AdminpanelComponent,
+    ReportComponent
   ],
  
   imports: [
@@ -53,7 +71,7 @@ import { MatCardModule } from '@angular/material/card';
     MatTabsModule,
     MatCardModule,
     BrowserAnimationsModule
-    
+    ,HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

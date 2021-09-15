@@ -8,5 +8,8 @@ let productController = require("../controller/product.controller");
 // use GET / POST / DELETE / PUT
 // ex template: 
 // router.post(".../pathNameHere", productController.functionNameHere);
+router.delete("/deleteItem/:pid",productController.deleteItem);
+router.get("/getProducts",productController.getAllproductsDetails);
+router.post("/storeProduct",productController.storedProductInfo);
 
 module.exports=router;

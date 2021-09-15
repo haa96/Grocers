@@ -1,9 +1,28 @@
 import { Injectable } from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import { Admin} from './admin'
 
-@Injectable({
+import { Observable } from 'rxjs';
+
+
+
+@Injectable({ 
   providedIn: 'root'
 })
 export class AdminService {
 
-  constructor() { }
+ 
+  constructor(public http:HttpClient) { }
+
+  addproductDetails(admin:Admin):Observable<any>{
+    return this.http.post("http://localhost:9090/api/product/storeProduct",admin,
+    {responseType:'text'});
+  }
+  deleteproductDetails(admin:Admin):Observable<any>{
+    return this.http.delete("http://localhost:9090/api/product/deleteItem/",admin);
+  }
+  getproductDetails():Observable<any>{
+    return this.http.get("http://localhost:9090/api/product/getProducts/");
+  }
+  
 }

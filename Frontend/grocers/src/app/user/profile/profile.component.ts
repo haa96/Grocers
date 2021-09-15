@@ -15,4 +15,7 @@ export class ProfileComponent implements OnInit {
   main(){
     this.router.navigate(["main"]);  }
 
+test(){
+  
+}
 }
