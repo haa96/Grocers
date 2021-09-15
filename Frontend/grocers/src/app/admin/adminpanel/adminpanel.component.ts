@@ -18,6 +18,11 @@ export class AdminpanelComponent implements OnInit {
     discount:new FormControl(),
 
   })
+  deleteRef = new FormGroup({
+    _id:new FormControl(),
+
+
+  })
   constructor(public router:Router,public adminSer:AdminService) { }
   msg?:string;
 
@@ -32,5 +37,12 @@ export class AdminpanelComponent implements OnInit {
        subscribe(result=>this.msg=result,error=>console.log(error));
        this.productRef.reset();    
        alert("The product added successfully")
+    }
+    deleteproduct(){
+      let prodcut = this.deleteRef.value;
+      this.adminSer.deleteproductDetails(prodcut._id).
+      subscribe(result=>this.msg=result,error=>console.log(error));
+      this.productRef.reset(); 
+      alert("The product deleted successfully")
     }
 }

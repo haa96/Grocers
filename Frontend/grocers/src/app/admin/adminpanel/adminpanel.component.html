@@ -49,14 +49,17 @@
 
         <mat-tab label="Delete Product">
             <mat-card class="card">
+                <form [formGroup]="deleteRef" >
+
                 <mat-form-field>
                     <mat-label>Product ID</mat-label>
-                        <input matInput>
+                        <input matInput  formControlName="_id">
                 </mat-form-field>
                
                 <br>
-                <button mat-raised-button color="primary" mat-dialog-close mat-dialog-close="false">Delete</button>
-            </mat-card>
+                <button mat-raised-button (click)="deleteproduct()" color="primary" mat-dialog-close mat-dialog-close="false">Delete</button>
+            </form>
+         </mat-card>
             </mat-tab>
             <mat-tab label="Update Product">
                 <mat-card class="card">

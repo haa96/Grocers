@@ -16,4 +16,8 @@ export class AdminService {
     return this.http.post("http://localhost:9090/api/product/storeProduct",admin,
     {responseType:'text'});
   }
+  deleteproductDetails(admin:Admin):Observable<any>{
+    return this.http.delete("http://localhost:9090/api/product/deleteItem/"+admin);
+  }
+  
 }

@@ -14,4 +14,14 @@ let storedProductInfo = (request,response)=> {
     })
 }
 
-module.exports= {storedProductInfo}
+let deleteItem = (request,response)=> {
+    let pid = request.params.pid;
+    productModel.deleteOne({_id:pid},(err,result)=> {
+        if(!err){
+            response.send(result)
+        }else {
+            response.send(err);
+        }
+    })
+}
+module.exports= {storedProductInfo,deleteItem}

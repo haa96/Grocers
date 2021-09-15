@@ -22,7 +22,6 @@ export class AdminComponent implements OnInit {
     if(login.userAdmin=="Admin" && login.passAdmin=="123456"){
       this.router.navigate(["AdminPan"]);
     }else{
-    //this.router.navigate([""]);
     this.dialog.open(AdminComponent);
 
     alert("YOUR Username or Your Password Is Wrong")
