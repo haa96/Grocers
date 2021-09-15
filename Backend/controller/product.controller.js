@@ -1,6 +1,15 @@
 let productModel = require("../model/product.model");
 
-
+let updateProduct = (request,response)=> {
+    let p = request.body;
+    productModel.updateMany({_id:p._id},{$set:{qty:p.qty,price:p.price,discount:p.discount}},(err,result)=> {
+        if(!err){
+            response.send(result);
+        }else {
+            response.send(err);
+        }
+    })
+}
 let getAllproductsDetails = (request,response)=> {
     
     productModel.find({},(err,data)=> {
@@ -35,4 +44,4 @@ let deleteItem = (request,response)=> {
         }
     })
 }
-module.exports= {getAllproductsDetails,storedProductInfo,deleteItem}
+module.exports= {storedProductInfo,deleteItem,updateProduct,getAllproductsDetails}

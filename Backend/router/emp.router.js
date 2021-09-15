@@ -7,6 +7,7 @@ let empController = require("../controller/emp.controller");
 
 // use GET / POST / DELETE / PUT
 // ex template: 
-// router.post(".../pathNameHere", empController.functionNameHere);
+ router.post("/storeEmployee",empController.addEmployee);
+ router.delete("/deleteEmployee/:eid",empController.deleteEmployee);
 
 module.exports=router;

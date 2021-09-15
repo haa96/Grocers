@@ -3,7 +3,7 @@ import {MatDialog} from '@angular/material/dialog';
 import { AdminComponent } from '../admin/admin.component';
 import { UserComponent } from '../user/user.component';
 import { EmployeeComponent } from '../employee/employee.component';
-
+import { RaiseticketComponent } from '../raiseticket/raiseticket.component';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -24,5 +24,9 @@ export class HomeComponent implements OnInit {
   }
   openDialogEmployee(){
     this.dialog.open(EmployeeComponent);
+  }
+  raiseticket(){
+    this.dialog.open(RaiseticketComponent);
+
   }
 }

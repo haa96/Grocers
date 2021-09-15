@@ -10,6 +10,9 @@ import { AdminService } from 'src/app/admin.service';
 export class MainComponent implements OnInit {
 products =[];
 
+
+
+
 constructor(public router:Router,public adminSer:AdminService,public activateRoute:ActivatedRoute) { }
 
 ngOnInit(): void {

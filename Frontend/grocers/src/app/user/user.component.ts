@@ -23,6 +23,8 @@ export class UserComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
+
   checkUser() {
     let user = this.loginRef.value;
     console.log(user);
