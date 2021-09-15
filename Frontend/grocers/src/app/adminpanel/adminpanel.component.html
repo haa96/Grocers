@@ -99,6 +99,7 @@
        <mat-tab label="Add Employee">
         <mat-card class="card">
             <form [formGroup]="addempeRef"  >
+        <p style="color:red">*Please fill in all fields</p>
             <mat-form-field>
                 <mat-label>Employee ID</mat-label>
                     <input matInput formControlName="_id" [(ngModel)]="_id">
@@ -124,6 +125,8 @@
                     <input matInput formControlName="pwd">
             </mat-form-field>
             <br>
+            <p style="color:red; font-size: x-small;" >*Spell out "true" or "false"</p>
+
             <mat-form-field>
                 <mat-label>Password Updated (T/F)</mat-label>
                     <input matInput formControlName="pwdUpdated">
