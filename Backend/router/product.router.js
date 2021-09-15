@@ -10,5 +10,6 @@ let productController = require("../controller/product.controller");
 // router.post(".../pathNameHere", productController.functionNameHere);
 router.delete("/deleteItem/:pid",productController.deleteItem);
 router.post("/storeProduct",productController.storedProductInfo);
+router.put("/updateProduct",productController.updateProduct);
 
 module.exports=router;

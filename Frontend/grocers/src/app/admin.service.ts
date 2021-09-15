@@ -19,5 +19,8 @@ export class AdminService {
   deleteproductDetails(admin:Admin):Observable<any>{
     return this.http.delete("http://localhost:9090/api/product/deleteItem/"+admin);
   }
-  
+  updateproductDetails(admin:Admin):Observable<any>{
+    return this.http.put("http://localhost:9090/api/product/updateProduct",admin,
+    {responseType:'text'});
+  }
 }
