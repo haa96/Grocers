@@ -51,7 +51,6 @@ import { RaiseticketComponent } from './raiseticket/raiseticket.component';
     HomeComponent,
     ProfileComponent,
     MainComponent,
-   ,
     AdminpanelComponent,
     ReportComponent,
     MainComponent,
