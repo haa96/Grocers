@@ -11,6 +11,8 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  test(){}
-
+  main(){}
+test(){
+  
+}
 }

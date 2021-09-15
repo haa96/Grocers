@@ -27,6 +27,17 @@ import { ProfileComponent } from './user/profile/profile.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import { MainComponent } from './user/main/main.component';
 import { MatCardModule } from '@angular/material/card';
+import { AdminpanelComponent } from './admin/adminpanel/adminpanel.component';
+import { ReportComponent } from './admin/report/report.component';
+import {HttpClientModule} from '@angular/common/http'; 
+
+
+
+
+
+
+
+
 
 @NgModule({
   declarations: [
@@ -38,7 +49,9 @@ import { MatCardModule } from '@angular/material/card';
     CartComponent,
     HomeComponent,
     ProfileComponent,
-    MainComponent
+    MainComponent,
+    AdminpanelComponent,
+    ReportComponent
   ],
  
   imports: [
@@ -56,8 +69,7 @@ import { MatCardModule } from '@angular/material/card';
     MatTreeModule,
     MatTabsModule,
     MatCardModule,
-    BrowserAnimationsModule
-    
+    BrowserAnimationsModule,HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
