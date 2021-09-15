@@ -41,7 +41,7 @@ import { ReportComponent } from './report/report.component';
     ProfileComponent,
     RegisterComponent,
     CartComponent,
-    HomeComponent, 
+    HomeComponent,
     ProfileComponent,
     AdminpanelComponent,
     AdminpanelComponent,
