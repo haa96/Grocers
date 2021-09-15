@@ -25,23 +25,23 @@ export class UserComponent implements OnInit {
 
   checkUser() {
     let user = this.loginRef.value;
-    console.log(user);
 
-    this.router.navigate(["userPanel"]);
+    console.log(user);
 
     this.userSer.checkUserDetails(user).
     subscribe(result=>{
       if(result=="Success"){
         console.log("Success!");
-        this.router.navigate(["main",user.email]);
+        this.router.navigate(["main"]);
       }else {
+          console.log("Invalid Login Credentials");
           this.msg = result;
       }
     },
     error=>console.log(error));
     this.loginRef.reset();
-
   }
+
   registerUser(){
     this.router.navigate(["register"]);
   }
