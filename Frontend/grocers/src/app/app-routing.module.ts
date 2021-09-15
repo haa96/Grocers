@@ -11,24 +11,23 @@ import { ProfileComponent } from './user/profile/profile.component';
 
 
 import { AdminpanelComponent} from'./adminpanel/adminpanel.component';
-import { MainComponent } from './user/main/main.component';
 import { ReportComponent } from './report/report.component';
 const routes: Routes = [
-  {path:"AdminPan",component:AdminpanelComponent},
+  {path:"AdminPan/:admin",component:AdminpanelComponent},
   {path:"report",component:ReportComponent},
   {path:"profile",component:ProfileComponent},
   {path:"cart",component:CartComponent},
-  {path:"**",component:NotfoundComponent},
-  {path:"",component:HomeComponent},
   {path:"home",component:HomeComponent},
   // user login page
   {path:"user",component:UserComponent},
   // user main page
-  {path:"userPanel",component:UserpanelComponent},
+  {path:"userPanel/:user",component:UserpanelComponent},
   // admin login page
   {path:"admin",component:AdminComponent},
   // employee login page
   {path: "employee",component:EmployeeComponent},
+  {path:"",component:HomeComponent},
+  {path:"**",component:NotfoundComponent}
 ];
 
 @NgModule({

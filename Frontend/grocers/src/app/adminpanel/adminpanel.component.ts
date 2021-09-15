@@ -16,12 +16,9 @@ export class AdminpanelComponent implements OnInit {
     qty:new FormControl(),
     price:new FormControl(),
     discount:new FormControl(),
-
   })
   deleteRef = new FormGroup({
     _id:new FormControl(),
-
-
   })
   constructor(public router:Router,public adminSer:AdminService) { }
   msg?:string;
@@ -31,16 +28,16 @@ export class AdminpanelComponent implements OnInit {
   Report(){
     this.router.navigate(["report"]);  }
     addproduct(){
-      let prodcut = this.productRef.value;
-      console.log(prodcut); 
-       this.adminSer.addproductDetails(prodcut).
+      let product = this.productRef.value;
+      console.log(product); 
+       this.adminSer.addproductDetails(product).
        subscribe(result=>this.msg=result,error=>console.log(error));
        this.productRef.reset();    
        alert("The product added successfully")
     }
     deleteproduct(){
-      let prodcut = this.deleteRef.value;
-      this.adminSer.deleteproductDetails(prodcut._id).
+      let product = this.deleteRef.value;
+      this.adminSer.deleteproductDetails(product._id).
       subscribe(result=>this.msg=result,error=>console.log(error));
       this.productRef.reset(); 
       alert("The product deleted successfully")

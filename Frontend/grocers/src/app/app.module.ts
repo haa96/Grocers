@@ -27,6 +27,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { AdminpanelComponent } from './adminpanel/adminpanel.component';
 import { ReportComponent } from './report/report.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,12 +39,9 @@ import { ReportComponent } from './report/report.component';
     NotfoundComponent,
     RegisterComponent,
     CartComponent,
-    ProfileComponent,
     RegisterComponent,
-    CartComponent,
     HomeComponent,
     ProfileComponent,
-    AdminpanelComponent,
     AdminpanelComponent,
     ReportComponent
   ],

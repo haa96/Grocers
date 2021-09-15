@@ -23,7 +23,7 @@ mongoose.connect(url).then(res=>console.log("connected")).catch(error=>console.l
 
 // middleware that helps watch main path and pass the request to router file
 
-// http://localhost:9090/api/admin/
+// http://localhost:9090/api/adminlogin
 app.use("/api/admin",adminRouter);
 // http://localhost:9090/api/user/login
 app.use("/api/user",userRouter);
@@ -33,7 +33,6 @@ app.use("/api/product",productRouter);
 // http://localhost:9090/api/cart/getAllCartItem
 // http://localhost:9090/api/cart/deleteItem
 // http://localhost:9090/api/cart/updateItemQuantity
-
 app.use("/api/cart",cartController);
 
 app.listen(9090,()=>console.log("Server running on port number 9090"))
