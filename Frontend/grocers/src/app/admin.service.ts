@@ -5,20 +5,25 @@ import { Observable } from 'rxjs';
 
 
 
-@Injectable({ 
+@Injectable({
   providedIn: 'root'
 })
 export class AdminService {
 
- 
+
   constructor(public http:HttpClient) { }
+
+  checkLoginDetails(admin:Admin):Observable<any>{
+    return this.http.post("http://localhost:9090/api/admin/adminlogin",admin,
+    {responseType:'text'});
+  }
 
   addproductDetails(admin:Admin):Observable<any>{
     return this.http.post("http://localhost:9090/api/product/storeProduct",admin,
     {responseType:'text'});
   }
   deleteproductDetails(admin:Admin):Observable<any>{
-    return this.http.delete("http://localhost:9090/api/product/deleteItem/"+admin);
+    return this.http.delete("http://localhost:9090/api/product/deleteItem/",admin);
   }
   getproductDetails():Observable<any>{
     return this.http.get("http://localhost:9090/api/product/getProducts/");

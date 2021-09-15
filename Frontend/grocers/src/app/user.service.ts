@@ -1,19 +1,17 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import { UserComponent } from './user/user.component';
 import { Observable } from 'rxjs';
-import { Userlogin } from './userlogin';
+import { User } from './user';
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
   constructor(public http:HttpClient) { }
-  checkUserDetails(login:Userlogin):Observable<any>{
-    return this.http.post("http://localhost:9090/api/user/login",login,
+  checkUserDetails(user:User):Observable<any>{
+    return this.http.post("http://localhost:9090/api/user/userlogin",user,
     {responseType:'text'});
   }
-
   // loginAccountCreate(login:Login):Observable<any>{
   //   return this.http.post("http://localhost:9090/api/user/signUp",login,
   //   {responseType:'text'});

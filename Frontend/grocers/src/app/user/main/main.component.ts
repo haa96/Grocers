@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { Router,ActivatedRoute } from '@angular/router';
 import { AdminService } from 'src/app/admin.service';
 import { SharedService } from 'src/app/shared.service';
+import {MatDialog} from '@angular/material/dialog';
+import { FormControl, FormGroup } from '@angular/forms';
+
+
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
@@ -15,7 +19,7 @@ products =[];
 constructor(public ser:SharedService,public router:Router,public adminSer:AdminService,public activateRoute:ActivatedRoute) { }
 
 ngOnInit(): void {
-  
+
   this.populateProducts();
 }
 cart(){this.router.navigate(["cart"]);}
@@ -33,7 +37,6 @@ populateProducts(){
 }
 addcart(){
   let x=25;
-  this.ser.setEmpArray(this.emps);      
 }
 
 }
