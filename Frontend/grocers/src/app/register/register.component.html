@@ -33,10 +33,9 @@
                 <mat-label>Bank Routing Number</mat-label>
                     <input matInput formControlName="bankCardNo" >
             </mat-form-field>
-
+            <br/>
+            <button mat-raised-button (click)="returnToLogin()" color="primary" mat-dialog-close mat-dialog-close="false">CANCEL</button>
             <button mat-raised-button (click)="addUser()" color="primary" mat-dialog-close mat-dialog-close="false">CREATE ACCOUNT</button>
-            <button mat-raised-button (click)="returnToLogin()" color="primary" mat-dialog-close mat-dialog-close="false">RETURN TO LOGIN</button>
-        
         </form>
         </mat-card>
         </mat-tab> 

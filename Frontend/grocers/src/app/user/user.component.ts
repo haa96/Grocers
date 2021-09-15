@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { FormControl, FormGroup } from '@angular/forms';
 import {MatDialog} from '@angular/material/dialog';
 import { UserService } from '../user.service';
+import { RegisterComponent } from '../register/register.component';
 
 @Component({
   selector: 'app-user',
@@ -21,7 +22,6 @@ export class UserComponent implements OnInit {
     msg?:string;
   ngOnInit(): void {
   }
-
 
   checkUser() {
     let user = this.loginRef.value;
@@ -43,6 +43,6 @@ export class UserComponent implements OnInit {
   }
 
   registerUser(){
-    this.router.navigate(["register"]);
+    this.dialog.open(RegisterComponent);
   }
 }
