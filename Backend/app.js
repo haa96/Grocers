@@ -25,23 +25,25 @@ let url = "mongodb://localhost:27017/Grocers"
 // connect the database
 mongoose.connect(url).then(res=>console.log("connected")).catch(error=>console.log(error));
 let db = mongoose.connection;
+app.listen(9090,()=>console.log("Server running on port number 9090"))
 
 db.once("open",()=> {
 // middleware that helps watch main path and pass the request to router file
 let adminPreset = new adminModel({
-    _id:123,
+    _id:1234,
     pwd:1234
 });
-
-if(adminModel.find({_id:1234},{pwd:1234}) == null){
+console.log(adminPreset);
+// if(adminModel.find({_id:1234}) == null){
     adminModel.create([adminPreset],(err,result)=> {
     if(!err){
         console.log(result);
     }else {
         console.log(err);
     }
-})
-}
+});
+// }
+
 // http://localhost:9090/api/adminlogin
 app.use("/api/admin",adminRouter);
 // http://localhost:9090/api/user/login
@@ -57,7 +59,6 @@ app.use("/api/employee",empRouter);
 
 app.use("/api/cart",cartController);
 
-app.listen(9090,()=>console.log("Server running on port number 9090"))
 mongoose.disconnect;
 })
 
