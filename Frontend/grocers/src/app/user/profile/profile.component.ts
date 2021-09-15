@@ -8,8 +8,6 @@ import { Router } from '@angular/router';
 })
 export class ProfileComponent implements OnInit {
 
-
-
   constructor(public router:Router){}
 
   ngOnInit(): void {

@@ -11,8 +11,6 @@ export class MainComponent implements OnInit {
 products =[];
 
 
-
-
 constructor(public router:Router,public adminSer:AdminService,public activateRoute:ActivatedRoute) { }
 
 ngOnInit(): void {
@@ -34,5 +32,3 @@ populateProducts(){
 
 }
 }
-
-  

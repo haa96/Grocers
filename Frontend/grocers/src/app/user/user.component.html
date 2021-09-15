@@ -15,12 +15,11 @@
 <hr>
 <mat-dialog-actions>
   <button mat-raised-button mat-dialog-close mat-dialog-close="true">Cancel</button>
-  <button mat-raised-button color="primary" mat-dialog-close mat-dialog-close="false"  (click)=test()>Login</button>
+  <button mat-raised-button color="primary" mat-dialog-close mat-dialog-close="false"  (click)=checkUser()>Login</button>
 </mat-dialog-actions>
 <hr>
 <br>
   <mat-label>New Member? </mat-label>
 <hr>
-  <button mat-raised-button color="primary" mat-dialog-close="false" (onclick)="test()">Register</button>
-
-
+  <button mat-raised-button color="primary" mat-dialog-close="false" (onclick)="registerUser()">Register</button>
+  <a routerLink="/home">Back</a>

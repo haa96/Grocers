@@ -31,13 +31,21 @@ export class UserComponent implements OnInit {
 
     this.router.navigate(["userPanel"]);
 
+    this.userSer.checkUserDetails(user).
+    subscribe(result=>{
+      if(result=="Success"){
+        // this.router.navigate(["userPanel",user.email]);
+        this.router.navigate(["userPanel"]);
+      }else {
+        this.msg = result;
+      }
+    },
+
+  error=>console.log(error));
+  this.loginRef.reset();
   }
 
   registerUser() {
 
-  }
-  test(){
-
-    
   }
 }

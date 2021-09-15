@@ -5,15 +5,17 @@
         Cart
     </button>
     <button mat-raised-button color="primary" (click)="profile()">
-        My Profile
+      My Profile
+  </button>
+    <button mat-button>
+        Sign Out
     </button>
+  </mat-toolbar>
 
-</mat-toolbar>
-
-  <mat-card class="card" *ngFor="let product of products">
+  <mat-card class="card">
     <mat-card-header >
-      <mat-card-title class="name"> {{product.name}}</mat-card-title><br><br>
-      <mat-card-subtitle class="sub">price: {{product.price}}</mat-card-subtitle>
+      <mat-card-title class="name"> Product 1</mat-card-title><br><br>
+      <mat-card-subtitle class="sub">price:</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content class="list-info">
         <button mat-raised-button color="primary">
@@ -21,7 +23,7 @@
         </button>
     </mat-card-content>
   </mat-card>
-  <!-- <mat-card class="card">
+  <mat-card class="card">
     <mat-card-header >
       <mat-card-title class="name"> Product 2</mat-card-title><br><br>
       <mat-card-subtitle class="sub">price:</mat-card-subtitle>
@@ -43,4 +45,4 @@
         </button>
     </mat-card-content>
   </mat-card>
-   -->
+  
