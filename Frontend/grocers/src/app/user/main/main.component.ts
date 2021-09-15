@@ -4,11 +4,11 @@ import {MatDialog} from '@angular/material/dialog';
 import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
-  selector: 'app-userpanel',
-  templateUrl: './userpanel.component.html',
-  styleUrls: ['./userpanel.component.css']
+  selector: 'app-main',
+  templateUrl: './main.component.html',
+  styleUrls: ['./main.component.css']
 })
-export class UserpanelComponent implements OnInit {
+export class MainComponent implements OnInit {
 
   constructor(public router:Router) { }
   cart(){

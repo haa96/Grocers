@@ -21,12 +21,12 @@ import { RegisterComponent } from './register/register.component';
 import { CartComponent } from './cart/cart.component';
 import { ProfileComponent } from './user/profile/profile.component';
 import {MatTabsModule} from '@angular/material/tabs';
-import { UserpanelComponent } from './user/userpanel/userpanel.component'; // used to be mainComponent
 import { MatCardModule } from '@angular/material/card';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { AdminpanelComponent } from './adminpanel/adminpanel.component';
 import { ReportComponent } from './report/report.component';
+import { MainComponent } from './user/main/main.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +35,6 @@ import { ReportComponent } from './report/report.component';
     EmployeeComponent,
     AdminComponent,
     HomeComponent,
-    UserpanelComponent,
     NotfoundComponent,
     RegisterComponent,
     CartComponent,
@@ -43,7 +42,8 @@ import { ReportComponent } from './report/report.component';
     HomeComponent,
     ProfileComponent,
     AdminpanelComponent,
-    ReportComponent
+    ReportComponent,
+    MainComponent
   ],
 
   imports: [
