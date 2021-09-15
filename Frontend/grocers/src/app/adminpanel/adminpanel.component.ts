@@ -18,7 +18,6 @@ export class AdminpanelComponent implements OnInit {
     qty:new FormControl(),
     price:new FormControl(),
     discount:new FormControl(),
-
   })
   deleteRef = new FormGroup({
     _id:new FormControl(),
@@ -43,47 +42,47 @@ export class AdminpanelComponent implements OnInit {
   })
   constructor(public router:Router,public adminSer:AdminService,public empSer:EmployeeService)  { }
   msg?:string;
- 
-  ngOnInit(): void { 
+
+  ngOnInit(): void {
   }
   Report(){
     this.router.navigate(["report"]);  }
     addproduct(){
       let prodcut = this.addRef.value;
-      console.log(prodcut); 
+      console.log(prodcut);
        this.adminSer.addproductDetails(prodcut).
        subscribe(result=>this.msg=result,error=>console.log(error));
-       this.addRef.reset();    
+       this.addRef.reset();
        alert("The product added successfully")
     }
     deleteproduct(){
-      let prodcut = this.deleteRef.value;
-      this.adminSer.deleteproductDetails(prodcut._id).
+      let product = this.deleteRef.value;
+      this.adminSer.deleteproductDetails(product._id).
       subscribe(result=>this.msg=result,error=>console.log(error));
-      this.deleteRef.reset(); 
+      this.deleteRef.reset();
       alert("The product deleted successfully")
     }
     updateproduct(){
       let prodcut = this.updateRef.value;
-      console.log(prodcut); 
+      console.log(prodcut);
        this.adminSer.updateproductDetails(prodcut).
        subscribe(result=>this.msg=result,error=>console.log(error));
-       this.updateRef.reset();    
+       this.updateRef.reset();
        alert("The product updated successfully")
     }
     addemployee(){
       let employee = this.addempeRef.value;
-      console.log(employee); 
+      console.log(employee);
        this.empSer.addEmployeeDetails(employee).
        subscribe(result=>this.msg=result,error=>console.log(error));
-       this.addempeRef.reset();    
+       this.addempeRef.reset();
        alert("The employee added successfully")
     }
     deleteemployee(){
       let employee = this.delempRef.value;
       this.empSer.deleteEmployeeDetails(employee._id).
       subscribe(result=>this.msg=result,error=>console.log(error));
-      this.delempRef.reset(); 
+      this.delempRef.reset();
       alert("The employee deleted successfully")
     }
 }

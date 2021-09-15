@@ -4,6 +4,8 @@ let userController = require("../controller/user.controller");
 
 // use GET / POST / DELETE / PUT
 // ex template:
-router.post(".../login", userController.userLogin);
+console.log("In User Router");
+router.post("/userlogin", userController.userlogin);
+router.post("/register", userController.register);
 
 module.exports=router;

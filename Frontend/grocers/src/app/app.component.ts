@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
+import {MatDialog} from '@angular/material/dialog';
 
 
 
@@ -10,7 +11,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'dialog';
+  // title = 'dialog';
   constructor(
     public router:Router) { }
   Signout(){
