@@ -47,7 +47,8 @@ import {HttpClientModule} from '@angular/common/http';
     ProfileComponent,
     MainComponent,
     AdminpanelComponent,
-    ReportComponent
+    ReportComponent,
+    MainComponent
   ],
  
   imports: [
@@ -65,7 +66,9 @@ import {HttpClientModule} from '@angular/common/http';
     MatTreeModule,
     MatTabsModule,
     MatCardModule,
-    BrowserAnimationsModule,HttpClientModule
+    BrowserAnimationsModule,HttpClientModule,
+    BrowserAnimationsModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
