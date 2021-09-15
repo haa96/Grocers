@@ -25,6 +25,16 @@ import { MainComponent } from './user/main/main.component';
 import { MatCardModule } from '@angular/material/card';
 import { AdminpanelComponent } from './admin/adminpanel/adminpanel.component';
 import { ReportComponent } from './admin/report/report.component';
+import {HttpClientModule} from '@angular/common/http'; 
+
+
+
+
+
+
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,8 +65,7 @@ import { ReportComponent } from './admin/report/report.component';
     MatTreeModule,
     MatTabsModule,
     MatCardModule,
-    BrowserAnimationsModule
-    
+    BrowserAnimationsModule,HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -15,7 +15,8 @@ export class AdminComponent implements OnInit {
   });
   constructor(public dialog: MatDialog,  public router:Router) {}
   ngOnInit(): void {
-  }
+  } 
+  test(){}
   checkUser(){
     let login = this.loginRef.value;
     if(login.userAdmin=="Admin" && login.passAdmin=="123456"){
