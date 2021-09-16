@@ -20,6 +20,7 @@ export class MainComponent implements OnInit {
   counterqty = 1;
   total: number;
   i = 0;
+
   constructor(public router:Router,public adminSer:AdminService,public activeRoute:ActivatedRoute,
     public sharedSer:SharedService) {
     this.activeRoute.params.subscribe(data=>{
@@ -36,10 +37,13 @@ export class MainComponent implements OnInit {
   profile(){
     console.log("Profile function");
     console.log(this.email);
-    this.router.navigate(["../../profile",this.email.user],{relativeTo:this.activeRoute})
+    this.router.navigate(["profile",this.email]);
   }
 
-  cart(){this.router.navigate(["cart"]);}
+  cart(){
+    console.log("Cart function");
+    console.log(this.email);
+    this.router.navigate(["cart",this.email.user]);}
 
   addcart(name: any, price: any, quantity: any) {
       this.total = price * quantity;

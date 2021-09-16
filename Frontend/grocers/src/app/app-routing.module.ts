@@ -26,20 +26,13 @@ const routes: Routes = [
   {path: "employee",component:EmployeeComponent},
   {path:"empmain",component:EmpMainComponent},
   {path:"report",component:ReportComponent},
-  {path:"cart",component:CartComponent},
+  {path:'profile:user', component: ProfileComponent},
+  {path:"cart/:user",component:CartComponent},
   // user registration path
   {path:"register",component:RegisterComponent},
   // main login portal page
-  {path:"user",component:UserComponent,    
-  children: [
-    {
-      path:'profile/:user', component: ProfileComponent
-    }
-  ]},
-  {path:'profile', component: MainComponent},
-  {path:'main', component: MainComponent},
+  {path:"user",component:UserComponent},    
   // for passing user information
-  {path:'profile/:user', component: MainComponent},
   {path:'main/:user', component: MainComponent},
   {path:"",component:HomeComponent},
   {path:"**",component:NotfoundComponent}

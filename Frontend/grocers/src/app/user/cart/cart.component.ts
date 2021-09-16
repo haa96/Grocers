@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { SharedService } from 'src/app/shared.service';
 import { Cart } from '../../cart';
 @Component({
@@ -9,15 +9,22 @@ import { Cart } from '../../cart';
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent implements OnInit {
-
-  constructor(public router: Router, public ser: SharedService) { }
+  user = {"email":""};
   carts?: Array<Cart>;
   totalprice: number;
-    ngOnInit(): void {
+  constructor(public router: Router, public ser: SharedService,public activeRoute:ActivatedRoute) { 
+    this.activeRoute.params.subscribe(data=>{
+      this.user.email=data.user;
+      console.log(data);
+      console.log(this.user.email);
+   })
+  }
+
+  ngOnInit(): void {
     this.loadData();
   }
   main() {
-    this.router.navigate(["main"]);
+    this.router.navigate(["main",this.user.email]);
   }
 
   loadData(): void {

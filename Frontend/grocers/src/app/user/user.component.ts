@@ -11,7 +11,6 @@ import { MatDialog } from '@angular/material/dialog';
 })
 export class UserComponent implements OnInit {
   msg?:string;
-
   loginRef = new FormGroup({
     email:new FormControl(),
     pwd:new FormControl()
@@ -22,8 +21,7 @@ export class UserComponent implements OnInit {
     public dialog: MatDialog,
     public router:Router,
     public activeRoute:ActivatedRoute) {
-     }
-
+    }
   ngOnInit(): void {
   }
 

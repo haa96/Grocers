@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-
+import { Report } from './../report';
 @Component({
   selector: 'app-report',
   templateUrl: './report.component.html',
@@ -8,8 +8,7 @@ import { Router } from '@angular/router';
 })
 export class ReportComponent implements OnInit {
 
-  constructor(public router:Router){ }
-
+  constructor(public router:Router, public report:Report){ }
   ngOnInit(): void {
   }
   Adminpan(){

@@ -9,7 +9,7 @@ let empController = require("../controller/emp.controller");
 // ex template:
  router.post("/storeEmployee",empController.addEmployee);
  router.delete("/deleteEmployee/:eid",empController.deleteEmployee);
-//  router.post("/login",empController.authenticateLogin);
+ router.post("/login",empController.authenticateLogin);
  router.put("/updateEmployee",empController.updateEmployee);
 
 
