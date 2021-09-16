@@ -18,7 +18,7 @@ let register = async (request,response)=> {
     user.locked = false;
     user.balance = 500;
     user._id = 1;
-    
+
     let userInfo = await userModel.findOne({_id:user._id});
     if(userInfo==null){
         let result = await userModel.insertMany(user);
@@ -30,7 +30,7 @@ let register = async (request,response)=> {
         }
         result = await userModel.insertMany(user);
         response.send("Account created successfully");
-    }    
+    }
 }
 
 let getUserDetails = (request,response)=> {
@@ -41,9 +41,19 @@ let getUserDetails = (request,response)=> {
             console.log("The user is "+data);
             response.json(data);
         }else {
-             response.send(err);   
+             response.send(err);
         }
     })
 }
 
-module.exports={userlogin,register,getUserDetails};
+let unlockUser = (request,response)=> {
+    let p = request.body;
+    userModel.updateOne({_id:p._id},{$set:{locked:false}},(err,result)=> {
+        if(!err){
+            response.send(result);
+        }else {
+            response.send(err);
+        }
+    })
+}
+module.exports={userlogin,register,unlockUser};

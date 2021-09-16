@@ -8,4 +8,6 @@ console.log("In User Router");
 router.post("/userlogin", userController.userlogin);
 router.post("/userregister", userController.register);
 router.get("/details/:email",userController.getUserDetails);
+router.post("/register", userController.register);
+router.post("/unlock", userController.unlockUser);
 module.exports=router;
