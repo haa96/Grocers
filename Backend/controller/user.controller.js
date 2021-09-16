@@ -10,19 +10,27 @@ let userlogin = async (request, response)=> {
         response.send("Invalid email or password");
     }
 }
+
 let register = async (request,response)=> {
     let user = request.body;    // receive the data from post method
     console.log(user);
     if(user.bankCardNo === ''){ user.bankCardNo=0; }
     user.locked = false;
     user.balance = 500;
+    user._id = 1;
 
-    let userInfo = await userModel.findOne({email:user.email});
+    
+    let userInfo = await userModel.findOne({_id:user._id});
     if(userInfo==null){
         let result = await userModel.insertMany(user);
         response.send("Account created successfully");
     }else {
-        response.send("Email Id must be unqiue");
+        while(userInfo != null){
+            user._id++;
+            userInfo = await userModel.findOne({_id:user._id});
+        }
+        let result = await userModel.insertMany(user);
+        response.send("Account created successfully");
     }    
 }
 
