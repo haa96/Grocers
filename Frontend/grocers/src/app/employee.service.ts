@@ -15,5 +15,10 @@ export class EmployeeService {
   }
   deleteEmployeeDetails(employee:Employee):Observable<any>{
     return this.http.delete("http://localhost:9090/api/employee/deleteEmployee/"+employee);
+  }performLogin(employee:Employee ):Observable<any> {
+    let login_url = "http://localhost:9090/api/employee/login";
+  
+    return this.http.post(login_url, employee, {responseType: "json"});
+  
   }
 }
