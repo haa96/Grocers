@@ -1,1 +1,50 @@
-<p>register works!</p>
+<!-- <mat-toolbar>
+    <span class="g">Create Your Account</span>
+    <span class="example-spacer"></span>
+</mat-toolbar> -->
+  <mat-tab-group animationDuration="0ms">
+        <mat-tab label="Create Your Account">
+        <mat-card class="card">
+            <form [formGroup]="userRef" >
+
+            <mat-form-field>
+                <mat-label>First Name</mat-label>
+                    <input matInput formControlName="firstName">
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <mat-label> Last Name</mat-label>
+                    <input matInput formControlName="lastName" >
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <mat-label>Email </mat-label>
+                    <input matInput formControlName="email" >
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <mat-label>Password</mat-label>
+                    <input matInput formControlName="pwd" required >
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <mat-label>Phone No</mat-label>
+                    <input matInput formControlName="phone">
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <mat-label>Shipping Address</mat-label>
+                    <input matInput formControlName="address">
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <mat-label>Bank Routing Number</mat-label>
+                    <input matInput formControlName="bankCardNo" >
+            </mat-form-field>
+            <br/>
+            <button mat-raised-button (click)="returnToLogin()" color="primary" mat-dialog-close mat-dialog-close="false">Cancel</button> 
+            <button mat-raised-button (click)="addUser()" color="primary" mat-dialog-close mat-dialog-close="false">Create Account</button>
+        </form>
+        </mat-card>
+        </mat-tab> 
+  </mat-tab-group>

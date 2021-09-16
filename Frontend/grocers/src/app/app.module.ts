@@ -37,7 +37,6 @@ import{ RaiseticketComponent} from './raiseticket/raiseticket.component'
     AdminComponent,
     HomeComponent,
     NotfoundComponent,
-    RegisterComponent,
     EmpMainComponent,
     CartComponent,
     RegisterComponent,

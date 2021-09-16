@@ -45,8 +45,8 @@ export class AdminpanelComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  Report(){
-    this.router.navigate(["report"]);  }
+  Report(){this.router.navigate(["report"]);  }
+  
     addproduct(){
       let prodcut = this.addRef.value;
       console.log(prodcut);

@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { FormControl, FormGroup } from '@angular/forms';
 import {MatDialog} from '@angular/material/dialog';
 import { UserService } from '../user.service';
+import { RegisterComponent } from '../register/register.component';
 
 @Component({
   selector: 'app-user',
@@ -22,27 +23,26 @@ export class UserComponent implements OnInit {
   ngOnInit(): void {
   }
 
-
   checkUser() {
     let user = this.loginRef.value;
-    console.log(user);
 
-    this.router.navigate(["userPanel"]);
+    console.log(user);
 
     this.userSer.checkUserDetails(user).
     subscribe(result=>{
       if(result=="Success"){
         console.log("Success!");
-        this.router.navigate(["userPanel",user.email]);
+        this.router.navigate(["main"]);
       }else {
+          console.log("Invalid Login Credentials");
           this.msg = result;
       }
     },
     error=>console.log(error));
     this.loginRef.reset();
-
   }
+
   registerUser(){
-    let user = this.loginRef.value;
+    this.dialog.open(RegisterComponent);
   }
 }

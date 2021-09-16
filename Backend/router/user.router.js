@@ -6,6 +6,6 @@ let userController = require("../controller/user.controller");
 // ex template:
 console.log("In User Router");
 router.post("/userlogin", userController.userlogin);
-router.post("/register", userController.register);
+router.post("/userregister", userController.register);
 
 module.exports=router;
