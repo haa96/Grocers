@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from '../user.service';
-import { FormControl, FormGroup,FormsModule } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
+import {MatDialog} from '@angular/material/dialog';
+import { UserComponent } from '../user/user.component';
 
 @Component({
   selector: 'app-register',
@@ -19,7 +21,7 @@ export class RegisterComponent implements OnInit {
     address:new FormControl(),
     bankCardNo:new FormControl()
   })
-  constructor(public router:Router, public userSer:UserService) { }
+  constructor(public router:Router, public userSer:UserService,public dialog: MatDialog) { }
   msg?:string;
   ngOnInit(): void {
   }
@@ -31,6 +33,7 @@ export class RegisterComponent implements OnInit {
      subscribe(result=>this.msg=result,error=>console.log(error));
      this.userRef.reset();
      alert("Your account has been created");
+     this.dialog.open(UserComponent);
   }
 
   returnToLogin(){
