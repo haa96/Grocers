@@ -45,4 +45,15 @@ let getUserInfo = async (request, response)=> {
         response.send("user not found");
     }
 }
-module.exports={userlogin,register,getUserInfo};
+
+let updateUserInfo = (request,response)=> {
+    let user = request.body;
+    userModel.updateMany({email:user.email},{$set:{firstName:user.firstName,lastName:user.lastName,email:user.email,pwd:user.pwd,phone:user.phone,address:user.address}},(err,result)=> {
+        if(!err){
+            response.send(result);
+        }else {
+            response.send(err);
+        }
+    })
+}
+module.exports={userlogin,register,getUserInfo,updateUserInfo};
