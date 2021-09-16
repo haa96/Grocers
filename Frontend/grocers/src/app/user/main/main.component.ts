@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AdminService } from 'src/app/admin.service';
 import { SharedService } from 'src/app/shared.service';
-import { Citem } from 'src/app/Cart.model';
+import { Citem } from 'src/app/cart';
 import { UserService } from 'src/app/user.service';
 
 

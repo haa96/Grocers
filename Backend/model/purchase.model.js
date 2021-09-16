@@ -5,13 +5,13 @@ mongoose.pluralize(null);
 let purchaseSchema = mongoose.Schema({
 
     // customer ID
-    cID : Number,
+    cID: Number,
     // the standard product total price
-    price : Number,
+    price: Number,
     // the discount on the product
-    orderStatus : String
+    orderStatus: String
 });
 
-let purchaseModel = mongoose.model("Purchase",purchaseSchema);
+let purchaseModel = mongoose.model("Purchase", purchaseSchema);
 
-module.exports=purchaseModel;
+module.exports = purchaseModel;

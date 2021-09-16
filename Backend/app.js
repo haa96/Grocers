@@ -12,7 +12,7 @@ let userticketRouter = require("./router/userticket.router");
 let empRouter = require("./router/emp.router");
 
 // add other routers as needed ....
-let cartController = require("./router/cart.router");
+let purchaseController = require("./router/purchase.router");
 const adminModel = require("./model/admin.model");
 
 // add middleware
@@ -42,9 +42,7 @@ if(adminModel.findOne({_id:1234}) == null){
         console.log(err);
     }
 });
-
 }
-
 // http://localhost:9090/api/adminlogin
 app.use("/api/admin",adminRouter);
 // http://localhost:9090/api/user/login
@@ -55,10 +53,8 @@ app.use("/api/product",productRouter);
 app.use("/api/ticket",userticketRouter);
 // http://localhost:9090/api/employee/
 app.use("/api/employee",empRouter);
-
-
-
-app.use("/api/cart",cartController);
+// http://localhost:9090/api/purchase/
+app.use("/api/purchase",purchaseController);
 
 mongoose.disconnect;
 })
