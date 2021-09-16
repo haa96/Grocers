@@ -19,7 +19,7 @@ const routes: Routes = [
   {path:"AdminPan/:admin",component:AdminpanelComponent},
 
   {path:"report",component:ReportComponent},
-  {path:"profile",component:ProfileComponent},
+  {path:"profile/:user",component:ProfileComponent},
   {path:"cart",component:CartComponent},
   {path:"empmain",component:EmpMainComponent},
 

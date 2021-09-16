@@ -34,4 +34,15 @@ let register = async (request,response)=> {
     }    
 }
 
-module.exports={userlogin,register};
+
+let getUserInfo = async (request, response)=> {
+    let user = request.body; //recieve the data from post method
+    let userInfo = await userModel.findOne(user.email);
+    console.log(userInfo);
+    if(userInfo!=null){
+        response.json(userInfo);
+    }else {
+        response.send("user not found");
+    }
+}
+module.exports={userlogin,register,getUserInfo};
