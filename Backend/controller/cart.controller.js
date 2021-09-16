@@ -1,5 +1,7 @@
 
 let cartModel = require("../model/cart.model");
+
+
 let getAllCartItem = (request,response)=> {
     
     cartModel.find({},(err,data)=> {
@@ -13,7 +15,8 @@ let getAllCartItem = (request,response)=> {
 }
 let updateItemQuantity = (request,response)=> {
     let Cart = request.body;
-    cartModel.updateOne({_id:Cart._id},{$set:{quantity:Cart.quantity}},(err,result)=> {
+    cartModel.updateOne({_id:Cart._id},{$set:{name:Cart.name,price:Cart.price,
+        qty:Cart.quantity,total:Cart.total}},(err,result)=> {
         if(!err){
             response.send(result);
         }else {

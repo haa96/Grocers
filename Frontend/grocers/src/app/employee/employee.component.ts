@@ -1,13 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import {Router} from "@angular/router";
+import { Router } from "@angular/router";
 import { Observable } from 'rxjs';
 import { FormControl, FormGroup } from '@angular/forms';
-import {MatDialog} from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { Admin } from '../admin';
 import { EmployeeService } from '../employee.service';
-
-
 
 @Component({
   selector: 'app-employee',
@@ -17,36 +15,31 @@ import { EmployeeService } from '../employee.service';
 
 export class EmployeeComponent implements OnInit {
   loginRef = new FormGroup({
-    eid:new FormControl(),
-    password:new FormControl()
+    eid: new FormControl(),
+    password: new FormControl()
   });
-  constructor(public router:Router,
+  constructor(public router: Router,
     public dialog: MatDialog,
-    public employeeservice :EmployeeService,
-    public http:HttpClient) { }
+    public employeeservice: EmployeeService,
+    public http: HttpClient) { }
 
   ngOnInit(): void {
   }
 
- 
-openEmpMain(){
 
- let employee = this.loginRef.value;
- console.log(employee)
-   this.employeeservice.performLogin(employee).
-   subscribe(res=>{
-     console.log(res,res.statusValue);
-    if(res.statusValue === "Success"){
-      this.router.navigate(["empmain"]);
-    }
-    else{
-      console.log("Login Failed")
-    }
-  } )
-
-  
-}
-
-
+  openEmpMain() {
+    let employee = this.loginRef.value;
+    console.log(employee)
+    this.employeeservice.performLogin(employee).
+      subscribe(res => {
+        console.log(res, res.statusValue);
+        if (res === "Success") {
+          this.router.navigate(["empmain"]);
+        }
+        else {
+          console.log("Login Failed")
+        }
+      })
+  }
 
 }

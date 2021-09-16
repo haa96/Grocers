@@ -6,7 +6,7 @@ import { UserComponent } from './user/user.component';
 import { AdminComponent } from './admin/admin.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { NotfoundComponent } from './notfound/notfound.component';
-import { CartComponent} from'./cart/cart.component';
+import { CartComponent} from'./user/cart/cart.component';
 import { ProfileComponent } from './user/profile/profile.component';
 import {EmpMainComponent} from './employee/empmain/empmain.component'
 import { MainComponent } from './user/main/main.component';
@@ -15,34 +15,25 @@ import { ReportComponent } from './report/report.component';
 import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = [
-  // admin main page (routes here after admin login)
-  {path:"AdminPan/:admin",component:AdminpanelComponent},
-
-  {path:"report",component:ReportComponent},
-  {path:"profile",component:ProfileComponent},
-  {path:"cart",component:CartComponent},
-  {path:"empmain",component:EmpMainComponent},
-
-  // user registration path
-  {path:"register",component:RegisterComponent},
-
-  // main login portal page
   {path:"home",component:HomeComponent},
-
   // user login page
-  {path:"user",component:UserComponent},
-
-  // user main page
-  {path:"main",component:MainComponent},
-  {path:"main/:user",component:MainComponent},
-
   // admin login page
   {path:"admin",component:AdminComponent},
-
+  // admin main page (routes here after admin login)
+  {path:"AdminPan/:admin",component:AdminpanelComponent},
+  {path:"AdminPan",component:AdminpanelComponent},
   // employee login page
   {path: "employee",component:EmployeeComponent},
-
-  // path not found and no path routes
+  {path:"empmain",component:EmpMainComponent},
+  {path:"report",component:ReportComponent},
+  {path:'profile:user', component: ProfileComponent},
+  {path:"cart/:user",component:CartComponent},
+  // user registration path
+  {path:"register",component:RegisterComponent},
+  // main login portal page
+  {path:"user",component:UserComponent},    
+  // for passing user information
+  {path:'main/:user', component: MainComponent},
   {path:"",component:HomeComponent},
   {path:"**",component:NotfoundComponent}
 ];

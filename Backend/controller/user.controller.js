@@ -3,6 +3,7 @@ let userModel = require("../model/user.model");
 // create functions
 let userlogin = async (request, response)=> {
     let user = request.body; //recieve the data from post method
+    console.log(user);
     let userInfo = await userModel.findOne({email:user.email,pwd:user.pwd});
     if(userInfo!=null){
         response.send("Success");
@@ -19,7 +20,6 @@ let register = async (request,response)=> {
     user.balance = 500;
     user._id = 1;
 
-    
     let userInfo = await userModel.findOne({_id:user._id});
     if(userInfo==null){
         let result = await userModel.insertMany(user);
@@ -29,9 +29,32 @@ let register = async (request,response)=> {
             user._id++;
             userInfo = await userModel.findOne({_id:user._id});
         }
-        let result = await userModel.insertMany(user);
+        result = await userModel.insertMany(user);
         response.send("Account created successfully");
-    }    
+    }
 }
 
-module.exports={userlogin,register};
+// let getUserDetails = (request,response)=> {
+//     let email = request.body;
+//     console.log(email);
+//     userModel.find({email:email},(err,data)=> {
+//         if(!err){
+//             console.log("The user is "+data);
+//             response.json(data);
+//         }else {
+//              response.send(err);
+//         }
+//     })
+// }
+
+let unlockUser = (request,response)=> {
+    let p = request.body;
+    userModel.updateOne({_id:p._id},{$set:{locked:false}},(err,result)=> {
+        if(!err){
+            response.send(result);
+        }else {
+            response.send(err);
+        }
+    })
+}
+module.exports={userlogin,register,unlockUser};

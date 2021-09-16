@@ -19,7 +19,7 @@ import { AdminComponent } from './admin/admin.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { RegisterComponent } from './register/register.component';
 import { EmpMainComponent } from './employee/empmain/empmain.component';
-import { CartComponent } from './cart/cart.component';
+import { CartComponent } from './user/cart/cart.component';
 import { ProfileComponent } from './user/profile/profile.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import { MatCardModule } from '@angular/material/card';

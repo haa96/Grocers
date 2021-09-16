@@ -3,6 +3,7 @@ let express = require("express");
 let bodyParser = require("body-parser");
 let mongoose = require("mongoose");
 let cors = require("cors");
+
 // create the reference of express
 let app = express();
 let adminRouter = require("./router/admin.router");
@@ -10,10 +11,10 @@ let userRouter = require("./router/user.router");
 let productRouter = require("./router/product.router");
 let userticketRouter = require("./router/userticket.router");
 let empRouter = require("./router/emp.router");
-
-// add other routers as needed ....
+let proRequestRouter = require("./router/productrequest.router");
 let cartController = require("./router/cart.router");
 const adminModel = require("./model/admin.model");
+const proRequestModel = require("./model/productrequest.model");
 
 // add middleware
 app.use(cors());
@@ -47,15 +48,17 @@ if(adminModel.findOne({_id:1234}) == null){
 
 // http://localhost:9090/api/adminlogin
 app.use("/api/admin",adminRouter);
+// http://localhost:9090/api/employee/
+app.use("/api/employee",empRouter);
 // http://localhost:9090/api/user/login
 app.use("/api/user",userRouter);
 // http://localhost:9090/api/product/
 app.use("/api/product",productRouter);
 // http://localhost:9090/api/ticket/
 app.use("/api/ticket",userticketRouter);
-// http://localhost:9090/api/employee/
-app.use("/api/employee",empRouter);
-
+//http://localhost:9090/api/sendProductRequest/
+app.use("/api/sendProductRequest",proRequestRouter);
+//http://localhost:9090/api/cart/
 app.use("/api/cart",cartController);
 
 mongoose.disconnect;
