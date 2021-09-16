@@ -23,5 +23,18 @@ let deleteEmployee=(request,response)=> {
         }
     })
 }
+let authenticateLogin= async(request,response)=> {
+    let employee = request.body;
+    console.log("attempting login",employee)
+    let empInfo = await empModel.findOne({_id:employee.eid,pwd:employee.password});
+    if(empInfo!=null){
+        console.log("Success");
+        response.send({"statusValue" : "Success"});
+    }else {
+        console.log("Invalid login");
+        response.send({"statusValue" : "Failed"});
+    }
 
-module.exports= {addEmployee, deleteEmployee};
+}
+
+module.exports= {addEmployee, deleteEmployee, authenticateLogin};

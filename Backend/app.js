@@ -55,8 +55,6 @@ app.use("/api/ticket",userticketRouter);
 // http://localhost:9090/api/employee/
 app.use("/api/employee",empRouter);
 
-
-
 app.use("/api/cart",cartController);
 
 mongoose.disconnect;
