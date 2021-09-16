@@ -18,7 +18,6 @@ let register = async (request,response)=> {
     user.locked = false;
     user.balance = 500;
     user._id = 1;
-
     
     let userInfo = await userModel.findOne({_id:user._id});
     if(userInfo==null){
