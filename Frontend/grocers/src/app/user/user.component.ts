@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormControl, FormGroup } from '@angular/forms';
-import {MatDialog} from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { UserService } from '../user.service';
 import { RegisterComponent } from '../register/register.component';
 
@@ -15,7 +15,7 @@ export class UserComponent implements OnInit {
 
   loginRef = new FormGroup({
     email:new FormControl(),
-    pwd:new FormControl()
+    password:new FormControl()
   });
 
   constructor(
