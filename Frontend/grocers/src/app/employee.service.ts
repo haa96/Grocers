@@ -13,18 +13,21 @@ export class EmployeeService {
     return this.http.post("http://localhost:9090/api/employee/storeEmployee",employee,
     {responseType:'text'});
   }
+
   deleteEmployeeDetails(employee:Employee):Observable<any>{
     return this.http.delete("http://localhost:9090/api/employee/deleteEmployee/"+employee);
-  }performLogin(employee:Employee ):Observable<any> {
-    let login_url = "http://localhost:9090/api/employee/login";
-  
-    return this.http.post(login_url, employee, {responseType: "json"});
-  
   }
+  
+  performLogin(employee:Employee ):Observable<any> {
+    let login_url = "http://localhost:9090/api/employee/login";
+    return this.http.post(login_url, employee, {responseType: "json"});
+  }
+
   updateEmployeeDetails(employee:Employee):Observable<any>{
     return this.http.put("http://localhost:9090/api/employee/updateEmployee",employee,
     {responseType:'text'});
   }
+  
   sendProductRequest(employee:Employee):Observable<any>{
       return this.http.post("http://localhost:9090/api/sendProductRequest/sendProductRequest",employee,
       {responseType:'text'});

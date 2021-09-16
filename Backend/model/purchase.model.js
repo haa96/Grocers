@@ -15,7 +15,6 @@ let purchaseSchema = mongoose.Schema({
     discount : Number,
     // the date purchased
     date : Date,
-    
     orderStatus : String
 });
 

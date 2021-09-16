@@ -19,7 +19,7 @@ export class UserService {
     {responseType:'text'});
   }
 
-  getUserDetails(string:String):Observable<any>{
+  getUserDetails(user:User):Observable<any>{
     return this.http.get("http://localhost:9090/api/user/details");
   }
   userUnlock(user:User):Observable<any>{

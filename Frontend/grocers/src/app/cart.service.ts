@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Emp } from './Cart.model';
+import { Cart } from './cart';
 
 @Injectable({
   providedIn: 'root'
@@ -7,13 +7,13 @@ import { Emp } from './Cart.model';
 export class CartService {
 
   constructor() { }
-  emps:Array<Emp>=[];
+  prod:Array<Cart>=[];
 
-  setEmpArray(emps:Array<Emp>): void {
-    this.emps=emps;
+  setProdArray(prod:Array<Cart>): void {
+    this.prod=prod;
   }
 
-  getEmpArray(): Array<Emp>{
-    return this.emps;
+  getProdArray(): Array<Cart>{
+    return this.prod;
   }
 }

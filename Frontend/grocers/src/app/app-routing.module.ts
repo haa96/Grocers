@@ -15,30 +15,30 @@ import { ReportComponent } from './report/report.component';
 import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = [
+  {path:"home",component:HomeComponent},
+  // user login page
+  // admin login page
+  {path:"admin",component:AdminComponent},
   // admin main page (routes here after admin login)
   {path:"AdminPan/:admin",component:AdminpanelComponent},
   {path:"AdminPan",component:AdminpanelComponent},
+  // employee login page
+  {path: "employee",component:EmployeeComponent},
+  {path:"empmain",component:EmpMainComponent},
   {path:"report",component:ReportComponent},
   {path:"cart",component:CartComponent},
-  {path:"empmain",component:EmpMainComponent},
   // user registration path
   {path:"register",component:RegisterComponent},
   // main login portal page
-  {path:"home",component:HomeComponent},
-  // user login page
   {path:"user",component:UserComponent,    
   children: [
-    {
-      path:'main/:user', component: MainComponent
-    },
     {
       path:'profile/:user', component: ProfileComponent
     }
   ]},
-  // admin login page
-  {path:"admin",component:AdminComponent},
-  // employee login page
-  {path: "employee",component:EmployeeComponent},
+  {path:'profile', component: MainComponent},
+  {path:'main', component: MainComponent},
+  // for passing user information
   {path:'profile/:user', component: MainComponent},
   {path:'main/:user', component: MainComponent},
   {path:"",component:HomeComponent},

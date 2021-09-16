@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { SharedService } from 'src/app/shared.service';
-import { Citem } from 'src/app/Cart.model';
+import { Cart } from '../../cart';
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
@@ -11,14 +11,13 @@ import { Citem } from 'src/app/Cart.model';
 export class CartComponent implements OnInit {
 
   constructor(public router: Router, public ser: SharedService) { }
-  carts?: Array<Citem>;
+  carts?: Array<Cart>;
   totalprice: number;
     ngOnInit(): void {
     this.loadData();
   }
   main() {
     this.router.navigate(["main"]);
-
   }
 
   loadData(): void {

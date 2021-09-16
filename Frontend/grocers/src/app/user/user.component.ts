@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormControl, FormGroup } from '@angular/forms';
-import { Router } from '@angular/router';
 import { UserService } from '../user.service';
 import { RegisterComponent } from '../register/register.component';
-
+import { MatDialog } from '@angular/material/dialog';
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
@@ -15,7 +14,7 @@ export class UserComponent implements OnInit {
 
   loginRef = new FormGroup({
     email:new FormControl(),
-    password:new FormControl()
+    pwd:new FormControl()
   });
 
   constructor(
