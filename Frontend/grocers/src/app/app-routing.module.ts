@@ -6,7 +6,7 @@ import { UserComponent } from './user/user.component';
 import { AdminComponent } from './admin/admin.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { NotfoundComponent } from './notfound/notfound.component';
-import { CartComponent} from'./user/main/cart/cart.component';
+import { CartComponent} from'./user/cart/cart.component';
 import { ProfileComponent } from './user/profile/profile.component';
 import { MainComponent } from './user/main/main.component';
 import { AdminpanelComponent} from'./adminpanel/adminpanel.component';

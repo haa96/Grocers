@@ -1,0 +1,25 @@
+<mat-toolbar>
+    <span class="g">Cart</span>
+    <span class="example-spacer"></span>
+    <button mat-raised-button color="primary" (click)="main()">
+        Home
+    </button>
+  </mat-toolbar>
+  <br><br> <mat-card-title class="me-name">My Cart</mat-card-title><br><br>
+<mat-card class="card" *ngFor="let emp of employees">
+    <mat-card-header >
+    </mat-card-header>
+    <mat-card-content class="list-info">
+      <mat-card-title class="me-name">Items:  {{emp.name}}</mat-card-title><br>
+      <ul>
+          <li>price:  {{emp.price}}</li>
+          <li>Qyt:  {{emp.Qty}}</li>
+          <li>Total Price:  {{emp.total}}</li>
+      </ul>
+
+    </mat-card-content>
+    </mat-card>
+    <button mat-raised-button color="primary" (click)="main()">
+      checkout
+      </button>
+
