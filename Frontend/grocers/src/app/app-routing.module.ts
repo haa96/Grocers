@@ -26,20 +26,21 @@ const routes: Routes = [
   // main login portal page
   {path:"home",component:HomeComponent},
   // user login page
-  {path:"user",component:UserComponent},
-  // {path:"profile",component:ProfileComponent},
-  // user main page
-  {path:"main",component:MainComponent},
-
-  // {path:"main/:email",component:MainComponent},
+  {path:"user",component:UserComponent,    
+  children: [
+    {
+      path:'main/:user', component: MainComponent
+    },
+    {
+      path:'profile/:user', component: ProfileComponent
+    }
+  ]},
   // admin login page
   {path:"admin",component:AdminComponent},
   // employee login page
   {path: "employee",component:EmployeeComponent},
-  // {path:"profile/:email",component:ProfileComponent},
-  {path:"profile",component:ProfileComponent},
-
-  // path not found and no path routes
+  {path:'profile/:user', component: MainComponent},
+  {path:'main/:user', component: MainComponent},
   {path:"",component:HomeComponent},
   {path:"**",component:NotfoundComponent}
 ];

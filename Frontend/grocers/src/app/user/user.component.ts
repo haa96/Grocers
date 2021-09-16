@@ -30,14 +30,14 @@ export class UserComponent implements OnInit {
 
   checkUser() {
     let user = this.loginRef.value;
-
     console.log(user);
 
     this.userSer.checkUserDetails(user).
     subscribe(result=>{
       if(result=="Success"){
         console.log("Success!");
-        this.router.navigate(["main"]);
+        let email = user.email;
+        this.router.navigate(["main",email]);
       }else {
           console.log("Invalid Login Credentials");
           this.msg = result;
