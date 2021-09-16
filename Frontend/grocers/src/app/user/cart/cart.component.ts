@@ -13,6 +13,7 @@ export class CartComponent implements OnInit {
   constructor(public router: Router, public ser: SharedService) { }
   carts?: Array<Citem>;
   totalprice: number;
+  carttotalprice=0;
     ngOnInit(): void {
     this.loadData();
   }
@@ -45,9 +46,12 @@ export class CartComponent implements OnInit {
 
   }
   checkout(){
-
-
+    for(let i=0;i<this.carts.length;i++){
+     
+      this.carttotalprice+= this.carts[i].total
+    }
     console.log( this.carts)
+    console.log( this.carttotalprice)
     this.carts=[];
   }
 
