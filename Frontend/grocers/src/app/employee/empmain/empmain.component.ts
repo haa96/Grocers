@@ -11,7 +11,7 @@ import {UserService} from 'src/app/user.service';
 export class EmpMainComponent implements OnInit {
   
   sendRef = new FormGroup({
-    message:new FormControl(),
+    request:new FormControl(),
   })
   
   _id = '';

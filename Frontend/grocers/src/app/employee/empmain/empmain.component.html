@@ -11,7 +11,7 @@
         <form [formGroup]="sendRef">
         <mat-form-field>
             <mat-label>Enter Request</mat-label>
-                <input matInput formControlName="message">
+                <input matInput formControlName="request" >
         </mat-form-field>
 		<br>
         <button mat-raised-button color="primary" mat-dialog-close mat-dialog-close="false" (click)="sendRequest()">Submit</button>
