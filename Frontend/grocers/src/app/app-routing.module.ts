@@ -31,12 +31,12 @@ const routes: Routes = [
   // user main page
   {path:"main",component:MainComponent},
 
-  {path:"main/:email",component:MainComponent},
+  // {path:"main/:email",component:MainComponent},
   // admin login page
   {path:"admin",component:AdminComponent},
   // employee login page
   {path: "employee",component:EmployeeComponent},
-  {path:"profile/:email",component:ProfileComponent},
+  // {path:"profile/:email",component:ProfileComponent},
   {path:"profile",component:ProfileComponent},
 
   // path not found and no path routes

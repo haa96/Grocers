@@ -37,7 +37,7 @@ export class UserComponent implements OnInit {
     subscribe(result=>{
       if(result=="Success"){
         console.log("Success!");
-        this.router.navigate(["main",user.email]);
+        this.router.navigate(["main"]);
       }else {
           console.log("Invalid Login Credentials");
           this.msg = result;

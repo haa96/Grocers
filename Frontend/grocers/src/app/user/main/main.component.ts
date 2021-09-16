@@ -15,7 +15,6 @@ email : any;
 
 constructor(public router:Router,public adminSer:AdminService,public activeRoute:ActivatedRoute) { 
   this.activeRoute.params.subscribe(data=>this.email=data);
-  document.write(this.email)
 }
 
 ngOnInit(): void {
@@ -23,7 +22,7 @@ ngOnInit(): void {
 }
 cart(){this.router.navigate(["cart"]);}
 
-profile(){this.router.navigate(["profile",this.email]);}
+profile(){this.router.navigate(["profile"]);}
 
 populateProducts(){
   //alert("here");
