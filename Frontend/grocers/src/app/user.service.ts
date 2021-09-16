@@ -19,11 +19,8 @@ export class UserService {
     {responseType:'text'});
   }
 
-  getUserDetails(user:User):Observable<any>{
+  getUserDetails(string:String):Observable<any>{
     return this.http.get("http://localhost:9090/api/user/details");
   }
-  // loginAccountCreate(login:Login):Observable<any>{
-  //   return this.http.post("http://localhost:9090/api/user/signUp",login,
-  //   {responseType:'text'});
-  // }
+
 }

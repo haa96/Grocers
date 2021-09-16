@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FormControl, FormGroup } from '@angular/forms';
 import {MatDialog} from '@angular/material/dialog';
 import { UserService } from '../user.service';
@@ -11,15 +11,20 @@ import { RegisterComponent } from '../register/register.component';
   styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
+  msg?:string;
+
   loginRef = new FormGroup({
     email:new FormControl(),
     pwd:new FormControl()
   });
+
   constructor(
     public userSer:UserService,
     public dialog: MatDialog,
-    public router:Router) { }
-    msg?:string;
+    public router:Router,
+    public activeRoute:ActivatedRoute) {
+     }
+
   ngOnInit(): void {
   }
 
@@ -32,7 +37,7 @@ export class UserComponent implements OnInit {
     subscribe(result=>{
       if(result=="Success"){
         console.log("Success!");
-        this.router.navigate(["main"]);
+        this.router.navigate(["main",user.email]);
       }else {
           console.log("Invalid Login Credentials");
           this.msg = result;

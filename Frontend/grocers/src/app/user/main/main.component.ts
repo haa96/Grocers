@@ -4,7 +4,6 @@ import { AdminService } from 'src/app/admin.service';
 import {MatDialog} from '@angular/material/dialog';
 import { FormControl, FormGroup } from '@angular/forms';
 
-
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
@@ -12,16 +11,19 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class MainComponent implements OnInit {
 products =[];
+email : any;
 
-
-constructor(public router:Router,public adminSer:AdminService,public activateRoute:ActivatedRoute) { }
+constructor(public router:Router,public adminSer:AdminService,public activeRoute:ActivatedRoute) { 
+  this.activeRoute.params.subscribe(data=>this.email=data);
+  document.write(this.email)
+}
 
 ngOnInit(): void {
-
   this.populateProducts();
 }
 cart(){this.router.navigate(["cart"]);}
-profile(){this.router.navigate(["profile"]);}
+
+profile(){this.router.navigate(["profile",this.email]);}
 
 populateProducts(){
   //alert("here");

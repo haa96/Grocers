@@ -29,19 +29,22 @@ let register = async (request,response)=> {
             user._id++;
             userInfo = await userModel.findOne({_id:user._id});
         }
-        let result = await userModel.insertMany(user);
+        result = await userModel.insertMany(user);
         response.send("Account created successfully");
     }    
 }
 
 let getUserDetails = (request,response)=> {
-    userModel.find({},(err,data)=> {
+    let email = request.body;
+    console.log(email);
+    userModel.find({email:email},(err,data)=> {
         if(!err){
-            response.send(data);
+            console.log("The user is "+data);
+            response.json(data);
         }else {
              response.send(err);   
         }
     })
-
+}
 
 module.exports={userlogin,register,getUserDetails};

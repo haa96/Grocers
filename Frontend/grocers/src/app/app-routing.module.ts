@@ -17,30 +17,27 @@ import { RegisterComponent } from './register/register.component';
 const routes: Routes = [
   // admin main page (routes here after admin login)
   {path:"AdminPan/:admin",component:AdminpanelComponent},
-
+  {path:"AdminPan",component:AdminpanelComponent},
   {path:"report",component:ReportComponent},
-  {path:"profile",component:ProfileComponent},
   {path:"cart",component:CartComponent},
   {path:"empmain",component:EmpMainComponent},
-
   // user registration path
   {path:"register",component:RegisterComponent},
-
   // main login portal page
   {path:"home",component:HomeComponent},
-
   // user login page
   {path:"user",component:UserComponent},
-
+  // {path:"profile",component:ProfileComponent},
   // user main page
   {path:"main",component:MainComponent},
-  {path:"main/:user",component:MainComponent},
 
+  {path:"main/:email",component:MainComponent},
   // admin login page
   {path:"admin",component:AdminComponent},
-
   // employee login page
   {path: "employee",component:EmployeeComponent},
+  {path:"profile/:email",component:ProfileComponent},
+  {path:"profile",component:ProfileComponent},
 
   // path not found and no path routes
   {path:"",component:HomeComponent},
