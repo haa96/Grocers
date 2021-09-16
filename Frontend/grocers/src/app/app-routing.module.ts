@@ -20,7 +20,7 @@ const routes: Routes = [
 
   {path:"report",component:ReportComponent},
   {path:"profile/:user",component:ProfileComponent},
-  {path:"cart",component:CartComponent},
+  {path:"cart/:user",component:CartComponent},
   {path:"empmain",component:EmpMainComponent},
 
   // user registration path
@@ -33,7 +33,6 @@ const routes: Routes = [
   {path:"user",component:UserComponent},
 
   // user main page
-  {path:"main",component:MainComponent},
   {path:"main/:user",component:MainComponent},
 
   // admin login page

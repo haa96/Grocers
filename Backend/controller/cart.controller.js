@@ -1,7 +1,17 @@
 
 let cartModel = require("../model/cart.model");
 
+let storedCartInfo = (request,response)=> {
+    let Cart = request.body;
 
+    cartModel.insertMany(Cart,(err,result)=> {
+        if(!err){
+                response.send("Record stored successfully")
+        }else {
+                response.send(err);
+        }
+    })
+}
 let getAllCartItem = (request,response)=> {
     
     cartModel.find({},(err,data)=> {
@@ -35,7 +45,7 @@ let deleteItem = (request,response)=> {
         }
     })
 }
-module.exports= {getAllCartItem,deleteItem,updateItemQuantity}
+module.exports= {getAllCartItem,deleteItem,updateItemQuantity,storedCartInfo}
 
 
 

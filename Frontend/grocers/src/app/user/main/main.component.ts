@@ -3,7 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { AdminService } from 'src/app/admin.service';
 import { SharedService } from 'src/app/shared.service';
 import { Citem } from 'src/app/Cart.model';
-
+import { UserService } from 'src/app/user.service';
 
 
 @Component({
@@ -20,14 +20,20 @@ export class MainComponent implements OnInit {
   counterqty = 1;
   total: number;
   i = 0;
-  constructor(public ser: SharedService, public router: Router, public adminSer: AdminService, public activateRoute: ActivatedRoute) { }
-
+  constructor(public ser: SharedService, public router: Router, public userSer:UserService,
+     public adminSer: AdminService, public activateRoute: ActivatedRoute) { }
+     msg?:string;
+     userEmail?:string;
+     firstName?:string;
+     lastName?:string;
+     email:string = "";
+     balance?:number;
   ngOnInit(): void {
-
+    this.getUser();
     this.populateProducts();
   }
-  cart() { this.router.navigate(["cart"]); }
-  profile() { this.router.navigate(["profile"]); }
+  cart() { this.router.navigate(["cart/:user"]); }
+  profile() { this.router.navigate(["profile/:user"]); }
 
   populateProducts() {
     this.adminSer.getproductDetails().
@@ -37,6 +43,18 @@ export class MainComponent implements OnInit {
         }
         console.log(this.products);
       }, error => console.error(error));
+  }
+  getUser() {
+    console.log(this.userEmail);
+    this.userSer.getUserDetails(this.userEmail).
+    subscribe(result=>{
+      console.log(result);
+      this.firstName = result.firstName;
+      this.lastName = result.lastName;
+      this.email=result.email;
+      this.balance=result.balance;
+      console.log(this.firstName+this.email);
+    }, error=>console.log(error));
   }
 
   addcart(name: any, price: any, quantity: any) {

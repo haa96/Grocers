@@ -4,5 +4,4 @@ export interface Citem {
     price:number;
     Qty:number;
     total:number;
-  
 }
