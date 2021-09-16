@@ -1,18 +1,18 @@
 import { Injectable } from '@angular/core';
-import { Emp } from './Emp.model';
+import { Citem } from './Cart.model';
 @Injectable({
   providedIn: 'root'
 })
 export class SharedService {
 
   constructor() { }
-  emps:Array<Emp>=[];
+  items:Array<Citem>=[];
 
-  setEmpArray(emps:Array<Emp>): void {
-    this.emps=emps;
+  setCartArray(cart:Array<Citem>): void {
+    this.items=cart;
   }
 
-  getEmpArray(): Array<Emp>{
-    return this.emps;
+  getCartArray(): Array<Citem>{
+    return this.items;
   }
 }

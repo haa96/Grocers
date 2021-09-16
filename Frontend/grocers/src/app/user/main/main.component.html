@@ -2,41 +2,27 @@
   <span class="g">Products</span>
   <span class="example-spacer"></span>
   <button mat-raised-button color="primary" (click)="cart()">
-      Cart
+    Cart
   </button>
   <button mat-raised-button color="primary" (click)="profile()">
-      My Profile
+    My Profile
   </button>
 
 </mat-toolbar>
 
 <mat-card class="card" *ngFor="let product of products">
-  <mat-card-header >
-    <mat-card-title class="name" > {{product.name}}</mat-card-title><br><br>
-    <mat-card-subtitle class="sub" >price: {{product.price}}</mat-card-subtitle>
+  <mat-card-header>
+    <mat-card-title class="name"> {{product.name}}</mat-card-title><br><br>
+    <mat-card-subtitle class="sub">price: {{product.price}}</mat-card-subtitle>
     <p style="color:red; font-size: x-small;"> Quantity</p><br>
-    <md-input-container >
-      <input  disable-it min="1"  value="1"
-          mdInput style="width: 30px;"
-          type="number"
-          
-
-          #myNumber
-      />
-  </md-input-container>
+    <md-input-container>
+      <input disable-it min="1" value="1" mdInput style="width: 30px;" type="number" #qty />
+    </md-input-container>
 
   </mat-card-header>
   <mat-card-content class="list-info">
-      <button mat-raised-button color="primary"  (click)='addcart(product.name,product.price,myNumber.value)'>
-          Add to cart
-      </button>
+    <button mat-raised-button color="primary" (click)='addcart(product.name,product.price,qty.value)'>
+      Add to cart
+    </button>
   </mat-card-content>
 </mat-card>
-
-
-<!-- <div>
-  <h2>Child3 component</h2>
-  Id :<input type="text" #idRef/><br/>
-  Name :<input type="text" #nameRef/><br/>
-  <input type="button" value="store value" (click)="storeData(idRef,nameRef)"/>
-</div> -->

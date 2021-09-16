@@ -1,4 +1,5 @@
-export interface Emp {
+export interface Citem {
+    id:number;
     name:string;
     price:number;
     Qty:number;
