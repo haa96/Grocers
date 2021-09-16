@@ -9,5 +9,6 @@ let empController = require("../controller/emp.controller");
 // ex template: 
  router.post("/storeEmployee",empController.addEmployee);
  router.delete("/deleteEmployee/:eid",empController.deleteEmployee);
+ router.put("/updateEmployee",empController.updateEmployee);
 
 module.exports=router;

@@ -16,4 +16,13 @@ export class EmployeeService {
   deleteEmployeeDetails(employee:Employee):Observable<any>{
     return this.http.delete("http://localhost:9090/api/employee/deleteEmployee/"+employee);
   }
-}
+  updateEmployeeDetails(employee:Employee):Observable<any>{
+    return this.http.put("http://localhost:9090/api/employee/updateEmployee",employee,
+    {responseType:'text'});
+  }
+  sendProductRequest(employee:Employee):Observable<any>{
+      return this.http.post("http://localhost:9090/api/sendProductRequest/sendProductRequest",employee,
+      {responseType:'text'});
+    }
+  }
+

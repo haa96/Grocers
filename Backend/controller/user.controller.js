@@ -20,5 +20,14 @@ let register = async (request,response)=> {
         response.send("Email Id must be unqiue");
     }    
 }
-
-module.exports={userlogin,register};
+let unlockUser = (request,response)=> {
+    let p = request.body;
+    userModel.updateOne({_id:p._id},{$set:{locked:false}},(err,result)=> {
+        if(!err){
+            response.send(result);
+        }else {
+            response.send(err);
+        }
+    })
+}
+module.exports={userlogin,register,unlockUser};

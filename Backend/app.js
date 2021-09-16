@@ -10,10 +10,11 @@ let userRouter = require("./router/user.router");
 let productRouter = require("./router/product.router");
 let userticketRouter = require("./router/userticket.router");
 let empRouter = require("./router/emp.router");
-
+let proRequestRouter = require("./router/productrequest.router");
 // add other routers as needed ....
 let cartController = require("./router/cart.router");
 const adminModel = require("./model/admin.model");
+//const proRequestModel = require("./model/productrequest.model");
 
 // add middleware
 app.use(cors());
@@ -54,6 +55,8 @@ app.use("/api/product",productRouter);
 app.use("/api/ticket",userticketRouter);
 // http://localhost:9090/api/employee/
 app.use("/api/employee",empRouter);
+//http://localhost:9090/api/sendProductRequest
+app.use("/api/sendProductRequest",proRequestRouter);
 
 
 

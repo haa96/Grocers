@@ -23,5 +23,15 @@ let deleteEmployee=(request,response)=> {
         }
     })
 }
+let updateEmployee = (request,response)=> {
+    let p = request.body;
+    empModel.updateOne({_id:p._id},{$set:{pwd:p.pwd,pwdUpdated:true}},(err,result)=> {
+        if(!err){
+            response.send(result);
+        }else {
+            response.send(err);
+        }
+    })
+}
 
-module.exports= {addEmployee, deleteEmployee};
+module.exports= {addEmployee, deleteEmployee,updateEmployee};

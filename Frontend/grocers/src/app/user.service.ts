@@ -12,6 +12,10 @@ export class UserService {
     return this.http.post("http://localhost:9090/api/user/userlogin",user,
     {responseType:'text'});
   }
+  userUnlock(user:User):Observable<any>{
+    return this.http.put("http://localhost:9090/api/user/unlock",user,
+    {responseType:'text'});
+  }
   // loginAccountCreate(login:Login):Observable<any>{
   //   return this.http.post("http://localhost:9090/api/user/signUp",login,
   //   {responseType:'text'});

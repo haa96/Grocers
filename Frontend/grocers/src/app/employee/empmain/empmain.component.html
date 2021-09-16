@@ -8,12 +8,14 @@
   <mat-tab-group animationDuration="0ms">
     <mat-tab label="Send Request">
         <br>
+        <form [formGroup]="sendRef">
         <mat-form-field>
             <mat-label>Enter Request</mat-label>
-                <input matInput>
+                <input matInput formControlName="message">
         </mat-form-field>
 		<br>
-        <button mat-raised-button color="primary" mat-dialog-close mat-dialog-close="false">Submit</button>
+        <button mat-raised-button color="primary" mat-dialog-close mat-dialog-close="false" (click)="sendRequest()">Submit</button>
+    </form>
     </mat-tab>
     <mat-tab label="Update Order Status">
         <mat-card class="card">
@@ -36,24 +38,35 @@
         <mat-card class="card">
             Locked Users:
         </mat-card>
+        <form [formGroup]="unlockRef">
         <mat-form-field>
         <mat-label>Enter User Id to unlock</mat-label>
-                <input matInput>
+                <input matInput formControlName="_id">
         </mat-form-field>
         <br>
-        <button mat-raised-button color="primary" mat-dialog-close mat-dialog-close="false">Submit</button>
+        <button mat-raised-button color="primary" mat-dialog-close mat-dialog-close="false" (click)="unlockUser()">Submit</button>
+    </form>
     </mat-tab>
+
     <mat-tab label="Edit Profile">
     <mat-card class="card">
+        <form [formGroup]="updateRef" >
+        <mat-form-field>
+        <mat-label>Employee ID</mat-label>
+                <input matInput formControlName="_id" [(ngModel)]="_id">
+        </mat-form-field>
+        <br>
         <mat-form-field>
             <mat-label>New Password</mat-label>
-                <input matInput>
+                <input matInput formControlName="pwd">
         </mat-form-field>
+  
         <br>
         
     
         <br>
-        <button mat-raised-button color="primary" mat-dialog-close mat-dialog-close="false">Save</button>
+        <button mat-raised-button color="primary" mat-dialog-close mat-dialog-close="false" (click)="updateemployee()">Save</button>
+        </form>
     </mat-card>
 
     </mat-tab>
