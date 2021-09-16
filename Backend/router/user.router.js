@@ -7,5 +7,6 @@ let userController = require("../controller/user.controller");
 console.log("In User Router");
 router.post("/userlogin", userController.userlogin);
 router.post("/userregister", userController.register);
+router.get("/details", userController.getUserDetails);
 
 module.exports=router;

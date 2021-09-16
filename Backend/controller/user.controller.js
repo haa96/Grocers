@@ -34,4 +34,14 @@ let register = async (request,response)=> {
     }    
 }
 
-module.exports={userlogin,register};
+let getUserDetails = (request,response)=> {
+    userModel.find({},(err,data)=> {
+        if(!err){
+            response.send(data);
+        }else {
+             response.send(err);   
+        }
+    })
+
+
+module.exports={userlogin,register,getUserDetails};
