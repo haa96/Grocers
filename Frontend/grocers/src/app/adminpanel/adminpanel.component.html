@@ -50,7 +50,7 @@
             <form [formGroup]="deleteRef">
                 <mat-form-field>
                     <mat-label>Product ID</mat-label>
-                    <input matInput formControlName="_id" [(ngModel)]="_id">
+                    <input type="number" matInput formControlName="_id" [(ngModel)]="_id">
                 </mat-form-field>
                 <br>
                 <button mat-raised-button [disabled]="_id === ''" (click)="deleteproduct()" color="primary"
@@ -65,22 +65,22 @@
             <form [formGroup]="updateRef">
                 <mat-form-field>
                     <mat-label>Product ID</mat-label>
-                    <input matInput formControlName="_id" [(ngModel)]="_id">
+                    <input type="number" matInput formControlName="_id" [(ngModel)]="_id">
                 </mat-form-field>
                 <br>
                 <mat-form-field>
                     <mat-label>Product Quantity</mat-label>
-                    <input matInput formControlName="qty">
+                    <input type="number" matInput formControlName="qty">
                 </mat-form-field>
                 <br>
                 <mat-form-field>
                     <mat-label>Product Price</mat-label>
-                    <input matInput formControlName="price">
+                    <input type="number" matInput formControlName="price">
                 </mat-form-field>
                 <br>
                 <mat-form-field>
                     <mat-label>Product Discount </mat-label>
-                    <input matInput formControlName="discount">
+                    <input type="number" matInput formControlName="discount">
                 </mat-form-field>
                 <br>
                 <button mat-raised-button (click)="updateproduct()" [disabled]="_id === ''" color="primary"
@@ -94,7 +94,6 @@
         </mat-card>
 
                     <!-- Add Employee tab and form -->
-
     </mat-tab>
     <mat-tab label="Add Employee">
         <mat-card class="card">
@@ -102,7 +101,7 @@
                 <p style="color:red">*Please fill in all fields</p>
                 <mat-form-field>
                     <mat-label>Employee ID</mat-label>
-                    <input matInput formControlName="_id" [(ngModel)]="_id">
+                    <input type="number" matInput formControlName="_id" [(ngModel)]="_id">
                 </mat-form-field>
                 <br>
                 <mat-form-field>
@@ -133,7 +132,7 @@
                 <br>
                 <mat-form-field>
                     <mat-label>Salary </mat-label>
-                    <input matInput formControlName="salary">
+                    <input type="number" matInput formControlName="salary">
                 </mat-form-field>
                 <br>
                 <button mat-raised-button (click)="addemployee()" [disabled]="_id === ''" color="primary"
@@ -148,7 +147,7 @@
             <form [formGroup]="delempRef">
                 <mat-form-field>
                     <mat-label>Employee ID</mat-label>
-                    <input matInput formControlName="_id" [(ngModel)]="_id">
+                    <input type="number" matInput formControlName="_id" [(ngModel)]="_id">
                 </mat-form-field>
                 <br>
                 <button mat-raised-button (click)="deleteemployee()" [disabled]="_id === ''" color="primary"
