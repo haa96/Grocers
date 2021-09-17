@@ -11,11 +11,6 @@ import { User } from '../../user';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-  userEmail: {"email":""};
-  firstName?:string;
-  email:string = "";
-  phone?:number;
-  address?:string;
 
   constructor(
   public router:Router,

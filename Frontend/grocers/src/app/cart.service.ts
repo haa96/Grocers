@@ -10,15 +10,15 @@ export class CartService {
 
   constructor(public http:HttpClient) { }
   items:Array<Citem>=[];
-  prod:Array<Cart>=[];
+  prod:Array<Citem>=[];
 
-  setProdArray(prod:Array<Cart>): void {
+  setProdArray(prod:Array<Citem>): void {
     this.prod=prod;
   }
 
-  getProdArray(): Array<Cart>{
+  getProdArray(): Array<Citem>{
     return this.prod;
-
+  }
   setEmpArray(items:Array<Citem>): void {
     this.items=items;
   }

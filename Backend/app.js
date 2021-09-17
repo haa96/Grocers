@@ -18,7 +18,7 @@ let productRouter = require("./router/product.router");
 let userticketRouter = require("./router/userticket.router");
 let empRouter = require("./router/emp.router");
 let proRequestRouter = require("./router/productrequest.router");
-let cartController = require("./router/cart.router");
+let cartRouter = require("./router/cart.router");
 let reportRouter = require("./router/report.router");
 let purchaseController = require("./router/purchase.router");
 
@@ -63,7 +63,7 @@ app.use("/api/ticket",userticketRouter);
 //http://localhost:9090/api/sendProductRequest/
 app.use("/api/sendProductRequest",proRequestRouter);
 //http://localhost:9090/api/cart/
-app.use("/api/cart",cartController);
+app.use("/api/cart",cartRouter);
 //http://localhost:9090/api/report/daily
 //http://localhost:9090/api/report/weekly
 //http://localhost:9090/api/report/monthly

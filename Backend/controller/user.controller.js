@@ -34,19 +34,6 @@ let register = async (request,response)=> {
     }
 }
 
-let getUserDetails = (request,response)=> {
-    let email = request.body;
-    console.log(email);
-    userModel.find({email:email},(err,data)=> {
-        if(!err){
-            console.log("The user is "+data);
-            response.json(data);
-        }else {
-             response.send(err);
-        }
-    })
-}
-
 let unlockUser = (request,response)=> {
     let p = request.body;
     console.log("Unlock User called");
@@ -80,5 +67,7 @@ let updateUserInfo = (request,response)=> {
             console.log("updated");
             response.send(result);
         }else {
-            console.log("didn't update!");
-module.exports={userlogin,register,unlockUser,getUserDetails,updateUserInfo,getUserInfo};
+            console.log("didn't update!");}
+    })
+}
+module.exports={userlogin,register,unlockUser,updateUserInfo,getUserInfo};
