@@ -1,52 +1,36 @@
 let purchaseModel = require("../model/purchase.model");
-let updateOrderStatus = (request,response)=> {
+
+// update order status for orders of particular customers
+let updateOrderStatus = (request, response) => {
     let p = request.body;
-    
-    purchaseModel.updateOne({cID:p.cID},{$set:{orderStatus:p.status}},(err,result)=> {
-        if(!err){
+    purchaseModel.updateOne({ cID: p.cID }, { $set: { orderStatus: p.status } }, (err, result) => {
+        if (!err) {
             response.send(result);
-        }else {
+        } else {
             response.send(err);
         }
     })
 }
-let getOrder = (request,response)=> {
-
-    purchaseModel.find({},(err,data)=> {
-        if(!err){
-            response.send(data);
-        }else {
-             response.send(err);
-        }
-    })
-
-}
-
-let storedpurchaset = (request,response)=> {
+// store a new purchase
+let storedpurchaset = (request, response) => {
     let Cart = request.body;
-
-    purchaseModel.insertMany(Cart,(err,result)=> {
-        if(!err){
-                response.send("Record stored successfully")
-        }else {
-                response.send(err);
+    purchaseModel.insertMany(Cart, (err, result) => {
+        if (!err) {
+            response.send("Record stored successfully")
+        } else {
+            response.send(err);
         }
     })
 }
-let getAllpurchaset= (request,response)=> {
-    
-    purchaseModel.find({},(err,data)=> {
-        if(!err){
+// return all purchased item information
+let getAllpurchaset = (request, response) => {
+    purchaseModel.find({}, (err, data) => {
+        if (!err) {
             response.json(data);
-        }else {
-             response.json(err);   
+        } else {
+            response.json(err);
         }
     })
-
 }
 
-module.exports={updateOrderStatus,getOrder,getAllpurchaset,storedpurchaset};
-
-
-
-
+module.exports = { updateOrderStatus, getAllpurchaset, storedpurchaset };
