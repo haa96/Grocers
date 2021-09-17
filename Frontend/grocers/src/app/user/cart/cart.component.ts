@@ -87,7 +87,7 @@ export class CartComponent implements OnInit {
       this.cartSer.storedpurchaset(purchase).
         subscribe(result => this.msg = result, error => console.log(error));
       this.addRef.reset();
-      alert("Current Funf is: " + fund)
+      alert("Current Fund is: " + fund)
       this.carts = [];
 
       document.getElementById("funds").innerHTML = "Current Funds:" + fund;

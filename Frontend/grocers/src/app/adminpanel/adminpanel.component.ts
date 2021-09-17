@@ -50,10 +50,10 @@ export class AdminpanelComponent implements OnInit {
   ngOnInit(): void {
   }
   Report() { this.router.navigate(["Report"]); }
+  
   // add product method to send form values to backend and DB
   addproduct() {
     let prodcut = this.addRef.value;
-    console.log(prodcut);
     this.adminSer.addproductDetails(prodcut).
       subscribe(result => this.msg = result, error => console.log(error));
     this.addRef.reset();
@@ -72,7 +72,6 @@ export class AdminpanelComponent implements OnInit {
   // update product method to send form values to backend and DB
   updateproduct() {
     let prodcut = this.updateRef.value;
-    console.log(prodcut);
     this.adminSer.updateproductDetails(prodcut).
       subscribe(result => this.msg = result, error => console.log(error));
     this.updateRef.reset();
@@ -82,12 +81,12 @@ export class AdminpanelComponent implements OnInit {
   // add employee method to send form values to backend and DB
   addemployee() {
     let employee = this.addempeRef.value;
-    console.log(employee);
     this.empSer.addEmployeeDetails(employee).
       subscribe(result => this.msg = result, error => console.log(error));
     this.addempeRef.reset();
     alert("The employee added successfully")
   }
+  
   // delete employee method to send form values to backend and DB
   deleteemployee() {
     let employee = this.delempRef.value;

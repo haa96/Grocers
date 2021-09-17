@@ -38,33 +38,34 @@ export class EmpMainComponent implements OnInit {
     this.viewTickets();
     this.viewOrder();
   }
+  
   //updates employee info, send info to backend thruogh employee service.ts
   updateemployee() {
-    let prodcut = this.updateRef.value;
-    console.log(prodcut);
-    this.empSer.updateEmployeeDetails(prodcut).
+    let employee = this.updateRef.value;
+    this.empSer.updateEmployeeDetails(employee).
       subscribe(result => this.msg = result, error => console.log(error));
     this.updateRef.reset();
     alert("The password updated successfully")
   }
+
   //unlock user, send info to backend thruogh user service.ts
   unlockUser() {
-    let prodcut = this.unlockRef.value;
-    console.log(prodcut);
-    this.userSer.userUnlock(prodcut).
+    let unlock = this.unlockRef.value;
+    this.userSer.userUnlock(unlock).
       subscribe(result => this.msg = result, error => console.log(error));
     this.unlockRef.reset();
     alert("The account has been unlocked successfully")
   }
+
   // send product request to backend through employee service.ts
   sendRequest() {
-    let prodcut = this.sendRef.value;
-    console.log(prodcut);
-    this.empSer.sendProductRequest(prodcut).
+    let req = this.sendRef.value;
+    this.empSer.sendProductRequest(req).
       subscribe(result => this.msg = result, error => console.log(error));
     this.sendRef.reset();
     alert("The product request has been sent successfully")
   }
+
   //get all raised ticket send request to backend thruogh employee service.ts
   viewTickets() {
     this.empSer.getTicketDetails().
@@ -75,15 +76,16 @@ export class EmpMainComponent implements OnInit {
         console.log(this.tickets);
       }, error => console.error(error));
   }
+
   //updates order status, send info to backend (purchase model) thruogh employee service.ts 
   updateOrder() {
-    let prodcut = this.orderRef.value;
-    console.log(prodcut);
-    this.empSer.updateOrderStatusDetails(prodcut).
+    let order = this.orderRef.value;
+    this.empSer.updateOrderStatusDetails(order).
       subscribe(result => this.msg = result, error => console.log(error));
     this.unlockRef.reset();
     alert("The account has been updated successfully")
   }
+
   //displays all orders
   viewOrder() {
     this.empSer.getOrderDetails().
@@ -93,7 +95,6 @@ export class EmpMainComponent implements OnInit {
         }
         console.log(this.orders);
       }, error => console.error(error));
-
   }
   openHome() {this.router.navigate([""]);}
 }
