@@ -44,7 +44,7 @@ export class MainComponent implements OnInit {
         console.log(this.products);
       }, error => console.error(error));
   }
-//get username info
+  //get username info
   getUser() {
     console.log(this.userEmail);
     this.userSer.getUserDetails(this.userEmail).

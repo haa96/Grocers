@@ -10,41 +10,37 @@ import { MatDialog } from '@angular/material/dialog';
   styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
-  msg?:string;
+  msg?: string;
   loginRef = new FormGroup({
-    email:new FormControl(),
-    pwd:new FormControl()
+    email: new FormControl(),
+    pwd: new FormControl()
   });
 
   constructor(
-    public userSer:UserService,
+    public userSer: UserService,
     public dialog: MatDialog,
-    public router:Router,
-    public activeRoute:ActivatedRoute) {
-    }
+    public router: Router,
+    public activeRoute: ActivatedRoute) {
+  }
   ngOnInit(): void {
   }
-
+  //  check the user validation
   checkUser() {
     let user = this.loginRef.value;
-    console.log(user);
-
     this.userSer.checkUserDetails(user).
-    subscribe(result=>{
-      if(result=="Success"){
-        console.log("Success!");
-        let email = user.email;
-        this.router.navigate(["profile",email]);
-      }else {
-          console.log("Invalid Login Credentials");
+      subscribe(result => {
+        if (result == "Success") {
+          let email = user.email;
+          this.router.navigate(["profile", email]);
+        } else {
           this.msg = result;
-      }
-    },
-    error=>console.log(error));
+        }
+      },
+        error => console.log(error));
     this.loginRef.reset();
   }
 
-  registerUser(){
+  registerUser() {
     this.dialog.open(RegisterComponent);
   }
 }
