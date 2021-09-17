@@ -2,8 +2,10 @@ let mongoose = require("mongoose");
 mongoose.pluralize(null);       // to avoid creating in lower case with s postfix. 
 
 let CartSchema = mongoose.Schema({
-  _id: String, 
-  quantity: Number,
+  _id: Number, 
+  name:String,
+  price:Number,
+  qty: Number,
   total: Number
 });
 

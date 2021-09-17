@@ -6,7 +6,7 @@ import { UserComponent } from './user/user.component';
 import { AdminComponent } from './admin/admin.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { NotfoundComponent } from './notfound/notfound.component';
-import { CartComponent} from'./cart/cart.component';
+import { CartComponent} from'./user/cart/cart.component';
 import { ProfileComponent } from './user/profile/profile.component';
 import {EmpMainComponent} from './employee/empmain/empmain.component'
 import { MainComponent } from './user/main/main.component';
@@ -20,7 +20,7 @@ const routes: Routes = [
 
   {path:"report",component:ReportComponent},
   {path:"profile/:user",component:ProfileComponent},
-  {path:"cart",component:CartComponent},
+  {path:"cart/:user",component:CartComponent},
   {path:"empmain",component:EmpMainComponent},
 
   // user registration path
@@ -33,7 +33,6 @@ const routes: Routes = [
   {path:"user",component:UserComponent},
 
   // user main page
-  {path:"main",component:MainComponent},
   {path:"main/:user",component:MainComponent},
 
   // admin login page
