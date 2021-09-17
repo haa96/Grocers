@@ -20,21 +20,21 @@ export class MainComponent implements OnInit {
   counterqty = 1;
   total: number;
   i = 0;
-  constructor(public ser: SharedService, public router: Router, public userSer:UserService,
-     public adminSer: AdminService, public activateRoute: ActivatedRoute) { }
-     msg?:string;
-     userEmail?:string;
-     firstName?:string;
-     lastName?:string;
-     email:string = "";
-     balance?:number;
+  constructor(public ser: SharedService, public router: Router, public userSer: UserService,
+    public adminSer: AdminService, public activateRoute: ActivatedRoute) { }
+  msg?: string;
+  userEmail?: string;
+  firstName?: string;
+  lastName?: string;
+  email: string = "";
+  balance?: number;
   ngOnInit(): void {
-    this.activateRoute.params.subscribe(data=>this.userEmail=data.user);
+    this.activateRoute.params.subscribe(data => this.userEmail = data.user);
     this.getUser();
     this.populateProducts();
   }
-  cart() { this.router.navigate(["cart",this.userEmail]); }
-  profile() { this.router.navigate(["profile",this.userEmail]); }
+  cart() { this.router.navigate(["cart", this.userEmail]); }
+  profile() { this.router.navigate(["profile", this.userEmail]); }
 
   populateProducts() {
     this.adminSer.getproductDetails().
@@ -42,34 +42,26 @@ export class MainComponent implements OnInit {
         for (let i in data) {
           this.products.push({ id: data[i]._id, name: data[i].name, price: data[i].price })
         }
-        console.log(this.products);
       }, error => console.error(error));
   }
   getUser() {
-    console.log(this.userEmail);
     this.userSer.getUserDetails(this.userEmail).
-    subscribe(result=>{
-      console.log(result);
-      this.firstName = result.firstName;
-      this.lastName = result.lastName;
-      this.email=result.email;
-      this.balance=result.balance;
-      console.log(this.firstName+this.email);
-    }, error=>console.log(error));
+      subscribe(result => {
+        this.firstName = result.firstName;
+        this.lastName = result.lastName;
+        this.email = result.email;
+        this.balance = result.balance;
+      }, error => console.log(error));
   }
 
   addcart(name: any, price: any, quantity: any) {
-      this.total = price * quantity;
-      let ite: Citem = { id: this.i, name: name, price: price, Qty: quantity, total: this.total };
-      console.log(ite)
-      this.carts.push(ite);
-      this.ser.setCartArray(this.carts);
-      this.i++
-      this.item = this.ser.getCartArray()
-      console.log(name)
-
-
-      }
-    }
+    this.total = price * quantity;
+    let ite: Citem = { id: this.i, name: name, price: price, Qty: quantity, total: this.total };
+    this.carts.push(ite);
+    this.ser.setCartArray(this.carts);
+    this.i++
+    this.item = this.ser.getCartArray()
+  }
+}
 
 

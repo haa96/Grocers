@@ -13,7 +13,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class CartComponent implements OnInit {
 
-  constructor(public activateRoute: ActivatedRoute,public router: Router, public userSer: UserService, public ser: SharedService, public cartSer: CartService) { }
+  constructor(public activateRoute: ActivatedRoute, public router: Router, public userSer: UserService, public ser: SharedService, public cartSer: CartService) { }
   msg?: string;
   carts?: Array<Citem>;
   totalprice: number;
@@ -23,12 +23,12 @@ export class CartComponent implements OnInit {
   email: string = "";
   balance?: number;
   ngOnInit(): void {
-    this.activateRoute.params.subscribe(data=>this.userEmail=data.user);
+    this.activateRoute.params.subscribe(data => this.userEmail = data.user);
     this.loadData();
     this.getUser();
   }
   main() {
-    this.router.navigate(["main",this.userEmail]);
+    this.router.navigate(["main", this.userEmail]);
   }
   loadData(): void {
     this.carts = this.ser.getCartArray();
@@ -42,7 +42,7 @@ export class CartComponent implements OnInit {
     this.carts[id].total = this.totalprice;
 
   }
-  getFormInfo(){
+  getFormInfo() {
     this.addRef = new FormGroup({
       cID: new FormControl(this.cid),
       price: new FormControl(this.carttotalprice),
@@ -82,10 +82,10 @@ export class CartComponent implements OnInit {
       alert("Current Funf is: " + fund)
       this.carts = [];
 
-      document.getElementById("funds").innerHTML="Current Funds:"+fund;
+      document.getElementById("funds").innerHTML = "Current Funds:" + fund;
     } else {
       alert("You Don't Have Enough Money")
-      this.carttotalprice=0;
+      this.carttotalprice = 0;
     }
   }
 }

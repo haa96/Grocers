@@ -11,19 +11,18 @@ import { RaiseticketService } from 'src/app/raiseticket.service';
 export class RaiseticketComponent implements OnInit {
   username = '';
   ticketRef = new FormGroup({
-    username:new FormControl(),
-    reason:new FormControl()
+    username: new FormControl(),
+    reason: new FormControl()
   });
-  constructor(public router:Router,public raiseticketService:RaiseticketService) { }
-  msg?:string;
+  constructor(public router: Router, public raiseticketService: RaiseticketService) { }
+  msg?: string;
   ngOnInit(): void {
   }
-  checkUser(){
+  checkUser() {
     let prodcut = this.ticketRef.value;
-    console.log(prodcut); 
-     this.raiseticketService.addproductDetails(prodcut).
-     subscribe(result=>this.msg=result,error=>console.log(error));
-     this.ticketRef.reset();    
-     alert("The product added successfully")
-      }
+    this.raiseticketService.addproductDetails(prodcut).
+      subscribe(result => this.msg = result, error => console.log(error));
+    this.ticketRef.reset();
+    alert("The product added successfully")
+  }
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from "@angular/router"
+import { Router } from "@angular/router"
 @Component({
   selector: 'app-employee',
   templateUrl: './employee.component.html',
@@ -7,16 +7,15 @@ import {Router} from "@angular/router"
 })
 export class EmployeeComponent implements OnInit {
 
-  constructor(public router:Router) { }
+  constructor(public router: Router) { }
 
   ngOnInit(): void {
   }
 
+  openEmpMain() {
+    this.router.navigate(["empmain"]);
 
-openEmpMain(){
-  this.router.navigate(["empmain"]);
-  
-}
+  }
 
 
 }

@@ -6,13 +6,13 @@ import { Citem } from './cart';
 export class SharedService {
 
   constructor() { }
-  items:Array<Citem>=[];
+  items: Array<Citem> = [];
 
-  setCartArray(cart:Array<Citem>): void {
-    this.items=cart;
+  setCartArray(cart: Array<Citem>): void {
+    this.items = cart;
   }
 
-  getCartArray(): Array<Citem>{
+  getCartArray(): Array<Citem> {
     return this.items;
   }
 }

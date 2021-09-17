@@ -1,44 +1,46 @@
 <h1 mat-dialog-title style="color: #3f51b5">Register</h1>
 
-        <mat-card class="card">
-            <form [formGroup]="userRef" >
+<mat-card class="card">
+    <form [formGroup]="userRef">
 
-            <mat-form-field>
-                <mat-label>First Name</mat-label>
-                    <input matInput formControlName="firstName" required>
-            </mat-form-field>
-            <br>
-            <mat-form-field>
-                <mat-label> Last Name</mat-label>
-                    <input matInput formControlName="lastName" required>
-            </mat-form-field>
-            <br>
-            <mat-form-field>
-                <mat-label>Email </mat-label>
-                    <input matInput formControlName="email" required>
-            </mat-form-field>
-            <br>
-            <mat-form-field>
-                <mat-label>Password</mat-label>
-                    <input type="password" matInput formControlName="pwd" required >
-            </mat-form-field>
-            <br>
-            <mat-form-field>
-                <mat-label>Phone No</mat-label>
-                    <input type="number" matInput formControlName="phone" required>
-            </mat-form-field>
-            <br>
-            <mat-form-field>
-                <mat-label>Shipping Address</mat-label>
-                    <input matInput formControlName="address" required>
-            </mat-form-field>
-            <br>
-            <mat-form-field>
-                <mat-label>Bank Routing Number</mat-label>
-                    <input type="number"  matInput formControlName="bankCardNo" required>
-            </mat-form-field>
-            <br/>
-            <button mat-raised-button (click)="returnToLogin()" color="primary" mat-dialog-close mat-dialog-close="false">Cancel</button> 
-            <button mat-raised-button (click)="addUser()" color="primary" mat-dialog-close mat-dialog-close="false">Create Account</button>
-        </form>
-        </mat-card>
+        <mat-form-field>
+            <mat-label>First Name</mat-label>
+            <input matInput formControlName="firstName" required>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-label> Last Name</mat-label>
+            <input matInput formControlName="lastName" required>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-label>Email </mat-label>
+            <input matInput formControlName="email" required>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-label>Password</mat-label>
+            <input type="password" matInput formControlName="pwd" required>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-label>Phone No</mat-label>
+            <input type="number" matInput formControlName="phone" required>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-label>Shipping Address</mat-label>
+            <input matInput formControlName="address" required>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-label>Bank Routing Number</mat-label>
+            <input type="number" matInput formControlName="bankCardNo" required>
+        </mat-form-field>
+        <br />
+        <button mat-raised-button (click)="returnToLogin()" color="primary" mat-dialog-close
+            mat-dialog-close="false">Cancel</button>
+        <button mat-raised-button (click)="addUser()" color="primary" mat-dialog-close mat-dialog-close="false">Create
+            Account</button>
+    </form>
+</mat-card>

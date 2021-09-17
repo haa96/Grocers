@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
-import {MatDialog} from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 
 
 
@@ -13,8 +13,8 @@ import {MatDialog} from '@angular/material/dialog';
 export class AppComponent {
   // title = 'dialog';
   constructor(
-    public router:Router) { }
-  Signout(){
+    public router: Router) { }
+  Signout() {
     this.router.navigate([""]);
 
   }
