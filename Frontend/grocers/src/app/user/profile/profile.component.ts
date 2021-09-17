@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router,ActivatedRoute } from '@angular/router';
 import { UserService } from 'src/app/user.service';
 import { FormControl, FormGroup } from '@angular/forms';
-
+import { CartService } from 'src/app/cart.service';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -14,6 +14,7 @@ export class ProfileComponent implements OnInit {
   public router:Router,
   public activateRoute:ActivatedRoute,
   public userSer:UserService,
+  public cartSer:CartService
   ){}
   updateRef = new FormGroup({
     firstName:new FormControl(),
@@ -24,7 +25,7 @@ export class ProfileComponent implements OnInit {
     phone:new FormControl(),
   })
 
-
+  orders=[];
   msg?:string;
   userEmail?:string;
   firstName?:string;
@@ -37,6 +38,7 @@ export class ProfileComponent implements OnInit {
   ngOnInit(): void {
     this.activateRoute.params.subscribe(data=>this.userEmail=data.user);
     this.getUser();
+    this.OrderStatus();
 
   }
   main(){this.router.navigate(["main",this.userEmail]);}
@@ -67,4 +69,16 @@ export class ProfileComponent implements OnInit {
      alert("info updated successfully")
      this.getUser();
   }
+
+  OrderStatus() {
+    this.cartSer.getOrders().
+      subscribe(data => {
+        for (let i in data) {
+          this.orders.push({ id: data[i]._id, price: data[i].price, orderStatus: data[i].orderStatus })
+        console.log(this.orders)
+        }
+        console.log(this.orders);
+      }, error => console.error(error));
+  }
 }
+

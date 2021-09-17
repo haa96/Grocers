@@ -25,7 +25,7 @@ export class CartComponent implements OnInit {
   ngOnInit(): void {
     this.activateRoute.params.subscribe(data=>this.userEmail=data.user);
     this.loadData();
-    this.getUser()
+    this.getUser();
   }
   main() {
     this.router.navigate(["main",this.userEmail]);
@@ -40,7 +40,14 @@ export class CartComponent implements OnInit {
     document.getElementById(total).append("Total Price: " + x);
     this.carts[id].Qty = qty;
     this.carts[id].total = this.totalprice;
-    console.log(this.carts)
+
+  }
+  getFormInfo(){
+    this.addRef = new FormGroup({
+      cID: new FormControl(this.cid),
+      price: new FormControl(this.carttotalprice),
+      orderStatus: new FormControl('pending')
+    })
   }
   addRef = new FormGroup({
     cID: new FormControl(this.cid),
@@ -66,15 +73,13 @@ export class CartComponent implements OnInit {
       this.carttotalprice += this.carts[i].total
     }
     if (this.carttotalprice < this.balance) {
-      console.log("this is balance"+ this.balance)
-      console.log(this.carttotalprice)
       let fund = this.balance - this.carttotalprice
+      this.getFormInfo();
       let purchase = this.addRef.value;
-      console.log(purchase);
       this.cartSer.storedpurchaset(purchase).
         subscribe(result => this.msg = result, error => console.log(error));
       this.addRef.reset();
-      alert("Your Funf is: " + fund)
+      alert("Current Funf is: " + fund)
       this.carts = [];
 
       document.getElementById("funds").innerHTML="Current Funds:"+fund;

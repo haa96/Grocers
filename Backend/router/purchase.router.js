@@ -5,6 +5,6 @@ const purchaseController = require("../controller/purchase.controller");
 
 router.post("/storedpurchaset",purchaseController.storedpurchaset);
 
-router.delete("/getAllpurchaset/:pid",purchaseController.getAllpurchaset);
+router.get("/getAllpurchaset",purchaseController.getAllpurchaset);
 
 module.exports=router;

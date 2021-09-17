@@ -18,6 +18,11 @@ export class CartService {
   getEmpArray(): Array<Citem>{
     return this.items;
   }
+  getOrders():Observable<any>{
+    return this.http.get("http://localhost:9090/api/purchase/getAllpurchaset/"
+    );
+  }
+
   storedpurchaset(cart:Citem):Observable<any>{
     return this.http.post("http://localhost:9090/api/purchase/storedpurchaset",cart,
     {responseType:'text'});
