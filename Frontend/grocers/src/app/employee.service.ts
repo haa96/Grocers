@@ -27,21 +27,21 @@ export class EmployeeService {
     return this.http.put("http://localhost:9090/api/employee/updateEmployee", employee,
       { responseType: 'text' });
   }
-  
-  sendProductRequest(employee:Employee):Observable<any>{
-      return this.http.post("http://localhost:9090/api/sendProductRequest/sendProductRequest",employee,
-      {responseType:'text'});
-    }
-    getTicketDetails():Observable<any>{
-      return this.http.get("http://localhost:9090/api/ticket/getTickets/");
-    }
-    updateOrderStatusDetails(employee:Employee):Observable<any>{
-      return this.http.post("http://localhost:9090/api/purchase/orderStatus",employee,
-      {responseType:'text'});
-    }
-    getOrderDetails():Observable<any>{
-      return this.http.get("http://localhost:9090/api/purchase/getOrder/");
-    }
+
+  sendProductRequest(employee: Employee): Observable<any> {
+    return this.http.post("http://localhost:9090/api/sendProductRequest/sendProductRequest", employee,
+      { responseType: 'text' });
   }
+  getTicketDetails(): Observable<any> {
+    return this.http.get("http://localhost:9090/api/ticket/getTickets/");
+  }
+  updateOrderStatusDetails(employee: Employee): Observable<any> {
+    return this.http.post("http://localhost:9090/api/purchase/orderStatus", employee,
+      { responseType: 'text' });
+  }
+  getOrderDetails(): Observable<any> {
+    return this.http.get("http://localhost:9090/api/purchase/getOrder/");
+  }
+}
 
 

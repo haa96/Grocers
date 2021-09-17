@@ -17,20 +17,44 @@ import { RegisterComponent } from './register/register.component';
 const routes: Routes = [
   // admin main page (routes here after admin login)
   { path: "AdminPan/:admin", component: AdminpanelComponent },
+<<<<<<< Updated upstream
   { path: "report", component: ReportComponent },
   { path: "empmain", component: EmpMainComponent },
   // user registration path
   { path: "register", component: RegisterComponent },
   // main login portal page
   { path: "home", component: HomeComponent },
+=======
+
+  { path: "report", component: ReportComponent },
+  { path: "empmain", component: EmpMainComponent },
+
+  // user registration path
+  { path: "register", component: RegisterComponent },
+
+  // main login portal page
+  { path: "home", component: HomeComponent },
+  // user login page
+  // user main page
+
+>>>>>>> Stashed changes
   // admin login page
   { path: "admin", component: AdminComponent },
   // admin main page (routes here after admin login)
   { path: "AdminPan", component: AdminpanelComponent },
   // employee login page
   { path: "employee", component: EmployeeComponent },
+<<<<<<< Updated upstream
   { path: 'profile/:user', component: ProfileComponent },
   { path: "cart/:user", component: CartComponent },
+=======
+  { path: "empmain", component: EmpMainComponent },
+  { path: "Report", component: ReportComponent },
+  { path: 'profile/:user', component: ProfileComponent },
+  { path: "cart/:user", component: CartComponent },
+  // user registration path
+  { path: "register", component: RegisterComponent },
+>>>>>>> Stashed changes
   // main login portal page
   { path: "user", component: UserComponent },
   // for passing user information

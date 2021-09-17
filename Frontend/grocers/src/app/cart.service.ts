@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Citem } from './cart';
 
@@ -8,31 +8,31 @@ import { Citem } from './cart';
 })
 export class CartService {
 
-  constructor(public http:HttpClient) { }
-  items:Array<Citem>=[];
-  prod:Array<Citem>=[];
+  constructor(public http: HttpClient) { }
+  items: Array<Citem> = [];
+  prod: Array<Citem> = [];
 
-  setProdArray(prod:Array<Citem>): void {
-    this.prod=prod;
+  setProdArray(prod: Array<Citem>): void {
+    this.prod = prod;
   }
 
-  getProdArray(): Array<Citem>{
+  getProdArray(): Array<Citem> {
     return this.prod;
   }
-  setEmpArray(items:Array<Citem>): void {
-    this.items=items;
+  setEmpArray(items: Array<Citem>): void {
+    this.items = items;
   }
 
-  getEmpArray(): Array<Citem>{
+  getEmpArray(): Array<Citem> {
     return this.items;
   }
-  getOrders():Observable<any>{
+  getOrders(): Observable<any> {
     return this.http.get("http://localhost:9090/api/purchase/getAllpurchaset/"
     );
   }
 
-  storedpurchaset(cart:Citem):Observable<any>{
-    return this.http.post("http://localhost:9090/api/purchase/storedpurchaset",cart,
-    {responseType:'text'});
+  storedpurchaset(cart: Citem): Observable<any> {
+    return this.http.post("http://localhost:9090/api/purchase/storedpurchaset", cart,
+      { responseType: 'text' });
   }
 }

@@ -30,7 +30,10 @@ import { ReportComponent } from './report/report.component';
 import { MainComponent } from './user/main/main.component';
 import { RaiseticketComponent } from './raiseticket/raiseticket.component';
 import { MatSelectModule } from '@angular/material/select';
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 @NgModule({
   declarations: [
     AppComponent,

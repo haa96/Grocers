@@ -46,7 +46,10 @@ export class CartComponent implements OnInit {
     this.carts[id].total = this.totalprice;
 
   }
+<<<<<<< Updated upstream
 //Get Order Details
+=======
+>>>>>>> Stashed changes
   getFormInfo() {
     this.addRef = new FormGroup({
       cID: new FormControl(this.cid),
