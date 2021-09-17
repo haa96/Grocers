@@ -6,6 +6,12 @@ let cors = require("cors");
 
 // create the reference of express
 let app = express();
+
+// import mdels
+const adminModel = require("./model/admin.model");
+const proRequestModel = require("./model/productrequest.model");
+
+// import routers
 let adminRouter = require("./router/admin.router");
 let userRouter = require("./router/user.router");
 let productRouter = require("./router/product.router");
@@ -13,9 +19,7 @@ let userticketRouter = require("./router/userticket.router");
 let empRouter = require("./router/emp.router");
 let proRequestRouter = require("./router/productrequest.router");
 let cartController = require("./router/cart.router");
-const adminModel = require("./model/admin.model");
-const proRequestModel = require("./model/productrequest.model");
-
+let reportRouter = require("./router/report.router");
 // add middleware
 app.use(cors());
 app.use(bodyParser.json())
@@ -60,6 +64,10 @@ app.use("/api/ticket",userticketRouter);
 app.use("/api/sendProductRequest",proRequestRouter);
 //http://localhost:9090/api/cart/
 app.use("/api/cart",cartController);
+//http://localhost:9090/api/report/daily
+//http://localhost:9090/api/report/weekly
+//http://localhost:9090/api/report/monthly
+app.use("api/report",adminRouter);
 
 mongoose.disconnect;
 })

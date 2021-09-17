@@ -29,7 +29,7 @@ export class AdminComponent implements OnInit {
     subscribe(result=>{
       if(result=="Success"){
         console.log("Success!");
-        this.router.navigate(["AdminPan",admin._id]);
+        this.router.navigate(["AdminPan"]);
       }else {
           this.msg = result;
       }

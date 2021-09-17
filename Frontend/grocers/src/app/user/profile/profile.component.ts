@@ -9,27 +9,29 @@ import { User } from '../../user';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-  user = {"email":""};
+  userEmail: {"email":""};
   firstName?:string;
   email:string = "";
   phone?:number;
   address?:string;
 
-  constructor(public router:Router, public userSer:UserService, public activeRoute:ActivatedRoute, public user2:User){
+  constructor(public router:Router, public userSer:UserService, public activeRoute:ActivatedRoute){
     this.activeRoute.params.subscribe(data=>{
-      this.user.email=data.user;
+      console.log("data is "+data);
+      console.log("data.user is "+data.user);
+      this.email=data.user;
       console.log(data);
-      console.log(this.user.email);
    })
   }
 
   ngOnInit(): void {
-    this.getUser(this.user.email);
+    // console.log("Calling Get User");
+    // this.getUser(this.userEmail.email);
   }
 
-  getUser(email) {
-    console.log("getUser recieved "+email+" as an email");
-    this.user2 = this.userSer.checkUserDetails(email).
+  getUser(data) {
+    console.log("getUser recieved "+data+" as an email");
+    let user = this.userSer.checkUserDetails(data).
     subscribe(result=>{
         console.log(result);
         this.firstName = result.firstName;
@@ -41,7 +43,8 @@ export class ProfileComponent implements OnInit {
   }
 
   main(){
-    this.router.navigate(["main"]);  
+    console.log("email is: "+this.email);
+    this.router.navigate(["main",this.email]);  
   }
 
   test(){

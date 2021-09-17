@@ -20,13 +20,12 @@ const routes: Routes = [
   // admin login page
   {path:"admin",component:AdminComponent},
   // admin main page (routes here after admin login)
-  {path:"AdminPan/:admin",component:AdminpanelComponent},
   {path:"AdminPan",component:AdminpanelComponent},
   // employee login page
   {path: "employee",component:EmployeeComponent},
   {path:"empmain",component:EmpMainComponent},
-  {path:"report",component:ReportComponent},
-  {path:'profile:user', component: ProfileComponent},
+  {path:"Report",component:ReportComponent},
+  {path:'profile/:user', component: ProfileComponent},
   {path:"cart/:user",component:CartComponent},
   // user registration path
   {path:"register",component:RegisterComponent},

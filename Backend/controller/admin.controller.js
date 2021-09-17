@@ -1,6 +1,5 @@
 // load the model schema file
 let adminModel = require("../model/admin.model");
-
 let adminlogin = async(request, response)=> {
     console.log("In admin controller");
     let admin = request.body; //recieve the data from post method

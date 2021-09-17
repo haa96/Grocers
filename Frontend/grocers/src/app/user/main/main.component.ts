@@ -37,7 +37,7 @@ export class MainComponent implements OnInit {
   profile(){
     console.log("Profile function");
     console.log(this.email);
-    this.router.navigate(["profile",this.email]);
+    this.router.navigate(["profile",this.email.user]);
   }
 
   cart(){

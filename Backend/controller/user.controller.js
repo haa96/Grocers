@@ -34,27 +34,29 @@ let register = async (request,response)=> {
     }
 }
 
-// let getUserDetails = (request,response)=> {
-//     let email = request.body;
-//     console.log(email);
-//     userModel.find({email:email},(err,data)=> {
-//         if(!err){
-//             console.log("The user is "+data);
-//             response.json(data);
-//         }else {
-//              response.send(err);
-//         }
-//     })
-// }
+let getUserDetails = (request,response)=> {
+    let email = request.body;
+    console.log(email);
+    userModel.find({email:email},(err,data)=> {
+        if(!err){
+            console.log("The user is "+data);
+            response.json(data);
+        }else {
+             response.send(err);
+        }
+    })
+}
 
 let unlockUser = (request,response)=> {
     let p = request.body;
-    userModel.updateOne({_id:p._id},{$set:{locked:false}},(err,result)=> {
+    console.log("Unlock User called");
+    userModel.updateOne({_id:p._id},{$set:{locked:"false"}},(err,result)=> {
         if(!err){
+            console.log("Unlocking the user account");
             response.send(result);
         }else {
             response.send(err);
         }
     })
 }
-module.exports={userlogin,register,unlockUser};
+module.exports={userlogin,register,unlockUser,getUserDetails};

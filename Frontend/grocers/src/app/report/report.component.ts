@@ -1,16 +1,31 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Report } from './../report';
+import { ReportService } from '../report.service';
+// import { AdminService } from '../admin.service';
 @Component({
   selector: 'app-report',
   templateUrl: './report.component.html',
   styleUrls: ['./report.component.css']
 })
 export class ReportComponent implements OnInit {
+// , public report:Report, public adminSer:AdminService
+  constructor(public router:Router,public reportSer:ReportService){ }
 
-  constructor(public router:Router, public report:Report){ }
   ngOnInit(): void {
+    this.getDaily();
+    this.getWeekly();
   }
-  Adminpan(){
-    this.router.navigate(["AdminPan"]);  }
+
+  Adminpan(){this.router.navigate(["AdminPan"]);  }
+
+  getDaily(){
+    let report=this.reportSer.dayReport().
+    subscribe(result=>{
+    },error=>console.log(error));
+  }
+  getWeekly(){
+    let report=this.reportSer.dayReport().
+    subscribe(result=>{
+    },error=>console.log(error));
+  }
 }
