@@ -20,9 +20,8 @@ export class RaiseticketComponent implements OnInit {
   }
   //Makes a ticket
   checkUser() {
-    let prodcut = this.ticketRef.value;
-    console.log(prodcut);
-    this.raiseticketService.addproductDetails(prodcut).
+    let user = this.ticketRef.value;
+    this.raiseticketService.addproductDetails(user).
       subscribe(result => this.msg = result, error => console.log(error));
     this.ticketRef.reset();
     alert("Ticket has been raised successfully")

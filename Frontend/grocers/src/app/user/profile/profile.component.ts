@@ -3,7 +3,6 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { UserService } from 'src/app/user.service';
 import { FormControl, FormGroup } from '@angular/forms';
 import { CartService } from 'src/app/cart.service';
-import { User } from '../../user';
 
 @Component({
   selector: 'app-profile',
@@ -47,7 +46,6 @@ export class ProfileComponent implements OnInit {
   test() { }
   //get username info
   getUser() {
-    console.log(this.userEmail);
     this.userSer.getUserDetails(this.userEmail).
       subscribe(result => {
         console.log(result);
@@ -64,7 +62,6 @@ export class ProfileComponent implements OnInit {
   //update user info
   updateInfo() {
     let user = this.updateRef.value;
-    console.log(user);
     this.userSer.updateUserDetails(user).
       subscribe(result => this.msg = result, error => console.log(error));
     this.updateRef.reset();

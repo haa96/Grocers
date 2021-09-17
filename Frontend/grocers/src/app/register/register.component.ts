@@ -28,7 +28,6 @@ export class RegisterComponent implements OnInit {
 //Adds a User account
   addUser() {
     let user = this.userRef.value;
-    console.log(user);
     this.userSer.createUserAccount(user).
       subscribe(result => this.msg = result, error => console.log(error));
     this.userRef.reset();

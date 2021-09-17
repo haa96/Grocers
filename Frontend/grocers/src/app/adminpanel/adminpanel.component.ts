@@ -49,7 +49,7 @@ export class AdminpanelComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  Report() { this.router.navigate(["Report"]); }
+  Report() { this.router.navigate(["report"]); }
   
   // add product method to send form values to backend and DB
   addproduct() {
