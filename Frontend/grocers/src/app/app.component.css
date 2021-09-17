@@ -5,3 +5,10 @@
   .g{
     font-size:xx-large
   }
+
+footer {
+  background-color:rgb(235, 238, 238);
+  margin-left: 60%;
+  position:fixed;
+  bottom:0;
+}
