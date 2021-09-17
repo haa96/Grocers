@@ -39,7 +39,7 @@ export class ProfileComponent implements OnInit {
     this.getUser();
 
   }
-  main(){this.router.navigate(["main"]);}
+  main(){this.router.navigate(["main",this.userEmail]);}
   test(){}
 
   getUser() {

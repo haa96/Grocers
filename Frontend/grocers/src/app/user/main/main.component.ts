@@ -29,11 +29,12 @@ export class MainComponent implements OnInit {
      email:string = "";
      balance?:number;
   ngOnInit(): void {
+    this.activateRoute.params.subscribe(data=>this.userEmail=data.user);
     this.getUser();
     this.populateProducts();
   }
-  cart() { this.router.navigate(["cart/:user"]); }
-  profile() { this.router.navigate(["profile/:user"]); }
+  cart() { this.router.navigate(["cart",this.userEmail]); }
+  profile() { this.router.navigate(["profile",this.userEmail]); }
 
   populateProducts() {
     this.adminSer.getproductDetails().

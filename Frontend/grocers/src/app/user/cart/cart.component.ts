@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { SharedService } from 'src/app/shared.service';
 import { Citem } from 'src/app/cart';
 import { UserService } from 'src/app/user.service';
@@ -13,7 +13,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class CartComponent implements OnInit {
 
-  constructor(public router: Router, public userSer: UserService, public ser: SharedService, public cartSer: CartService) { }
+  constructor(public activateRoute: ActivatedRoute,public router: Router, public userSer: UserService, public ser: SharedService, public cartSer: CartService) { }
   msg?: string;
   carts?: Array<Citem>;
   totalprice: number;
@@ -23,11 +23,12 @@ export class CartComponent implements OnInit {
   email: string = "";
   balance?: number;
   ngOnInit(): void {
+    this.activateRoute.params.subscribe(data=>this.userEmail=data.user);
     this.loadData();
     this.getUser()
   }
   main() {
-    this.router.navigate(["main/:user"]);
+    this.router.navigate(["main",this.userEmail]);
   }
   loadData(): void {
     this.carts = this.ser.getCartArray();
@@ -43,7 +44,7 @@ export class CartComponent implements OnInit {
   }
   addRef = new FormGroup({
     cID: new FormControl(this.cid),
-    price: new FormControl(),
+    price: new FormControl(this.carttotalprice),
     orderStatus: new FormControl('pending')
   })
   remove(id: any) {
@@ -65,6 +66,7 @@ export class CartComponent implements OnInit {
       this.carttotalprice += this.carts[i].total
     }
     if (this.carttotalprice < this.balance) {
+      console.log("this is balance"+ this.balance)
       console.log(this.carttotalprice)
       let fund = this.balance - this.carttotalprice
       let purchase = this.addRef.value;
@@ -74,8 +76,11 @@ export class CartComponent implements OnInit {
       this.addRef.reset();
       alert("Your Funf is: " + fund)
       this.carts = [];
+
+      document.getElementById("funds").innerHTML="Current Funds:"+fund;
     } else {
       alert("You Don't Have Enough Money")
+      this.carttotalprice=0;
     }
   }
 }
