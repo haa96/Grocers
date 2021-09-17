@@ -9,6 +9,7 @@ import { Observable } from 'rxjs';
 export class AdminService {
 
   constructor(public http: HttpClient) { }
+
   checkLoginDetails(admin: Admin): Observable<any> {
     return this.http.post("http://localhost:9090/api/admin/adminlogin", admin,
       { responseType: 'text' });

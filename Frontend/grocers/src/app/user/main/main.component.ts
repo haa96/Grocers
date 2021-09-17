@@ -3,7 +3,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { AdminService } from 'src/app/admin.service';
 import {MatDialog} from '@angular/material/dialog';
 import { SharedService } from 'src/app/shared.service';
-import { Cart } from '../../cart';
+import { Citem } from 'src/app/cart';
+import { UserService } from 'src/app/user.service';
 
 
 @Component({
@@ -13,31 +14,45 @@ import { Cart } from '../../cart';
 
 })
 export class MainComponent implements OnInit {
-  products =[];
-  email = {"user" : ""};
-  item?: Array<Cart> = [];
-  carts: Array<Cart> = [];
+  products = [];
+  item?: Array<Citem> = [];
+
+  carts: Array<Citem> = [];
   counterqty = 1;
   total: number;
   i = 0;
-
-  constructor(public router:Router,public adminSer:AdminService,public activeRoute:ActivatedRoute,
-    public sharedSer:SharedService) {
-    this.activeRoute.params.subscribe(data=>{
-      this.email.user=data.user;
-      console.log(data);
-      console.log(this.email);
-    });
-  }
-
+  constructor(public ser: SharedService, public router: Router, public userSer:UserService,
+     public adminSer: AdminService, public activateRoute: ActivatedRoute) { }
+     msg?:string;
+     userEmail?:string;
+     firstName?:string;
+     lastName?:string;
+     email:string = "";
+     balance?:number;
   ngOnInit(): void {
+    this.activateRoute.params.subscribe(data=>this.userEmail=data.user);
+    this.getUser();
     this.populateProducts();
   }
+  cart() { this.router.navigate(["cart",this.userEmail]); }
+  profile() { this.router.navigate(["profile",this.userEmail]); }
 
   profile(){
     console.log("Profile function");
     console.log(this.email);
     this.router.navigate(["profile",this.email.user]);
+  }
+  getUser() {
+    console.log(this.userEmail);
+    this.userSer.getUserDetails(this.userEmail).
+    subscribe(result=>{
+      console.log(result);
+      this.firstName = result.firstName;
+      this.lastName = result.lastName;
+      this.email=result.email;
+      this.balance=result.balance;
+      console.log(this.firstName+this.email);
+    }, error=>console.log(error));
   }
 
   cart(){

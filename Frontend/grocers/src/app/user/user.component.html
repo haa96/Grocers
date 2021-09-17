@@ -11,18 +11,20 @@
     <br>
     <mat-form-field>
       <mat-label>Password</mat-label>
-      <input matInput formControlName="pwd" required>
+      <input type="password" matInput formControlName="pwd" required>
     </mat-form-field>
 </mat-dialog-content>
-<hr>
+
 <mat-dialog-actions>
   <button mat-raised-button mat-dialog-close mat-dialog-close="true">Cancel</button>
   <button mat-raised-button color="primary" mat-dialog-close mat-dialog-close="false" (click)=checkUser()>Login</button>
 </mat-dialog-actions>
 </form>
-<hr>
+
 <br>
-  <mat-label>New Member? </mat-label>
+<br>
 <hr>
+  <mat-label>New Member? </mat-label>
+
 <p style = color:red>{{msg}}</p>
 <button mat-raised-button color="primary" mat-dialog-close="false" (click)="registerUser()">Register</button>

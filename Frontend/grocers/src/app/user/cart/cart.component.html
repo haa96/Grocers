@@ -7,6 +7,12 @@
 </mat-toolbar>
 <br><br>
 <mat-card-title class="me-name">My Cart</mat-card-title><br><br>
+<mat-card-content class="list-info">
+  <ul>
+      <li>Email: {{userEmail}} </li>
+      <li id="funds">Current Funds: {{balance}} </li> 
+  </ul>
+</mat-card-content>
 <mat-card class="card" *ngFor="let car of carts">
   <mat-card-header>
   </mat-card-header>

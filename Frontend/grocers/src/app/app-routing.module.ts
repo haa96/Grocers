@@ -15,8 +15,20 @@ import { ReportComponent } from './report/report.component';
 import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = [
+  // admin main page (routes here after admin login)
+  {path:"AdminPan/:admin",component:AdminpanelComponent},
+
+  {path:"report",component:ReportComponent},
+  {path:"empmain",component:EmpMainComponent},
+
+  // user registration path
+  {path:"register",component:RegisterComponent},
+
+  // main login portal page
   {path:"home",component:HomeComponent},
   // user login page
+  // user main page
+
   // admin login page
   {path:"admin",component:AdminComponent},
   // admin main page (routes here after admin login)
@@ -30,7 +42,7 @@ const routes: Routes = [
   // user registration path
   {path:"register",component:RegisterComponent},
   // main login portal page
-  {path:"user",component:UserComponent},    
+  {path:"user",component:UserComponent},
   // for passing user information
   {path:'main/:user', component: MainComponent},
   {path:"",component:HomeComponent},

@@ -55,8 +55,30 @@ let unlockUser = (request,response)=> {
             console.log("Unlocking the user account");
             response.send(result);
         }else {
+
             response.send(err);
         }
     })
 }
-module.exports={userlogin,register,unlockUser,getUserDetails};
+
+let getUserInfo = async (request, response)=> {
+    let user = request.body; //recieve the data from post method
+    let userInfo = await userModel.findOne(user.email);
+    console.log(userInfo);
+    if(userInfo!=null){
+        response.json(userInfo);
+        console.log(userInfo);
+    }else {
+        response.send("user not found");
+    }
+}
+
+let updateUserInfo = (request,response)=> {
+    let user = request.body;
+    userModel.updateMany({email:user.email},{$set:{firstName:user.firstName,lastName:user.lastName,email:user.email,pwd:user.pwd,phone:user.phone,address:user.address}},(err,result)=> {
+        if(!err){
+            console.log("updated");
+            response.send(result);
+        }else {
+            console.log("didn't update!");
+module.exports={userlogin,register,unlockUser,getUserDetails,updateUserInfo,getUserInfo};

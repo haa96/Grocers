@@ -20,6 +20,8 @@ let empRouter = require("./router/emp.router");
 let proRequestRouter = require("./router/productrequest.router");
 let cartController = require("./router/cart.router");
 let reportRouter = require("./router/report.router");
+let purchaseController = require("./router/purchase.router");
+
 // add middleware
 app.use(cors());
 app.use(bodyParser.json())
@@ -47,9 +49,7 @@ if(adminModel.findOne({_id:1234}) == null){
         console.log(err);
     }
 });
-
 }
-
 // http://localhost:9090/api/adminlogin
 app.use("/api/admin",adminRouter);
 // http://localhost:9090/api/employee/
@@ -68,7 +68,8 @@ app.use("/api/cart",cartController);
 //http://localhost:9090/api/report/weekly
 //http://localhost:9090/api/report/monthly
 app.use("api/report",reportRouter);
+app.use("/api/purchase",purchaseController);
+
 
 mongoose.disconnect;
 })
-

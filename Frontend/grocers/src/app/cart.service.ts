@@ -1,12 +1,15 @@
 import { Injectable } from '@angular/core';
-import { Cart } from './cart';
+import {HttpClient} from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { Citem } from './cart';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
 
-  constructor() { }
+  constructor(public http:HttpClient) { }
+  items:Array<Citem>=[];
   prod:Array<Cart>=[];
 
   setProdArray(prod:Array<Cart>): void {
@@ -15,5 +18,21 @@ export class CartService {
 
   getProdArray(): Array<Cart>{
     return this.prod;
+
+  setEmpArray(items:Array<Citem>): void {
+    this.items=items;
+  }
+
+  getEmpArray(): Array<Citem>{
+    return this.items;
+  }
+  getOrders():Observable<any>{
+    return this.http.get("http://localhost:9090/api/purchase/getAllpurchaset/"
+    );
+  }
+
+  storedpurchaset(cart:Citem):Observable<any>{
+    return this.http.post("http://localhost:9090/api/purchase/storedpurchaset",cart,
+    {responseType:'text'});
   }
 }
