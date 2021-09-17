@@ -82,4 +82,6 @@ export class ProfileComponent implements OnInit {
         console.log(this.orders);
       }, error => console.error(error));
   }
+  
+  Signout(){this.router.navigate([""]);}
 }

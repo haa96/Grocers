@@ -97,5 +97,5 @@ export class EmpMainComponent implements OnInit {
         console.log(this.orders);
       }, error => console.error(error));
   }
-  openHome() {this.router.navigate([""]);}
+  Signout(){this.router.navigate([""]);}
 }

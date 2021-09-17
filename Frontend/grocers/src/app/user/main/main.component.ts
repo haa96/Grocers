@@ -67,4 +67,6 @@ addcart(name: any, price: any, quantity: any) {
 
 
       }
+
+      Signout(){this.router.navigate([""]);}
     }

@@ -1,12 +1,14 @@
 <mat-toolbar>
-    <span class="g">Employee Page</span>
+    <span class="g">Employee Portal</span>
     <span class="example-spacer"></span>
+    <button mat-button (click)="Signout()">Sign Out</button>
 </mat-toolbar>
 <!-- Admin portal tabs -->
 <mat-tab-group animationDuration="0ms">
 
     <mat-tab label="Send Request">
         <br>
+        <mat-card class="card">
         <form [formGroup]="sendRef">
             <mat-form-field>
                 <mat-label>Enter Request</mat-label>
@@ -16,6 +18,7 @@
             <button mat-raised-button color="primary" mat-dialog-close mat-dialog-close="false"
                 (click)="sendRequest()">Submit</button>
         </form>
+    </mat-card>
     </mat-tab>
 
     <mat-tab label="Update Order Status">
@@ -31,6 +34,7 @@
         </mat-card>
 
         <!-- Update order status tab -->
+        <mat-card class="card">
         <form [formGroup]="orderRef">
             <mat-form-field>
                 <mat-label>User Id for order</mat-label>
@@ -45,7 +49,9 @@
             <button mat-raised-button color="primary" mat-dialog-close mat-dialog-close="false"
                 (click)="updateOrder()">Submit</button>
         </form>
+    </mat-card>
     </mat-tab>
+
     <!-- Unlock user tab -->
     <mat-tab label="Unlock User">
         <mat-card class="card">
@@ -57,6 +63,7 @@
                 <mat-card-subtitle class="sub">Reason:{{ticket.reason}}</mat-card-subtitle>
             </mat-card-header>
         </mat-card>
+        <mat-card class="card">
         <form [formGroup]="unlockRef">
             <mat-form-field>
                 <mat-label>Enter User Id to unlock</mat-label>
@@ -66,6 +73,7 @@
             <button mat-raised-button color="primary" mat-dialog-close mat-dialog-close="false"
                 (click)="unlockUser()">Submit</button>
         </form>
+    </mat-card>
     </mat-tab>
 
     <!-- Edit employee profile tab -->

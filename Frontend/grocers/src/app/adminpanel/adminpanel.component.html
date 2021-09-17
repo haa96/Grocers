@@ -1,7 +1,8 @@
 <mat-toolbar>
-    <span class="g">ADMIN</span>
+    <span class="g">Admin Portal</span>
     <span class="example-spacer"></span>
-    <button mat-raised-button color="primary" (click)="Report()">Report</button>
+    <button mat-raised-button color="primary" (click)="Report()">Reports</button>
+    <button mat-button (click)="Signout()">Sign Out</button>
 </mat-toolbar>
 
 <mat-tab-group animationDuration="0ms">
@@ -101,38 +102,38 @@
                 <p style="color:red">*Please fill in all fields</p>
                 <mat-form-field>
                     <mat-label>Employee ID</mat-label>
-                    <input type="number" matInput formControlName="_id" [(ngModel)]="_id">
+                    <input type="number" matInput formControlName="_id" [(ngModel)]="_id" required>
                 </mat-form-field>
                 <br>
                 <mat-form-field>
                     <mat-label> First Name</mat-label>
-                    <input matInput formControlName="firstName">
+                    <input matInput formControlName="firstName" required>
                 </mat-form-field>
                 <br>
                 <mat-form-field>
                     <mat-label>Last Name </mat-label>
-                    <input matInput formControlName="lastname">
+                    <input matInput formControlName="lastname" required>
                 </mat-form-field>
                 <br>
                 <mat-form-field>
                     <mat-label>UserName</mat-label>
-                    <input matInput formControlName="username">
+                    <input matInput formControlName="username" required>
                 </mat-form-field>
                 <br>
                 <mat-form-field>
                     <mat-label>Password</mat-label>
-                    <input type="password" matInput formControlName="pwd">
+                    <input type="password" matInput formControlName="pwd" required>
                 </mat-form-field>
                 <br>
                 <p style="color:red; font-size: x-small;">*Spell out "true" or "false"</p>
                 <mat-form-field>
                     <mat-label>Password Updated (T/F)</mat-label>
-                    <input matInput formControlName="pwdUpdated">
+                    <input matInput formControlName="pwdUpdated" required>
                 </mat-form-field>
                 <br>
                 <mat-form-field>
                     <mat-label>Salary </mat-label>
-                    <input type="number" matInput formControlName="salary">
+                    <input type="number" matInput formControlName="salary" required>
                 </mat-form-field>
                 <br>
                 <button mat-raised-button (click)="addemployee()" [disabled]="_id === ''" color="primary"

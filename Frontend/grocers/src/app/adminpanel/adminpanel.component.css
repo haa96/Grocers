@@ -2,7 +2,9 @@
     flex: 1 1 auto;
   }
 
-
+  .g{
+    font-size:x-large
+  }
 .card {
   max-width: 500px;
   margin: 20px;

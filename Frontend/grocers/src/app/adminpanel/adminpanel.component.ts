@@ -95,4 +95,5 @@ export class AdminpanelComponent implements OnInit {
     this.delempRef.reset();
     alert("The employee deleted successfully")
   }
+  Signout(){this.router.navigate([""]);}
 }

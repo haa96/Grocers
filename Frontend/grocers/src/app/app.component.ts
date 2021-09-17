@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
-import {MatDialog} from '@angular/material/dialog';
-
 
 
 @Component({
@@ -12,6 +10,7 @@ import {MatDialog} from '@angular/material/dialog';
 })
 export class AppComponent {
   // title = 'dialog';
+  flag:boolean;
   constructor(
     public router:Router) { }
   Signout(){
