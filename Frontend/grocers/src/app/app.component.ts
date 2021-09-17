@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  flag:boolean;
+  flag: boolean;
   constructor(
-    public router:Router) { }
+    public router: Router) { }
 }

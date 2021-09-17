@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 export class RaiseticketService {
 
   constructor(public http:HttpClient) { }
-
+  //add product Details
   addproductDetails(raiseticket:Raiseticket):Observable<any>{
     return this.http.post("http://localhost:9090/api/ticket/storeduserticket",raiseticket,
     {responseType:'text'});

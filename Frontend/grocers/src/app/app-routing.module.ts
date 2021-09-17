@@ -17,7 +17,9 @@ import { RegisterComponent } from './register/register.component';
 const routes: Routes = [
   // admin main page (routes here after admin login)
   { path: "AdminPan/:admin", component: AdminpanelComponent },
+  // Amin get the repot
   { path: "report", component: ReportComponent },
+  //employee main page
   { path: "empmain", component: EmpMainComponent },
   // user registration path
   { path: "register", component: RegisterComponent },
@@ -29,7 +31,9 @@ const routes: Routes = [
   { path: "AdminPan", component: AdminpanelComponent },
   // employee login page
   { path: "employee", component: EmployeeComponent },
+  // user profile
   { path: 'profile/:user', component: ProfileComponent },
+  // cart page
   { path: "cart/:user", component: CartComponent },
   // main login portal page
   { path: "user", component: UserComponent },
