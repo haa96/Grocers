@@ -5,19 +5,18 @@
 </mat-toolbar>
 
 <mat-tab-group animationDuration="0ms">
-
+            <!-- Add product tab and form -->
     <mat-tab label="Add Product">
         <mat-card class="card">
             <form [formGroup]="addRef">
-
                 <mat-form-field>
                     <mat-label>Product ID</mat-label>
-                    <input matInput formControlName="_id" [(ngModel)]="_id">
+                    <input matInput type="number" formControlName="_id" [(ngModel)]="_id" required>
                 </mat-form-field>
                 <br>
                 <mat-form-field>
                     <mat-label> Product Name</mat-label>
-                    <input matInput formControlName="name">
+                    <input matInput formControlName="name" required>
                 </mat-form-field>
                 <br>
                 <mat-form-field>
@@ -27,65 +26,62 @@
                 <br>
                 <mat-form-field>
                     <mat-label>Product Quantity</mat-label>
-                    <input matInput formControlName="qty">
+                    <input type="number" matInput formControlName="qty" required>
                 </mat-form-field>
                 <br>
                 <mat-form-field>
                     <mat-label>Product Price</mat-label>
-                    <input matInput formControlName="price">
+                    <input type="number" matInput formControlName="price" required>
                 </mat-form-field>
                 <br>
                 <mat-form-field>
                     <mat-label>Product Discount </mat-label>
-                    <input matInput formControlName="discount">
+                    <input type="number" matInput formControlName="discount">
                 </mat-form-field>
-
                 <br>
                 <button mat-raised-button (click)="addproduct()" [disabled]="_id === ''" color="primary"
                     mat-dialog-close mat-dialog-close="false">ADD</button>
-
             </form>
         </mat-card>
     </mat-tab>
-
+            <!-- Delete product tab and form -->
     <mat-tab label="Delete Product">
         <mat-card class="card">
             <form [formGroup]="deleteRef">
-
                 <mat-form-field>
                     <mat-label>Product ID</mat-label>
-                    <input matInput formControlName="_id" [(ngModel)]="_id">
+                    <input type="number" matInput formControlName="_id" [(ngModel)]="_id">
                 </mat-form-field>
-
                 <br>
                 <button mat-raised-button [disabled]="_id === ''" (click)="deleteproduct()" color="primary"
                     mat-dialog-close mat-dialog-close="false">Delete</button>
             </form>
         </mat-card>
     </mat-tab>
+
+            <!-- Update product tab and form -->
     <mat-tab label="Update Product">
         <mat-card class="card">
             <form [formGroup]="updateRef">
                 <mat-form-field>
                     <mat-label>Product ID</mat-label>
-                    <input matInput formControlName="_id" [(ngModel)]="_id">
+                    <input type="number" matInput formControlName="_id" [(ngModel)]="_id">
                 </mat-form-field>
                 <br>
                 <mat-form-field>
                     <mat-label>Product Quantity</mat-label>
-                    <input matInput formControlName="qty">
+                    <input type="number" matInput formControlName="qty">
                 </mat-form-field>
                 <br>
                 <mat-form-field>
                     <mat-label>Product Price</mat-label>
-                    <input matInput formControlName="price">
+                    <input type="number" matInput formControlName="price">
                 </mat-form-field>
                 <br>
                 <mat-form-field>
                     <mat-label>Product Discount </mat-label>
-                    <input matInput formControlName="discount">
+                    <input type="number" matInput formControlName="discount">
                 </mat-form-field>
-
                 <br>
                 <button mat-raised-button (click)="updateproduct()" [disabled]="_id === ''" color="primary"
                     mat-dialog-close mat-dialog-close="false">Update</button>
@@ -95,9 +91,9 @@
 
     <mat-tab label=" View Request">
         <mat-card class="card">
-
         </mat-card>
 
+                    <!-- Add Employee tab and form -->
     </mat-tab>
     <mat-tab label="Add Employee">
         <mat-card class="card">
@@ -105,7 +101,7 @@
                 <p style="color:red">*Please fill in all fields</p>
                 <mat-form-field>
                     <mat-label>Employee ID</mat-label>
-                    <input matInput formControlName="_id" [(ngModel)]="_id">
+                    <input type="number" matInput formControlName="_id" [(ngModel)]="_id">
                 </mat-form-field>
                 <br>
                 <mat-form-field>
@@ -129,7 +125,6 @@
                 </mat-form-field>
                 <br>
                 <p style="color:red; font-size: x-small;">*Spell out "true" or "false"</p>
-
                 <mat-form-field>
                     <mat-label>Password Updated (T/F)</mat-label>
                     <input matInput formControlName="pwdUpdated">
@@ -137,7 +132,7 @@
                 <br>
                 <mat-form-field>
                     <mat-label>Salary </mat-label>
-                    <input matInput formControlName="salary">
+                    <input type="number" matInput formControlName="salary">
                 </mat-form-field>
                 <br>
                 <button mat-raised-button (click)="addemployee()" [disabled]="_id === ''" color="primary"
@@ -146,14 +141,14 @@
         </mat-card>
     </mat-tab>
 
+            <!-- Delete employee tab and form -->
     <mat-tab label="Delete Employee">
         <mat-card class="card">
             <form [formGroup]="delempRef">
                 <mat-form-field>
                     <mat-label>Employee ID</mat-label>
-                    <input matInput formControlName="_id" [(ngModel)]="_id">
+                    <input type="number" matInput formControlName="_id" [(ngModel)]="_id">
                 </mat-form-field>
-
                 <br>
                 <button mat-raised-button (click)="deleteemployee()" [disabled]="_id === ''" color="primary"
                     mat-dialog-close mat-dialog-close="false">Delete</button>

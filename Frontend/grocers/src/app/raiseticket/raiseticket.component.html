@@ -1,21 +1,21 @@
 <form [formGroup]="ticketRef" (ngSubmit)="checkUser()" class="form-group">
-    <h1 mat-dialog-title style="color: #3f51b5">Raise Ticket</h1>
-    <hr>
-    <p style="color:red">*Please fill in all fields</p>
-    <mat-dialog-content>
-        <mat-form-field>
-          <mat-label>Username</mat-label>
-          <input matInput formControlName="username" [(ngModel)]="username" >
-        </mat-form-field>
-        <br>
-        <mat-form-field>
-          <mat-label>Reason</mat-label>
-          <input matInput  formControlName="reason" >
-        </mat-form-field>
-    </mat-dialog-content>
-    <hr>
-    <mat-dialog-actions>
-      <button mat-raised-button mat-dialog-close="true">Cancel</button>
-      <button mat-raised-button type="submit" [disabled]="username === ''" color="primary" mat-dialog-close="false">Submit</button>
-    </mat-dialog-actions>
-    </form>
+  <h1 mat-dialog-title style="color: #3f51b5">Raise Ticket</h1>
+  <hr>
+  <p style="color:red">*Please fill in all fields</p>
+  <mat-dialog-content>
+    <mat-form-field>
+      <mat-label>Username</mat-label>
+      <input matInput formControlName="username" [(ngModel)]="username">
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <mat-label>Reason</mat-label>
+      <input matInput formControlName="reason">
+    </mat-form-field>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-raised-button mat-dialog-close="true">Cancel</button>
+    <button mat-raised-button type="submit" [disabled]="username === ''" color="primary"
+      mat-dialog-close="false">Submit</button>
+  </mat-dialog-actions>
+</form>

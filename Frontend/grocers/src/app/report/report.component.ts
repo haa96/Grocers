@@ -7,23 +7,24 @@ import { ReportService } from '../report.service';
   styleUrls: ['./report.component.css']
 })
 export class ReportComponent implements OnInit {
-  constructor(public router:Router,public reportSer:ReportService){ }
+  constructor(public router: Router, public reportSer: ReportService) { }
 
   ngOnInit(): void {
     this.getDaily();
     this.getWeekly();
   }
-
-  Adminpan(){this.router.navigate(["AdminPan"]);  }
-
-  getDaily(){
-    let report=this.reportSer.dayReport().
-    subscribe(result=>{
-    },error=>console.log(error));
+//Route to AdminPanel
+  Adminpan() { this.router.navigate(["AdminPan"]); }
+//Get Daily Report
+  getDaily() {
+    let report = this.reportSer.dayReport().
+      subscribe(result => {
+      }, error => console.log(error));
   }
-  getWeekly(){
-    let report=this.reportSer.dayReport().
-    subscribe(result=>{
-    },error=>console.log(error));
+ //Get Weekly Report 
+  getWeekly() {
+    let report = this.reportSer.dayReport().
+      subscribe(result => {
+      }, error => console.log(error));
   }
 }

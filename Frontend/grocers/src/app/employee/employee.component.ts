@@ -1,10 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
-import { Observable } from 'rxjs';
 import { FormControl, FormGroup } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
-import { Admin } from '../admin';
 import { EmployeeService } from '../employee.service';
 
 @Component({
@@ -23,15 +21,12 @@ export class EmployeeComponent implements OnInit {
     public employeeservice: EmployeeService,
     public http: HttpClient) { }
 
-  ngOnInit(): void {
-  }
-
-
+  ngOnInit(): void {}
+  //employee login... then direct to employee portal
   openEmpMain() {
     let employee = this.loginRef.value;
     console.log(employee)
-    this.employeeservice.performLogin(employee).
-      subscribe(res => {
+    this.employeeservice.performLogin(employee).subscribe(res => {
         console.log(res, res.statusValue);
         if (res === "Success") {
           this.router.navigate(["empmain"]);
