@@ -46,27 +46,22 @@ export class MainComponent implements OnInit {
   }
   //get username info
   getUser() {
-    console.log(this.userEmail);
     this.userSer.getUserDetails(this.userEmail).
       subscribe(result => {
-        console.log(result);
         this.firstName = result.firstName;
         this.lastName = result.lastName;
         this.email = result.email;
         this.balance = result.balance;
-        console.log(this.firstName + this.email);
       }, error => console.log(error));
   }
   //Add products to the card 
   addcart(name: any, price: any, quantity: any) {
     this.total = price * quantity;
     let ite: Citem = { id: this.i, name: name, price: price, Qty: quantity, total: this.total };
-    console.log(ite)
     this.carts.push(ite);
     this.ser.setCartArray(this.carts);
     this.i++
     this.item = this.ser.getCartArray()
-    console.log(name)
   }
 
   Signout() {
