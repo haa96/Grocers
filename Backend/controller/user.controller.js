@@ -41,6 +41,7 @@ let getUserInfo = async (request, response)=> {
     console.log(userInfo);
     if(userInfo!=null){
         response.json(userInfo);
+        console.log(userInfo);
     }else {
         response.send("user not found");
     }
@@ -50,8 +51,10 @@ let updateUserInfo = (request,response)=> {
     let user = request.body;
     userModel.updateMany({email:user.email},{$set:{firstName:user.firstName,lastName:user.lastName,email:user.email,pwd:user.pwd,phone:user.phone,address:user.address}},(err,result)=> {
         if(!err){
+            console.log("updated");
             response.send(result);
         }else {
+            console.log("didn't update!");
             response.send(err);
         }
     })

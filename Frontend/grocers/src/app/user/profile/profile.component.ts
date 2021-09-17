@@ -29,7 +29,7 @@ export class ProfileComponent implements OnInit {
   userEmail?:string;
   firstName?:string;
   lastName?:string;
-  email:string = "";
+  email?:string = "";
   phone?:number;
   address?:string;
   balance?:number;
@@ -37,6 +37,7 @@ export class ProfileComponent implements OnInit {
   ngOnInit(): void {
     this.activateRoute.params.subscribe(data=>this.userEmail=data.user);
     this.getUser();
+
   }
   main(){this.router.navigate(["main"]);}
   test(){}
@@ -64,5 +65,6 @@ export class ProfileComponent implements OnInit {
      subscribe(result=>this.msg=result,error=>console.log(error));
      this.updateRef.reset();
      alert("info updated successfully")
+     this.getUser();
   }
 }
