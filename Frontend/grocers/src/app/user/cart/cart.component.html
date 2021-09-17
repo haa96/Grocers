@@ -9,8 +9,8 @@
 <mat-card-title class="me-name">My Cart</mat-card-title><br><br>
 <mat-card-content class="list-info">
   <ul>
-      <li>Email: {{userEmail}} </li>
-      <li id="funds">Current Funds: {{balance}} </li> 
+    <li>Email: {{userEmail}} </li>
+    <li id="funds">Current Funds: {{balance}} </li>
   </ul>
 </mat-card-content>
 <mat-card class="card" *ngFor="let car of carts">
@@ -25,7 +25,8 @@
       </li>
       <li id={{car.total}}>Total Price: {{car.total}}</li>
     </ul>
-    <button mat-raised-button color="secondry" (click)="update(car.id,car.price,myNumber.value,car.total)">Update</button>
+    <button mat-raised-button color="secondry"
+      (click)="update(car.id,car.price,myNumber.value,car.total)">Update</button>
     <button mat-button color="secondry" (click)="remove(car.id)">remove</button>
   </mat-card-content>
 
@@ -33,4 +34,3 @@
 <button mat-raised-button color="primary" (click)="checkout()">
   checkout
 </button>
-
