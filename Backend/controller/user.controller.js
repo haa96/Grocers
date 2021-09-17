@@ -34,28 +34,40 @@ let register = async (request,response)=> {
     }
 }
 
-// let getUserDetails = (request,response)=> {
-//     let email = request.body;
-//     console.log(email);
-//     userModel.find({email:email},(err,data)=> {
-//         if(!err){
-//             console.log("The user is "+data);
-//             response.json(data);
-//         }else {
-//              response.send(err);
-//         }
-//     })
-// }
-
 let unlockUser = (request,response)=> {
     let p = request.body;
     
     userModel.updateOne({email:p.email},{$set:{locked:false}},(err,result)=> {
         if(!err){
+            console.log("Unlocking the user account");
             response.send(result);
         }else {
+
             response.send(err);
         }
     })
 }
-module.exports={userlogin,register,unlockUser};
+
+let getUserInfo = async (request, response)=> {
+    let user = request.body; //recieve the data from post method
+    let userInfo = await userModel.findOne(user.email);
+    console.log(userInfo);
+    if(userInfo!=null){
+        response.json(userInfo);
+        console.log(userInfo);
+    }else {
+        response.send("user not found");
+    }
+}
+
+let updateUserInfo = (request,response)=> {
+    let user = request.body;
+    userModel.updateMany({email:user.email},{$set:{firstName:user.firstName,lastName:user.lastName,email:user.email,pwd:user.pwd,phone:user.phone,address:user.address}},(err,result)=> {
+        if(!err){
+            console.log("updated");
+            response.send(result);
+        }else {
+            console.log("didn't update!");}
+    })
+}
+module.exports={userlogin,register,unlockUser,updateUserInfo,getUserInfo};

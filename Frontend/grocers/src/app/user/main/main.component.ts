@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AdminService } from 'src/app/admin.service';
-import {MatDialog} from '@angular/material/dialog';
 import { SharedService } from 'src/app/shared.service';
-import { Cart } from '../../cart';
+import { Citem } from 'src/app/cart';
+import { UserService } from 'src/app/user.service';
 
 
 @Component({
@@ -13,53 +13,58 @@ import { Cart } from '../../cart';
 
 })
 export class MainComponent implements OnInit {
-  products =[];
-  email = {"user" : ""};
-  item?: Array<Cart> = [];
-  carts: Array<Cart> = [];
+  products = [];
+  item?: Array<Citem> = [];
+carts: Array<Citem> = [];
   counterqty = 1;
   total: number;
   i = 0;
-  constructor(public router:Router,public adminSer:AdminService,public activeRoute:ActivatedRoute,
-    public sharedSer:SharedService) {
-    this.activeRoute.params.subscribe(data=>{
-      this.email.user=data.user;
-      console.log(data);
-      console.log(this.email);
-    });
-  }
-
+  constructor(public ser: SharedService, public router: Router, public userSer:UserService,
+     public adminSer: AdminService, public activateRoute: ActivatedRoute) { }
+     msg?:string;
+     userEmail?:string;
+     firstName?:string;
+     lastName?:string;
+     email:string = "";
+     balance?:number;
   ngOnInit(): void {
+    this.activateRoute.params.subscribe(data=>this.userEmail=data.user);
+    this.getUser();
     this.populateProducts();
   }
-
-  profile(){
-    console.log("Profile function");
-    console.log(this.email);
-    this.router.navigate(["../../profile",this.email.user],{relativeTo:this.activeRoute})
-  }
-
-  cart(){this.router.navigate(["cart"]);}
-
-  addcart(name: any, price: any, quantity: any) {
-      this.total = price * quantity;
-      let item: Cart = { id: this.i, name: name, price: price, Qty: quantity, total: this.total };
-      console.log(item)
-      this.carts.push(item);
-      this.sharedSer.setCartArray(this.carts);
-      this.i++
-      this.item = this.sharedSer.getCartArray()
-      console.log(name)
-    }
-
-  populateProducts(){
+  cart() { this.router.navigate(["cart",this.userEmail]); }
+  profile() { this.router.navigate(["profile",this.userEmail]); }
+  populateProducts() {
     this.adminSer.getproductDetails().
-    subscribe(data=>{
-      for(let i in data){
-        this.products.push({name: data[i].name, price:data[i].price, qty:data[i].qty})
-      }
+      subscribe(data => {
+        for (let i in data) {
+          this.products.push({ id: data[i]._id, name: data[i].name, price: data[i].price })
+        }
         console.log(this.products);
-    },error=> console.error(error));
+      }, error => console.error(error));
   }
+  getUser() {
+    console.log(this.userEmail);
+    this.userSer.getUserDetails(this.userEmail).
+    subscribe(result=>{
+      console.log(result);
+      this.firstName = result.firstName;
+      this.lastName = result.lastName;
+      this.email=result.email;
+      this.balance=result.balance;
+      console.log(this.firstName+this.email);
+    }, error=>console.log(error));
+  }
+addcart(name: any, price: any, quantity: any) {
+      this.total = price * quantity;
+      let ite: Citem = { id: this.i, name: name, price: price, Qty: quantity, total: this.total };
+      console.log(ite)
+      this.carts.push(ite);
+      this.ser.setCartArray(this.carts);
+      this.i++
+      this.item = this.ser.getCartArray()
+      console.log(name)
 
-}
+
+      }
+    }

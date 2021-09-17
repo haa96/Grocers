@@ -7,15 +7,15 @@
   <mat-card class="card">
     <mat-card-header >
       <mat-icon mat-card-avatar class="header-image"></mat-icon>
-      <mat-card-title class="me-name">Name</mat-card-title><br><br>
+      <mat-card-title class="me-name">{{firstName}} {{lastName}}</mat-card-title><br><br>
       <mat-card-subtitle class="sub">user</mat-card-subtitle>
     </mat-card-header>
 
     <mat-card-content class="list-info">
       <ul>
-          <li>Email:  {{email}}</li>
-          <li>Address:  {{address}}</li>
-          <li>Phone: {{phone}}</li>
+          <li>Email: {{userEmail}} </li>
+          <li>Address: {{address}} </li>
+          <li>Phone:  {{phone}}</li>
       </ul>
     </mat-card-content>
   </mat-card>
@@ -25,62 +25,67 @@
     <mat-tab label="Order Status">
         <br>
 
-		<mat-card class="card">
+		<mat-card class="card" *ngFor="let order of orders">
 		  <mat-card-header >
-			<mat-card-title class="name"> Product 1</mat-card-title><br><br>
-			<mat-card-subtitle class="sub">status</mat-card-subtitle>
-		  </mat-card-header>
+			<mat-card-title class="name"> Order id: {{order.id}}</mat-card-title><br><br>
+      <mat-card-subtitle class="sub">Cost: {{order.price}}</mat-card-subtitle>
+      <mat-card-subtitle class="sub">Status: {{order.orderStatus}}</mat-card-subtitle>
+    </mat-card-header>
         </mat-card>
-        <mat-card class="card">
-            <mat-card-header >
-              <mat-card-title class="name"> Product 2</mat-card-title><br><br>
-              <mat-card-subtitle class="sub">status</mat-card-subtitle>
-            </mat-card-header>
-          </mat-card>
-          <mat-card class="card">
-            <mat-card-header >
-              <mat-card-title class="name"> Product 3</mat-card-title><br><br>
-              <mat-card-subtitle class="sub">status</mat-card-subtitle>
-            </mat-card-header>
-          </mat-card>
+        <!-- <mat-card class="card" *ngFor="let order of orders">
+          <mat-card-header>
+            <mat-card-title class="name"> Order Id: {{order.id}}</mat-card-title><br><br>
+            <mat-card-subtitle class="sub">Amount: {{order.price}}</mat-card-subtitle>
+            <mat-card-subtitle class="sub">Status: {{order.orderStatus}}</mat-card-subtitle>
+            <md-input-container>
+            </md-input-container>
+        </mat-card-header>
+        </mat-card> -->
+
     </mat-tab>
     <mat-tab label="Funds">
         <mat-card class="card">
-            Current Funds:
+            Current Funds: {{balance}}
         </mat-card>
 
     </mat-tab>
+
     <mat-tab label="Edit Profile">
     <mat-card class="card">
+      <form [formGroup]="updateRef">
         <mat-form-field>
             <mat-label>New First Name</mat-label>
-                <input matInput>
+                <input matInput formControlName="firstName">
         </mat-form-field>
         <br>
         <mat-form-field>
             <mat-label>New Last Name</mat-label>
-                <input matInput>
+                <input matInput formControlName="lastName">
         </mat-form-field>
         <br>
         <mat-form-field>
             <mat-label>New Password</mat-label>
-                <input matInput >
+                <input type="password" matInput formControlName="pwd">
         </mat-form-field>
         <br>
         <mat-form-field>
+          <mat-label>New email</mat-label>
+              <input matInput formControlName="email">
+      </mat-form-field>
+      <br>
+        <mat-form-field>
             <mat-label>New Address</mat-label>
-                <input matInput>
+                <input matInput formControlName="address">
         </mat-form-field>
         <br>
         <mat-form-field>
             <mat-label>New Phone Number</mat-label>
-                <input matInput >
+                <input matInput formControlName="phone">
         </mat-form-field>
-
-
         <br>
-        <button mat-raised-button color="primary" mat-dialog-close mat-dialog-close="false">Save</button>
-    </mat-card>
-
+        <button mat-raised-button color="primary" (click)="updateInfo()" mat-dialog-close mat-dialog-close="false">Save</button>
+      </form>
+      </mat-card>
     </mat-tab>
+
   </mat-tab-group>

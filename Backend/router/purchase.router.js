@@ -7,5 +7,8 @@ let purchaseController = require("../controller/purchase.controller");
 
 
 router.post("/orderStatus", purchaseController.updateOrderStatus);
-router.get("/getOrder",purchaseController.getOrder)
+router.get("/getOrder",purchaseController.getOrder);
+router.post("/storedpurchaset",purchaseController.storedpurchaset);
+router.get("/getAllpurchaset",purchaseController.getAllpurchaset);
+
 module.exports=router;

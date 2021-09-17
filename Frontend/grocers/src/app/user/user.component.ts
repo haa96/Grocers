@@ -11,7 +11,6 @@ import { MatDialog } from '@angular/material/dialog';
 })
 export class UserComponent implements OnInit {
   msg?:string;
-
   loginRef = new FormGroup({
     email:new FormControl(),
     pwd:new FormControl()
@@ -22,8 +21,7 @@ export class UserComponent implements OnInit {
     public dialog: MatDialog,
     public router:Router,
     public activeRoute:ActivatedRoute) {
-     }
-
+    }
   ngOnInit(): void {
   }
 
@@ -36,7 +34,7 @@ export class UserComponent implements OnInit {
       if(result=="Success"){
         console.log("Success!");
         let email = user.email;
-        this.router.navigate(["main",email]);
+        this.router.navigate(["profile",email]);
       }else {
           console.log("Invalid Login Credentials");
           this.msg = result;

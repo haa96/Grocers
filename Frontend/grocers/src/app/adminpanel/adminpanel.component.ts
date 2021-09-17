@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import { FormControl, FormGroup } from '@angular/forms';
 import { AdminService } from 'src/app/admin.service';
 import { EmployeeService } from 'src/app/employee.service';
-
 @Component({
   selector: 'app-adminpanel',
   templateUrl: './adminpanel.component.html',
@@ -45,7 +44,7 @@ export class AdminpanelComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  Report(){this.router.navigate(["report"]);  }
+  Report(){this.router.navigate(["Report"]);  }
   
     addproduct(){
       let prodcut = this.addRef.value;

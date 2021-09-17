@@ -1,14 +1,13 @@
-
 let cartModel = require("../model/cart.model");
 
 
 let getAllCartItem = (request,response)=> {
-    
+
     cartModel.find({},(err,data)=> {
         if(!err){
             response.json(data);
         }else {
-             response.json(err);   
+             response.json(err);
         }
     })
 
@@ -36,6 +35,3 @@ let deleteItem = (request,response)=> {
     })
 }
 module.exports= {getAllCartItem,deleteItem,updateItemQuantity}
-
-
-

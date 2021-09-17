@@ -1,20 +1,21 @@
 import { Injectable } from '@angular/core';
-import { Cart } from './cart';
 import {HttpClient} from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Citem } from './cart';
+
 @Injectable({
   providedIn: 'root'
 })
 export class SharedService {
 
   constructor() { }
-  items:Array<Cart>=[];
+  items:Array<Citem>=[];
 
-  setCartArray(cart:Array<Cart>): void {
+  setCartArray(cart:Array<Citem>): void {
     this.items=cart;
   }
 
-  getCartArray(): Array<Cart>{
+  getCartArray(): Array<Citem>{
     return this.items;
   }
 }

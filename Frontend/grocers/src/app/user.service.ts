@@ -20,8 +20,15 @@ export class UserService {
   }
 
   getUserDetails(user:User):Observable<any>{
-    return this.http.get("http://localhost:9090/api/user/details");
+    return this.http.get("http://localhost:9090/api/user/getUser",user
+    );
   }
+
+  updateUserDetails(user:User):Observable<any>{
+    return this.http.put("http://localhost:9090/api/user/updateUser",user,
+    {responseType:'text'});
+  }
+  
   userUnlock(user:User):Observable<any>{
     return this.http.post("http://localhost:9090/api/user/unlock",user,
     {responseType:'text'});

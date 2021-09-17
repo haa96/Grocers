@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router,ActivatedRoute } from '@angular/router';
 import { UserService } from 'src/app/user.service';
+import { FormControl, FormGroup } from '@angular/forms';
+import { CartService } from 'src/app/cart.service';
 import { User } from '../../user';
 
 @Component({
@@ -9,37 +11,75 @@ import { User } from '../../user';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
+
+  constructor(
+  public router:Router,
+  public activateRoute:ActivatedRoute,
+  public userSer:UserService,
+  public cartSer:CartService
+  ){}
+  updateRef = new FormGroup({
+    firstName:new FormControl(),
+    lastName:new FormControl(),
+    email:new FormControl(),
+    pwd:new FormControl(),
+    address:new FormControl(),
+    phone:new FormControl(),
+  })
+
+  orders=[];
+  msg?:string;
+  userEmail?:string;
   firstName?:string;
-  email:string = "";
+  lastName?:string;
+  email?:string = "";
   phone?:number;
   address?:string;
-
-  constructor(public router:Router, public userSer:UserService, public activeRoute:ActivatedRoute, public user:User){
-    this.activeRoute.params.subscribe(data=>this.email=data.email);
-  }
+  balance?:number;
 
   ngOnInit(): void {
-    this.getUser(this.email);
-  }
+    this.activateRoute.params.subscribe(data=>this.userEmail=data.user);
+    this.getUser();
+    this.OrderStatus();
 
-  getUser(email : string) {
-    console.log("getUser recieved "+email+" as an email");
-    this.user = this.userSer.checkUserDetails(email).
+  }
+  main(){this.router.navigate(["main",this.userEmail]);}
+  test(){}
+
+  getUser() {
+    console.log(this.userEmail);
+    this.userSer.getUserDetails(this.userEmail).
     subscribe(result=>{
-        console.log(result);
-        this.firstName = result.firstName;
-        this.email=result.email;
-        this.phone=result.phone;
-        this.address=result.address;
-        console.log(this.firstName+this.email+this.address+this.phone);
-      }, error=>console.log(error));
+      console.log(result);
+      this.firstName = result.firstName;
+      this.lastName = result.lastName;
+      this.email=result.email;
+      this.phone=result.phone;
+      this.address=result.address;
+      this.balance=result.balance;
+      console.log(this.firstName+this.email+this.address+this.phone);
+    }, error=>console.log(error));
+
   }
 
-  main(){
-    this.router.navigate(["main"]);  
+  updateInfo(){
+    let user = this.updateRef.value;
+    console.log(user);
+     this.userSer.updateUserDetails(user).
+     subscribe(result=>this.msg=result,error=>console.log(error));
+     this.updateRef.reset();
+     alert("info updated successfully")
+     this.getUser();
   }
 
-  test(){
-    
+  OrderStatus() {
+    this.cartSer.getOrders().
+      subscribe(data => {
+        for (let i in data) {
+          this.orders.push({ id: data[i]._id, price: data[i].price, orderStatus: data[i].orderStatus })
+        console.log(this.orders)
+        }
+        console.log(this.orders);
+      }, error => console.error(error));
   }
 }

@@ -6,11 +6,10 @@ let purchaseSchema = mongoose.Schema({
     
     cID : Number,
     price:Number,
-    
     orderStatus : String,
     
 });
 
-let purchaseModel = mongoose.model("Purchase",purchaseSchema);
+let purchaseModel = mongoose.model("Purchase", purchaseSchema);
 
-module.exports=purchaseModel;
+module.exports = purchaseModel;

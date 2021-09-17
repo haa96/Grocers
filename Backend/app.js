@@ -6,6 +6,11 @@ let cors = require("cors");
 
 // create the reference of express
 let app = express();
+
+// import mdels
+
+
+// import routers
 let adminRouter = require("./router/admin.router");
 let userRouter = require("./router/user.router");
 let productRouter = require("./router/product.router");
@@ -15,7 +20,10 @@ let proRequestRouter = require("./router/productrequest.router");
 let purchaseRouter= require("./router/purchase.router");
 let cartController = require("./router/cart.router");
 const adminModel = require("./model/admin.model");
-const proRequestModel = require("./model/productrequest.model");
+//const proRequestModel = require("./model/productrequest.model");
+let cartRouter = require("./router/cart.router");
+let reportRouter = require("./router/report.router");
+let purchaseController = require("./router/purchase.router");
 
 // add middleware
 app.use(cors());
@@ -44,9 +52,7 @@ if(adminModel.findOne({_id:1234}) == null){
         console.log(err);
     }
 });
-
 }
-
 // http://localhost:9090/api/adminlogin
 app.use("/api/admin",adminRouter);
 // http://localhost:9090/api/employee/
@@ -62,8 +68,13 @@ app.use("/api/sendProductRequest",proRequestRouter);
 //http://localhost:9090/api/purchase
 app.use("/api/purchase",purchaseRouter);
 //http://localhost:9090/api/cart/
-app.use("/api/cart",cartController);
+app.use("/api/cart",cartRouter);
+//http://localhost:9090/api/report/daily
+//http://localhost:9090/api/report/weekly
+//http://localhost:9090/api/report/monthly
+app.use("api/report",reportRouter);
+app.use("/api/purchase",purchaseController);
+
 
 mongoose.disconnect;
 })
-
