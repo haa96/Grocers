@@ -5,11 +5,10 @@
 </mat-toolbar>
 
 <mat-tab-group animationDuration="0ms">
-
+            <!-- Add product tab and form -->
     <mat-tab label="Add Product">
         <mat-card class="card">
             <form [formGroup]="addRef">
-
                 <mat-form-field>
                     <mat-label>Product ID</mat-label>
                     <input matInput formControlName="_id" [(ngModel)]="_id">
@@ -39,30 +38,28 @@
                     <mat-label>Product Discount </mat-label>
                     <input matInput formControlName="discount">
                 </mat-form-field>
-
                 <br>
                 <button mat-raised-button (click)="addproduct()" [disabled]="_id === ''" color="primary"
                     mat-dialog-close mat-dialog-close="false">ADD</button>
-
             </form>
         </mat-card>
     </mat-tab>
-
+            <!-- Delete product tab and form -->
     <mat-tab label="Delete Product">
         <mat-card class="card">
             <form [formGroup]="deleteRef">
-
                 <mat-form-field>
                     <mat-label>Product ID</mat-label>
                     <input matInput formControlName="_id" [(ngModel)]="_id">
                 </mat-form-field>
-
                 <br>
                 <button mat-raised-button [disabled]="_id === ''" (click)="deleteproduct()" color="primary"
                     mat-dialog-close mat-dialog-close="false">Delete</button>
             </form>
         </mat-card>
     </mat-tab>
+
+            <!-- Update product tab and form -->
     <mat-tab label="Update Product">
         <mat-card class="card">
             <form [formGroup]="updateRef">
@@ -85,7 +82,6 @@
                     <mat-label>Product Discount </mat-label>
                     <input matInput formControlName="discount">
                 </mat-form-field>
-
                 <br>
                 <button mat-raised-button (click)="updateproduct()" [disabled]="_id === ''" color="primary"
                     mat-dialog-close mat-dialog-close="false">Update</button>
@@ -95,8 +91,9 @@
 
     <mat-tab label=" View Request">
         <mat-card class="card">
-
         </mat-card>
+
+                    <!-- Add Employee tab and form -->
 
     </mat-tab>
     <mat-tab label="Add Employee">
@@ -129,7 +126,6 @@
                 </mat-form-field>
                 <br>
                 <p style="color:red; font-size: x-small;">*Spell out "true" or "false"</p>
-
                 <mat-form-field>
                     <mat-label>Password Updated (T/F)</mat-label>
                     <input matInput formControlName="pwdUpdated">
@@ -146,6 +142,7 @@
         </mat-card>
     </mat-tab>
 
+            <!-- Delete employee tab and form -->
     <mat-tab label="Delete Employee">
         <mat-card class="card">
             <form [formGroup]="delempRef">
@@ -153,7 +150,6 @@
                     <mat-label>Employee ID</mat-label>
                     <input matInput formControlName="_id" [(ngModel)]="_id">
                 </mat-form-field>
-
                 <br>
                 <button mat-raised-button (click)="deleteemployee()" [disabled]="_id === ''" color="primary"
                     mat-dialog-close mat-dialog-close="false">Delete</button>
