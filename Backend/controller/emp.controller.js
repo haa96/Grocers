@@ -36,8 +36,6 @@ let authenticateLogin= async(request,response)=> {
     }
 
 }
-
-module.exports= {addEmployee, deleteEmployee, authenticateLogin};
 let updateEmployee = (request,response)=> {
     let p = request.body;
     empModel.updateOne({_id:p._id},{$set:{pwd:p.pwd,pwdUpdated:true}},(err,result)=> {
@@ -49,4 +47,5 @@ let updateEmployee = (request,response)=> {
     })
 }
 
-module.exports= {addEmployee, deleteEmployee,updateEmployee};
+
+module.exports= {addEmployee, deleteEmployee,updateEmployee,authenticateLogin};

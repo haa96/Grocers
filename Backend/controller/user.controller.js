@@ -16,7 +16,7 @@ let register = async (request,response)=> {
     let user = request.body;    // receive the data from post method
     console.log(user);
     if(user.bankCardNo === ''){ user.bankCardNo=0; }
-    user.locked = false;
+    user.locked = true;
     user.balance = 500;
     user._id = 1;
 
@@ -49,7 +49,8 @@ let register = async (request,response)=> {
 
 let unlockUser = (request,response)=> {
     let p = request.body;
-    userModel.updateOne({_id:p._id},{$set:{locked:false}},(err,result)=> {
+    
+    userModel.updateOne({email:p.email},{$set:{locked:false}},(err,result)=> {
         if(!err){
             response.send(result);
         }else {

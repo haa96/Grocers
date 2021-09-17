@@ -12,8 +12,17 @@ let storeduserticket = (request,response)=> {
         }
     })
 }
+let getTicket = (request,response)=> {
+    
+    userticketModel.find({},(err,data)=> {
+        if(!err){
+            response.send(data);
+        }else {
+             response.send(err);   
+        }
+    })
 
-
-module.exports= {storeduserticket}
+}
+module.exports= {storeduserticket,getTicket}
 
 

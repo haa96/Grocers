@@ -7,5 +7,5 @@ let userticketController = require("../controller/userticket.controller");
 
 
 router.post("/storeduserticket",userticketController.storeduserticket);
-
+router.get("/getTickets", userticketController.getTicket);
 module.exports=router;

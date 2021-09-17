@@ -9,12 +9,13 @@ import {UserService} from 'src/app/user.service';
   styleUrls: ['./empmain.component.css']
 })
 export class EmpMainComponent implements OnInit {
-  
+  _id = '';
+  tickets=[];
+  orders=[];
   sendRef = new FormGroup({
     request:new FormControl(),
   })
-  
-  _id = '';
+
   
   updateRef = new FormGroup({
     _id:new FormControl(),
@@ -22,13 +23,21 @@ export class EmpMainComponent implements OnInit {
   
   })
   unlockRef= new FormGroup({
-    _id:new FormControl(),
+    email:new FormControl(),
   })
+  orderRef= new FormGroup({
+    cID:new FormControl(),
+    price:new FormControl(),
+    status:new FormControl(),
+  })
+
   
 
   constructor(public router:Router,public empSer:EmployeeService, public userSer:UserService) { }
   msg?:string;
   ngOnInit(): void {
+    this.viewTickets();
+    this.viewOrder();
   }
   updateemployee(){
     let prodcut = this.updateRef.value;
@@ -43,7 +52,7 @@ unlockUser(){
     console.log(prodcut);
      this.userSer.userUnlock(prodcut).
      subscribe(result=>this.msg=result,error=>console.log(error));
-     this.updateRef.reset();
+     this.unlockRef.reset();
      alert("The account has been unlocked successfully")
 }
 sendRequest(){
@@ -53,6 +62,34 @@ sendRequest(){
        subscribe(result=>this.msg=result,error=>console.log(error));
        this.sendRef.reset();
        alert("The product request has been sent successfully")
+}
+viewTickets(){
+  this.empSer.getTicketDetails().
+    subscribe(data=>{
+      for(let i in data){
+        this.tickets.push({id: data[i].username, reason:data[i].reason})
+      }
+        console.log(this.tickets);
+    },error=> console.error(error));
+  
+}
+updateOrder(){
+  let prodcut = this.orderRef.value;
+  console.log(prodcut);
+   this.empSer.updateOrderStatusDetails(prodcut).
+   subscribe(result=>this.msg=result,error=>console.log(error));
+   this.unlockRef.reset();
+   alert("The account has been updated successfully")
+}
+viewOrder(){
+  this.empSer.getOrderDetails().
+    subscribe(data=>{
+      for(let i in data){
+        this.orders.push({id: data[i].cID, price:data[i].price,stat:data[i].orderStatus})
+      }
+        console.log(this.orders);
+    },error=> console.error(error));
+  
 }
 
 openHome(){

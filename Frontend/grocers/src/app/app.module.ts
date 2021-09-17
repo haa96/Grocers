@@ -28,7 +28,8 @@ import { HomeComponent } from './home/home.component';
 import { AdminpanelComponent } from './adminpanel/adminpanel.component';
 import { ReportComponent } from './report/report.component';
 import{ MainComponent}from './user/main/main.component';
-import{ RaiseticketComponent} from './raiseticket/raiseticket.component'
+import{ RaiseticketComponent} from './raiseticket/raiseticket.component';
+import {MatSelectModule} from '@angular/material/select';
 @NgModule({
   declarations: [
     AppComponent,
@@ -65,6 +66,7 @@ import{ RaiseticketComponent} from './raiseticket/raiseticket.component'
     MatTreeModule,
     MatTabsModule,
     MatCardModule,
+    MatSelectModule,
     BrowserAnimationsModule,
     HttpClientModule
   ],

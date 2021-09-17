@@ -23,7 +23,7 @@ export class UserService {
     return this.http.get("http://localhost:9090/api/user/details");
   }
   userUnlock(user:User):Observable<any>{
-    return this.http.put("http://localhost:9090/api/user/unlock",user,
+    return this.http.post("http://localhost:9090/api/user/unlock",user,
     {responseType:'text'});
   }
 

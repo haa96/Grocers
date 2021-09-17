@@ -12,6 +12,7 @@ let productRouter = require("./router/product.router");
 let userticketRouter = require("./router/userticket.router");
 let empRouter = require("./router/emp.router");
 let proRequestRouter = require("./router/productrequest.router");
+let purchaseRouter= require("./router/purchase.router");
 let cartController = require("./router/cart.router");
 const adminModel = require("./model/admin.model");
 const proRequestModel = require("./model/productrequest.model");
@@ -58,6 +59,8 @@ app.use("/api/product",productRouter);
 app.use("/api/ticket",userticketRouter);
 //http://localhost:9090/api/sendProductRequest/
 app.use("/api/sendProductRequest",proRequestRouter);
+//http://localhost:9090/api/purchase
+app.use("/api/purchase",purchaseRouter);
 //http://localhost:9090/api/cart/
 app.use("/api/cart",cartController);
 
