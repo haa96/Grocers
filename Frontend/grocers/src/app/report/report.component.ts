@@ -1,14 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ReportService } from '../report.service';
-// import { AdminService } from '../admin.service';
 @Component({
   selector: 'app-report',
   templateUrl: './report.component.html',
   styleUrls: ['./report.component.css']
 })
 export class ReportComponent implements OnInit {
-// , public report:Report, public adminSer:AdminService
   constructor(public router:Router,public reportSer:ReportService){ }
 
   ngOnInit(): void {

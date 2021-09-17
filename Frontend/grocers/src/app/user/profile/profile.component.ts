@@ -25,23 +25,9 @@ export class ProfileComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // console.log("Calling Get User");
-    // this.getUser(this.userEmail.email);
   }
 
-  getUser(data) {
-    console.log("getUser recieved "+data+" as an email");
-    let user = this.userSer.checkUserDetails(data).
-    subscribe(result=>{
-        console.log(result);
-        this.firstName = result.firstName;
-        this.email=result.email;
-        this.phone=result.phone;
-        this.address=result.address;
-        console.log(this.firstName+this.email+this.address+this.phone);
-      }, error=>console.log(error));
-  }
-
+ 
   main(){
     console.log("email is: "+this.email);
     this.router.navigate(["main",this.email]);  

@@ -67,7 +67,7 @@ app.use("/api/cart",cartController);
 //http://localhost:9090/api/report/daily
 //http://localhost:9090/api/report/weekly
 //http://localhost:9090/api/report/monthly
-app.use("api/report",adminRouter);
+app.use("api/report",reportRouter);
 
 mongoose.disconnect;
 })
